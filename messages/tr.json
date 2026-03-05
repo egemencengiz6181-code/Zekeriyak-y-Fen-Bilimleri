@@ -1,0 +1,396 @@
+{
+  "Index": {
+    "title": "Renee DesignLab - Modern Dijital Çözümler",
+    "description": "Ankara merkezli dijital tasarım ve reklam ajansı."
+  },
+  "Hero": {
+    "eyebrow": "Geleceğin Dijital Standartları",
+    "title": "Dijital Sanatı Veriyle Harmanlıyoruz",
+    "subtitle": "Renee DesignLab, yaratıcı bir laboratuvar titizliğiyle markanızı dijitalin zirvesine taşır.",
+    "headline": "Dijitalde İz Bırakan Tasarımlar",
+    "slogan": "Strateji, estetik ve teknolojinin kesiştiği noktada var olan bir ajans.",
+    "cta": "Laboratuvarı Keşfedin"
+  },
+  "Services": {
+    "meta_title": "Hizmetlerimiz | SEO, Google Ads, Web Tasarım ve Daha Fazlası - Renee DesignLab",
+    "meta_description": "SEO ve Google Ads'dan web tasarım, sosyal medya, prodüksiyon ve PR'a kadar; Renee DesignLab, Ankara'dan kapsamlı dijital ajans hizmetleri sunar.",
+    "title": "Hizmetlerimiz",
+    "subtitle": "Sanat ve teknolojinin moleküler düzeyde birleşimi.",
+    "cta": "Teklif Al",
+    "back": "Hizmetlere Dön",
+    "discovery_title": "Diğer Çözümlerimizi Keşfedin",
+    "strategy_section": "Stratejimiz",
+    "tech_section": "Teknoloji & Araçlar",
+    "scope": "Kapsam",
+    "about_suffix": "Hakkında",
+    "sections": {
+      "strategy": "Strateji",
+      "design": "Tasarım",
+      "performance": "Performans"
+    },
+    "items": {
+      "seo": {
+        "title": "SEO",
+        "description": "Arama motorlarında sadece bulunmanızı değil, hükmetmenizi sağlıyoruz. Görünürlüğü yeniden tanımlıyoruz.",
+        "hero_quote": "SEO, sadece teknik bir ayar değil; markanızın dijital dünyadaki yankısıdır. Google'da ilk sırada yer almak rakiplerden önce değil, rakiplerin erişemeyeceği bir yerde olmaktır.",
+        "intro": "Ankara dijital ajans olarak Renee DesignLab, arama motoru optimizasyonunu bir sanat formuna dönüştürür. Yalnızca sıralamada yükselmekle kalmaz; markanızın organik büyümesini sürdürülebilir kılarız. Google'ın 200'den fazla sıralama faktörünü analiz eden ekibimiz, teknik SEO'dan içerik stratejisine, backlink yönetiminden kullanıcı deneyimine kadar her katmanı hassasiyetle yönetir. 'Ankara SEO hizmeti', 'kurumsal web tasarım' ve 'dijital ajans Ankara' gibi yüksek rekabetli anahtar kelimelerde müşterilerimizi ilk sayfaya taşıma deneyimine sahibiz.",
+        "strategy_title": "3 Aşamalı SEO Stratejimiz",
+        "phase1_title": "1. Teşhis & Teknik Audit",
+        "phase1_text": "Sitenizin mevcut durumunu derinlemesine analiz ediyoruz. Crawl hataları, Core Web Vitals skorları, sayfa hızı metrikleri, yapısal veri (schema) eksiklikleri ve canonicalization sorunlarını tespit ederek öncelikli müdahale planı oluşturuyoruz. Rakip analizi ile piyasadaki boşlukları haritalıyor, sizi öne çıkaracak fırsatları belirliyoruz.",
+        "phase2_title": "2. Anahtar Kelime & İçerik Mimarisi",
+        "phase2_text": "Hedef kitlenizin arama niyetini (search intent) derinlemesine anlıyoruz. Uzun kuyruklu ve yüksek dönüşümlü anahtar kelimeleri keşfederek içerik mimarisini yeniden yapılandırıyoruz. Pillar page & topic cluster modeli ile sitenizin tematik otoritesini inşa ediyor; 'Ankara dijital ajans', 'kurumsal kimlik tasarımı', 'profesyonel web sitesi yaptırma' gibi kritik keyword gruplarını sayfalarınıza stratejik olarak yerleştiriyoruz.",
+        "phase3_title": "3. Otorite İnşası & Sürekli Optimizasyon",
+        "phase3_text": "Sektörel otorite siteler, Türk medya platformları ve nişe özgü bloglardan kaliteli backlink edinimi sağlıyoruz. Dijital PR çalışmalarıyla domain otoritenizi büyütüyor, iç linkleme stratejileriyle sayfa otoritenizi dengeli dağıtıyoruz. Aylık detaylı raporlarla her adımı şeffaf biçimde takip ediyor, A/B testleriyle optimizasyonu sürdürüyoruz.",
+        "tech_title": "Kullandığımız SEO Araçları",
+        "tech_intro": "Sektörün en güçlü araçlarını veri odaklı kararlar için kullanıyoruz.",
+        "tech_tools": "Google Search Console · Ahrefs · Semrush · Screaming Frog · Moz Pro · Google Analytics 4 · PageSpeed Insights · Schema Markup Validator",
+        "body": "Renee DesignLab'ın SEO hizmetleri, tek seferlik bir optimizasyonun çok ötesinde, markanız için kalıcı dijital değer yaratan bütünsel bir ekosistem sunar. Google algoritma güncellemelerine karşı dirençli, E-E-A-T (Deneyim, Uzmanlık, Otorite, Güvenilirlik) standartlarına uygun içerik mimarisi kuruyoruz. Ankara'da, Türkiye'de ve global pazarda rekabet eden markalar için yerel SEO'dan uluslararası çok dilli SEO stratejilerine kadar kapsamlı çözümler üretiyoruz. Her projeye özgü KPI'lar belirliyor; organik trafik büyümesi, keyword sıralama iyileşmesi ve dönüşüm oranı artışını ölçülebilir hedeflerle yönetiyoruz. Sektörün değişen dinamiklerine anında adapte olan ekibimiz, markanızı dijital rekabette daima bir adım önde tutar.",
+        "meta_title": "SEO Hizmetleri | Ankara Dijital Ajans | Renee DesignLab",
+        "meta_description": "Renee DesignLab'ın profesyonel SEO hizmetleriyle Google'da üst sıralara çıkın. Ankara merkezli dijital ajansımız, teknik SEO, içerik stratejisi ve backlink yönetimiyle organik büyümenizi garantiler.",
+        "image_alt": "Veri odaklı SEO stratejisi ve analitik dashboard",
+        "features": ["On-Page SEO", "Teknik SEO Audit", "Backlink Stratejisi", "İçerik Mimarisi", "Yerel SEO", "Core Web Vitals", "Schema Markup", "Aylık Raporlama"]
+      },
+      "google-ads": {
+        "title": "Google ADS",
+        "description": "Her tıklamayı bir yatırıma dönüştüren, veri odaklı ve keskin nişancı hassasiyetinde reklam yönetimi.",
+        "hero_quote": "Google Ads'de her kuruş bir silah, her tıklama bir fırsat. Bütçenizi israf etmek değil; en yüksek ROI'yi mühendislik hassasiyetiyle mümkün kılmak için biz buradayız.",
+        "intro": "Google Ads yönetimi, doğru yapıldığında en hızlı büyüme kanalıdır; yanlış yapıldığında ise en pahalı hata. Renee DesignLab olarak Google Premier Partner düzeyinde bilgi ve deneyimle Ankara'daki ve Türkiye genelindeki markaların reklam bütçelerini maksimum verimle yönetiyoruz. Search, Display, Shopping, Remarketing ve Performance Max kampanyalarından oluşan 360° bir reklam ekosistemi kurarak markanızı satın almaya hazır kitlelerin karşısına çıkarıyoruz.",
+        "strategy_title": "3 Aşamalı Google Ads Stratejimiz",
+        "phase1_title": "1. Kampanya Mimarisi & Anahtar Kelime Araştırması",
+        "phase1_text": "Rekabetçi anahtar kelime analizi ile tıklama maliyeti (CPC) ve dönüşüm oranı değişkenlerini modelliyor; bütçe dağılımını optimum gelir/maliyet dengesiyle tasarlıyoruz. Negatif anahtar kelime listeleri oluşturarak bütçe israfını sıfıra yakın tutuyoruz. Ad Group yapısını SKAG veya tema bazlı yaklaşımla kurarak kalite skorlarını maksimuma taşıyoruz.",
+        "phase2_title": "2. Reklam & Landing Page Optimizasyonu",
+        "phase2_text": "A/B testleriyle reklam metinlerini, uzantıları ve teklifleri sürekli optimize ediyoruz. Dönüşüm odaklı landing page tasarımları ile reklam alaka düzeyini ve kalite skorunu yükseltiyor, tıklama başına maliyeti düşürüyoruz. Responsive Search Ads (RSA) ve Performance Max kampanyalarında makine öğrenmesi algoritmalarını ehlileştirerek hedef kitlenize en doğru mesajı en doğru anda iletiyoruz.",
+        "phase3_title": "3. Dönüşüm Takibi & ROI Optimizasyonu",
+        "phase3_text": "Google Tag Manager ve Analytics 4 entegrasyonuyla mikro ve makro dönüşümleri eksiksiz takip ediyoruz. ROAS (Reklam Harcaması Getirisi) hedefli teklif stratejileriyle bütçenizi en verimli kanallara yönlendiriyoruz. Haftalık performans raporları ve aylık strateji toplantılarıyla kampanyaları sürekli iyileştiriyoruz.",
+        "tech_title": "Kullandığımız Google Ads Araçları",
+        "tech_intro": "Google ekosisteminin tüm gücünü markanız için harekete geçiriyoruz.",
+        "tech_tools": "Google Ads Editor · Google Analytics 4 · Google Tag Manager · Google Merchant Center · Looker Studio · SEMrush · Keyword Planner · Optmyzr",
+        "body": "Renee DesignLab'ın Google Ads hizmeti, reklam göstermenin çok ötesinde bir performans mühendisliğidir. Ankara'daki ve Türkiye genelindeki rekabetçi pazarlarda, rakiplerinizin reklam bütçelerini analiz ederek sizi her açık artırmada stratejik üstünlükle konumlandırıyoruz. E-ticaret markalarından B2B şirketlerine, yerel işletmelerden ulusal zincirlere kadar her ölçekteki işletme için özelleştirilmiş Google Ads stratejileri geliştiriyoruz. Dynamic Search Ads ile site içi fırsatları otomatik olarak yakalıyor, Shopping kampanyaları ile ürün kataloglarınızı alışverişe hazır kullanıcılara sunuyoruz. Mesleğimizde mükemmellik: her müşteri için ulaşılan reklam harcaması getirisini (ROAS) endüstri ortalamasının üzerinde tutmak.",
+        "meta_title": "Google Ads Yönetimi | Ankara Dijital Reklam Ajansı | Renee DesignLab",
+        "meta_description": "Profesyonel Google Ads yönetimiyle bütçenizi maksimum ROI'ye dönüştürün. Renee DesignLab, Ankara merkezli dijital reklam ajansı olarak Search, Display, Shopping ve Remarketing kampanyalarında uzmanlaşmıştır.",
+        "image_alt": "Google Ads kampanya performans analizi ve dashboard",
+        "features": ["Search Kampanyaları", "Display Network", "Shopping Ads", "Remarketing", "Performance Max", "Video Ads", "Dönüşüm Takibi", "ROAS Optimizasyonu"]
+      },
+      "meta-ads": {
+        "title": "Meta Reklam Yönetimi",
+        "description": "Algoritmaların ötesine geçerek hedef kitlenizin kalbine dokunan sosyal medya stratejileri.",
+        "hero_quote": "Meta reklamcılığı, insanların satın almak istediği ürünleri bulmalarına değil; henüz ihtiyaç duymadıklarını bile keşfetmelerine yardımcı olmaktır. Bu, veriyi sanata dönüştürme sanatıdır.",
+        "intro": "Facebook ve Instagram'ın 4 milyarı aşkın aktif kullanıcısı, doğru hedefleme ile markanız için sınırsız bir büyüme motoruna dönüşebilir. Renee DesignLab, Meta Business Suite'i tam kapasite kullanarak mikro-hedefleme, lookalike audience oluşturma ve retargeting döngüleri kurar. Yaratıcı içerik stratejisi ile algoritmanın kör noktalarını aşarak hedef kitlenizin duygusal eşiğine dokunuyoruz.",
+        "strategy_title": "3 Aşamalı Meta Ads Stratejimiz",
+        "phase1_title": "1. Kitle Segmentasyonu & Pixel Kurulumu",
+        "phase1_text": "Meta Pixel ve Conversions API entegrasyonu ile iOS 14+ kısıtlamalarına rağmen sahte olmayan dönüşüm verisi toplayarak kampanya optimizasyon kalitesini koruyoruz. Demografik, psikografik ve davranışsal segmentasyon ile mesajınızı tam doğru kitleye iletiyoruz.",
+        "phase2_title": "2. Yaratıcı İçerik & A/B Testi",
+        "phase2_text": "Video, carousel, koleksiyon ve dinamik reklam formatlarını test ederek en yüksek etkileşimi yakalıyoruz. Her 2 haftada bir yeni yaratıcı yenilemesiyle reklam yorgunluğunu önlüyoruz. Reklam metni, görsel dil ve CTA kombinasyonlarını sistematik biçimde test ediyoruz.",
+        "phase3_title": "3. Funnel Yönetimi & Dönüşüm Optimizasyonu",
+        "phase3_text": "TOFU (farkındalık), MOFU (değerlendirme) ve BOFU (dönüşüm) aşamaları için farklılaşmış kampanya mimarisi kuruyoruz. Retargeting sekanslama ile kullanıcıları satın alma kararına doğru nazikçe yönlendiriyoruz.",
+        "tech_title": "Kullandığımız Meta Araçları",
+        "tech_intro": "Meta ekosisteminin tüm katmanlarını ustalıkla kullanıyoruz.",
+        "tech_tools": "Meta Ads Manager · Meta Business Suite · Meta Pixel · Conversions API · Meta Creative Hub · Advantage+ · Looker Studio",
+        "body": "Meta platformları, organik erişimin dramatik biçimde düştüğü günümüzde ücretli reklamcılığı bir zorunluluk haline getirmiştir. Renee DesignLab olarak bu zorunluluğu markanız için rekabetçi bir avantaja dönüştürüyoruz. Ankara'daki yerel markalardan Türkiye genelinde büyüyen e-ticaret sitelerine kadar her ölçekteki işletme için özelleştirilmiş Meta reklam stratejileri geliştiriyoruz. WhatsApp entegrasyonlu click-to-message kampanyaları, Instagram Shopping katalog optimizasyonu ve Reels reklamcılığı gibi en güncel formatları markanız için aktive ediyoruz.",
+        "meta_title": "Meta Reklam Yönetimi | Facebook & Instagram Ads | Renee DesignLab",
+        "meta_description": "Facebook ve Instagram reklamlarıyla hedef kitlenize ulaşın. Renee DesignLab'ın Meta Ads uzmanları, dönüşüm odaklı kampanyalarla markanızın sosyal medya performansını zirveye taşır.",
+        "image_alt": "Meta sosyal medya reklam kampanyası analizi",
+        "features": ["Facebook Ads", "Instagram Ads", "Lookalike Audience", "Retargeting", "Meta Pixel", "Conversions API", "Dinamik Reklamlar", "Advantage+ Alışveriş"]
+      },
+      "web-design": {
+        "title": "Web Tasarım & Yazılım",
+        "description": "Sadece bir site değil, markanızın dijital anıtını inşa ediyoruz. Estetik ve fonksiyonelliğin kusursuz mühürü.",
+        "hero_quote": "Web siteniz, dijital dünyadaki showroom'unuzdur. Bir ziyaretçinin 0.05 saniyede oluşturduğu ilk izlenim, markanızın kaderini belirler. Bu nedenle her piksel, her animasyon, her satır kod bilerek tasarlanmalıdır.",
+        "intro": "Renee DesignLab, web tasarım ve yazılım alanında sıradan şablonların çok ötesinde, markanıza özel dijital deneyimler inşa eder. Kullanıcı deneyimi (UX) araştırmasından UI tasarımına, front-end geliştirmeden back-end entegrasyonuna kadar tüm süreci tek çatı altında yönetiyoruz. Next.js, React ve Tailwind CSS teknolojileriyle geliştirdiğimiz siteler; hız, erişilebilirlik ve SEO standartlarının en üst noktasında yer alır. Kurumsal web tasarım, e-ticaret çözümleri ve SaaS platformları konularında Ankara'nın öncü dijital ajansıyız.",
+        "strategy_title": "3 Aşamalı Web Tasarım Sürecimiz",
+        "phase1_title": "1. Keşif, Strateji & Wireframe",
+        "phase1_text": "Marka kimliğinizi, hedef kitlenizi ve iş hedeflerinizi derinlemesine anlıyoruz. Rakip analizi ve kullanıcı araştırması ile bilgi mimarisini oluşturuyor; düşük ve yüksek doğrulukta wireframe'lerle içerik yapısını netleştiriyoruz. Her tasarım kararının bir stratejik gerekçesi var.",
+        "phase2_title": "2. UI Tasarımı & Prototipleme",
+        "phase2_text": "Markanıza özel tasarım sistemi (design system) oluşturuyoruz: renk paleti, tipografi, ikonografi ve bileşen kütüphanesi. Figma'da pixel-perfect UI tasarımı ve interaktif prototip geliştirerek onay sürecini hızlandırıyoruz. Mobil öncelikli (mobile-first) yaklaşım ve WCAG 2.1 erişilebilirlik standartlarına tam uyum sağlıyoruz.",
+        "phase3_title": "3. Geliştirme, Test & Lansman",
+        "phase3_text": "Next.js 15 App Router, TypeScript ve Tailwind CSS ile yüksek performanslı, SEO dostu web uygulamaları geliştiriyoruz. Core Web Vitals skorlarını (LCP, FID, CLS) en üst seviyede tutarak Google'ın sayfa deneyimi sinyallerinde üstünlük sağlıyoruz. Kapsamlı cross-browser ve cihaz testlerinin ardından güvenli deployment süreciyle yayına alıyoruz.",
+        "tech_title": "Kullandığımız Teknolojiler",
+        "tech_intro": "Modern web standartlarının en ilerisi ile inşa ediyoruz.",
+        "tech_tools": "Next.js 15 · React 19 · TypeScript · Tailwind CSS · Framer Motion · Figma · Vercel · Supabase · Prisma · Stripe",
+        "body": "Renee DesignLab'ın web tasarım ve yazılım hizmetleri, markanız için dijital dünyada kalıcı ve güçlü bir varlık oluşturur. Kurumsal web tasarımdan e-ticaret platformlarına, portföy sitelerinden SaaS uygulamalarına kadar geniş bir yelpazede projeler geliştiriyoruz. Her proje; kullanıcı ihtiyaçları, iş hedefleri ve teknik mükemmellik ekseninde şekillenir. Google'ın Core Web Vitals standartlarına tam uyumlu, 90+ Lighthouse skoru hedefli siteler teslim ediyoruz. Çoklu dil desteği (i18n), gelişmiş animasyon ve micro-interaction tasarımı, CMS entegrasyonu ve ölçeklenebilir mimari yapılar konularında özelleşmiş ekibimiz, Ankara'nın en talep gören web tasarım ajansı olma yolunda emin adımlarla ilerlemektedir.",
+        "meta_title": "Web Tasarım & Yazılım | Ankara Kurumsal Web Tasarım | Renee DesignLab",
+        "meta_description": "Renee DesignLab, Ankara'nın öncü web tasarım ajansıdır. Next.js, React ve modern teknolojilerle kurumsal web siteleri, e-ticaret platformları ve dijital deneyimler geliştiriyoruz.",
+        "image_alt": "Modern web tasarım ve kullanıcı arayüzü geliştirme süreci",
+        "features": ["UI/UX Tasarım", "Next.js Geliştirme", "Mobil Optimizasyon", "E-Ticaret Çözümleri", "CMS Entegrasyonu", "Performans Optimizasyonu", "Figma Tasarım Sistemi", "Core Web Vitals"]
+      },
+      "social-media": {
+        "title": "Sosyal Medya Yönetimi",
+        "description": "Markanızın dijital sesini bir topluluğa, topluluğunuzu bir sadakat ekosistemine dönüştürüyoruz.",
+        "hero_quote": "Sosyal medya yönetimi takip sayısı peşinde koşmak değil; markanızı insanların hayatına dokunduran, kâra dönüşen anlamlı bir topluluğu inşa etmektir.",
+        "intro": "Sosyal medya, markaların müşterileriyle gerçek zamanlı diyalog kurduğu en güçlü platformdur. Renee DesignLab, içerik stratejisini, yaratıcı tasarımı ve topluluk yönetimini harmanlayan bütünsel sosyal medya çözümleri sunar. Instagram, LinkedIn, TikTok, X (Twitter) ve YouTube'da markanızı güçlü ve tutarlı bir sesle konumlandırıyoruz.",
+        "strategy_title": "3 Aşamalı Sosyal Medya Stratejimiz",
+        "phase1_title": "1. Marka Sesi & İçerik Stratejisi",
+        "phase1_text": "Markanızın tonunu, dilini ve görsel dilini belgeleyen bir brand voice kılavuzu oluşturuyoruz. Hedef kitle analizi, rakip benchmarking ve platform bazlı içerik tipleri ile aylık içerik takvimi planlıyoruz.",
+        "phase2_title": "2. İçerik Üretimi & Topluluk Yönetimi",
+        "phase2_text": "Profesyonel grafik tasarım, kısa video üretimi ve copywriting ile özgün dijital varlıklar üretiyoruz. Yorumlara, mesajlara ve etiketlemelere hızlı ve marka sesiyle uyumlu biçimde yanıt vererek topluluk bağını güçlendiriyoruz.",
+        "phase3_title": "3. Analitik & Büyüme Optimizasyonu",
+        "phase3_text": "Haftalık ve aylık performans raporlarıyla içerik stratejisini sürekli optimize ediyoruz. Algoritmik trendleri takip ederek viral içerik fırsatlarını yakalıyor; influencer iş birlikleri ile organik erişimi büyütüyoruz.",
+        "tech_title": "Kullandığımız Araçlar",
+        "tech_intro": "Veri ile yaratıcılığı kusursuz biçimde birleştiriyoruz.",
+        "tech_tools": "Meta Business Suite · Hootsuite · Later · Canva Pro · Adobe Suite · CapCut Pro · Sprout Social · Google Analytics 4",
+        "body": "Renee DesignLab'ın sosyal medya yönetim hizmetiyle markanız dijital gürültünün üzerine çıkar. Her platformun kendine özgü algoritmasını, içerik formatını ve kitle dinamiğini bilen ekibimiz; Instagram Reels, LinkedIn thought leadership, TikTok trend içerikleri ve YouTube Shorts stratejilerini markanıza özel harmanlıyor. Ankara'daki yerel markalardan Türkiye çapında büyüyen e-ticaret markalarına kadar geniş bir portföyde sosyal medya yönetim deneyimine sahibiz.",
+        "meta_title": "Sosyal Medya Yönetimi | Instagram & LinkedIn Yönetimi | Renee DesignLab",
+        "meta_description": "Renee DesignLab ile sosyal medyanı stratejik büyüme motoruna dönüştür. Instagram, LinkedIn, TikTok ve YouTube'da içerik stratejisi, topluluk yönetimi ve büyüme optimizasyonu.",
+        "image_alt": "Sosyal medya içerik stratejisi ve analitik dashboard",
+        "features": ["İçerik Takvimi", "Grafik Tasarım", "Topluluk Yönetimi", "Reels & TikTok", "Influencer Marketing", "Hashtag Stratejisi", "Aylık Raporlama", "Kriz Yönetimi"]
+      },
+      "production": {
+        "title": "Prodüksiyon",
+        "description": "Hikayenizi ışık, ses ve vizyonla dijital bir sinemaya dönüştürüyoruz. Görsel anlatımın zirvesi.",
+        "hero_quote": "En iyi içerik, izleyicinin ekrani kapatamadığı, paylaşmadan edemeyeceği; bir duyguyu, bir anı veya bir ihtiyacı mükemmel biçimde dile getiren içeriktir.",
+        "intro": "Dijital dünyada içerik kraldır; ancak kalitesiz içerik markaya zarar verir. Renee DesignLab'ın prodüksiyon ekibi, kurumsal tanıtım filmlerinden sosyal medya içeriklerine, ürün videolarından event görüntülerine kadar her formatta profesyonel görsel-işitsel içerik üretir. Ankara'da ve Türkiye genelinde projeler yürütüyoruz.",
+        "strategy_title": "3 Aşamalı Prodüksiyon Sürecimiz",
+        "phase1_title": "1. Pre-Production: Konsept & Planlama",
+        "phase1_text": "Marka briefi, hedef kitle analizi ve yaratıcı konsept geliştirme ile başlıyoruz. Senaryo yazımı, storyboard oluşturma, lokasyon keşfi ve çekim planlamasını titizlikle hazırlıyoruz.",
+        "phase2_title": "2. Production: Çekim",
+        "phase2_text": "4K/6K kameralar, sinema lensleri, profesyonel ışık düzeneği ve ses ekipmanıyla çekim yapıyoruz. Drone görüntüleri, makro lens detayları ve motion control ile görsel zenginlik katıyoruz.",
+        "phase3_title": "3. Post-Production: Kurgu & Dağıtım",
+        "phase3_text": "Renk düzeltme (color grading), ses miksajı, motion graphics ve 3D elementlerle profesyonel post prodüksiyon süreci yürütüyoruz. Platform bazlı formatlarda (9:16, 16:9, 1:1) çıktı hazırlıyor, dağıtım stratejisiyle izlenme potansiyelini maksimize ediyoruz.",
+        "tech_title": "Ekipman & Yazılımlarımız",
+        "tech_intro": "Sinema kalitesini her projeye taşıyoruz.",
+        "tech_tools": "Sony FX6 · DJI Ronin · Adobe Premiere Pro · DaVinci Resolve · After Effects · Cinema 4D · DJI Mavic 3 · Aputure Lighting",
+        "body": "Renee DesignLab prodüksiyon ekibi, teknik mükemmelliği yaratıcı vizyonla buluşturur. Kurumsal tanıtım filmlerinden reklam spotlarına, sosyal medya içerik serilerine kadar her formatta markanızın hikâyesini en güçlü görsel dille anlatıyoruz. Ankara'daki ofisimizden Türkiye'nin dört bir yanında çekim gerçekleştiriyor; uluslararası standartlarda post prodüksiyon ile projeyi teslim ediyoruz.",
+        "meta_title": "Video Prodüksiyon | Kurumsal Tanıtım Filmi | Renee DesignLab Ankara",
+        "meta_description": "Renee DesignLab, Ankara merkezli profesyonel video prodüksiyon ajansıdır. Kurumsal tanıtım filmi, reklam spotu, drone çekimi ve sosyal medya içerik üretiminde deneyimli ekip.",
+        "image_alt": "Profesyonel video prodüksiyon seti ve kamera ekipmanı",
+        "features": ["Kurumsal Tanıtım Filmi", "Reklam Spotu", "Drone Çekimi", "Sosyal Medya Video", "Color Grading", "Motion Graphics", "3D Animasyon", "Canlı Yayın"]
+      },
+      "design": {
+        "title": "Tasarım Hizmetleri",
+        "description": "Kurumsal kimliğinizi bir DNA gibi işleyerek, markanızın her dokunuşunda lüksü ve asaleti hissettiriyoruz.",
+        "hero_quote": "Tasarım, sadece bir şeyin nasıl göründüğü değil; nasıl hissettirdiğidir. Büyük markalar büyük tasarımlarla hatırlanır; çünkü tasarım, iletişimin sessiz ve en güçlü dilidir.",
+        "intro": "Renee DesignLab'ın tasarım hizmetleri, markanızın görsel kimliğini sistematik, estetik ve stratejik bir temele oturtur. Logo tasarımından kurumsal kimlik sistemine, ambalaj tasarımından dijital varlık üretimine kadar her alanda özgün ve ölçeklenebilir tasarım çözümleri sunuyoruz. Her renk, her tipografi seçimi, her form bir strateji kararıdır.",
+        "strategy_title": "3 Aşamalı Tasarım Sürecimiz",
+        "phase1_title": "1. Marka Keşfi & Araştırma",
+        "phase1_text": "Markanızın değerleri, hedef kitlesi, rakip konumlaması ve sektörel estetik normları üzerine derinlemesine bir keşif süreci yürütüyoruz. Mood board'lar ve referans analizleriyle tasarım yönünü netleştiriyoruz.",
+        "phase2_title": "2. Konsept Geliştirme & Tasarım",
+        "phase2_text": "Birden fazla tasarım konsepti sunuyor, geri bildirimlerle en güçlü yönde rafine ediyoruz. Logo sistem tasarımı, renk paleti, tipografi seçimi ve görsel dil kılavuzunu oluşturuyoruz.",
+        "phase3_title": "3. Brand Guidelines & Teslimat",
+        "phase3_text": "Kapsamlı marka kılavuzu (brand book) ile tüm kullanım kurallarını belgeliyoruz. Print ve dijital formatların tamamında kullanıma hazır dosya paketlerini teslim ediyoruz.",
+        "tech_title": "Kullandığımız Tasarım Araçları",
+        "tech_intro": "Endüstri standardı araçlarla pixel-perfect sonuçlar üretiyoruz.",
+        "tech_tools": "Figma · Adobe Illustrator · Adobe Photoshop · Adobe InDesign · Framer · Spline · Procreate · Protopie",
+        "body": "Renee DesignLab'ın tasarım ekibi, markanızı görsel dünyada rakipsiz kılacak özgün sistemler inşa eder. Logo ve kurumsal kimlik tasarımından dijital ürün tasarımına, ambalaj grafik çözümlerinden outdoor ve iç mekan uygulamalarına kadar her temas noktasında markanızın sesi ve görünümü tutarlı ve güçlü kalır. Ankara'nın köklü ve yenilikçi markalarına tasarım rehberliği yapan ajansımız, yaratıcılığı ölçülebilir iş değerine dönüştürür.",
+        "meta_title": "Kurumsal Kimlik & Logo Tasarımı | Ankara Grafik Tasarım | Renee DesignLab",
+        "meta_description": "Renee DesignLab, Ankara'nın öncü grafik ve kurumsal kimlik tasarım ajansıdır. Logo tasarımı, brand identity, ambalaj tasarımı ve tam kapsamlı marka kılavuzu hizmetleri.",
+        "image_alt": "Kurumsal kimlik tasarım süreci ve marka kılavuzu",
+        "features": ["Logo Tasarımı", "Kurumsal Kimlik", "Brand Book", "Ambalaj Tasarımı", "Dijital Varlıklar", "Sosyal Medya Şablonları", "UI Kit", "Print Tasarım"]
+      },
+      "pr": {
+        "title": "Halkla İlişkiler (PR)",
+        "description": "İtibarınızı korumakla kalmıyor, dijital dünyada markanızın otoritesini stratejik olarak inşa ediyoruz.",
+        "hero_quote": "İtibar inşa etmek onlarca yıl alır, yıkmak ise bir tweet kardar kısadır. Dijital PR, bu dengeyi markanız lehine koruyacak stratejik bir kalkan ve büyüme motorudur.",
+        "intro": "Dijital PR, marka bilinirliğini artıran, otorite inşa eden ve aynı zamanda SEO'yu güçlendiren çok katmanlı bir strateji disiplinidir. Renee DesignLab, medya ilişkileri, basın bültenleri, influencer iş birlikleri ve kriz yönetimini bütünsel bir PR ekosistemi içinde sunar. Ankara'daki ve Türkiye'deki marka itibarını yönetmek için veri odaklı bir yaklaşım benimsiyoruz.",
+        "strategy_title": "3 Aşamalı PR Stratejimiz",
+        "phase1_title": "1. İtibar Analizi & Strateji",
+        "phase1_text": "Markanızın mevcut dijital itibarını, medya varlığını ve rakip konumlamasını analiz ediyoruz. Hedef medya listesi, key message dokümantasyonu ve yıllık iletişim ajandası oluşturuyoruz.",
+        "phase2_title": "2. İçerik & Medya Yayını",
+        "phase2_text": "Sektör otoritesi inşa eden thought leadership içerikleri, basın bültenleri ve araştırma raporları üretiyoruz. Dijital medya platformlarında, sektör bloglarında ve sosyal medyada yayım sağlıyoruz.",
+        "phase3_title": "3. Kriz Yönetimi & İzleme",
+        "phase3_text": "7/24 medya izleme araçlarıyla markanıza dair her dijital sesi takip ediyoruz. Kriz senaryoları için hazır aksiyon planları geliştiriyor; olumsuz içerikleri hızla nötralize ediyoruz.",
+        "tech_title": "Kullandığımız PR Araçları",
+        "tech_intro": "Markanızın dijital sesini her kanalda yönetiyoruz.",
+        "tech_tools": "Mention · Brand24 · Meltwater · PR Newswire · Semrush · BuzzSumo · Google Alerts · Cision",
+        "body": "Renee DesignLab'ın dijital PR hizmetleri, markanızın hem medyada hem de arama motorlarında güçlü ve güvenilir bir otorite olarak konumlanmasını sağlar. Yüksek otoriteli platformlardaki yayınlar ve backlink'ler sayesinde SEO otoritenizi büyütürken, aynı zamanda hedef kitlenizin güvenini kazanırsınız. Kriz iletişiminden influencer partnership yönetimine, kurumsal iletişim danışmanlığından içerik pazarlamasına kadar kapsamlı dijital PR ekosistemi sunuyoruz.",
+        "meta_title": "Dijital PR & Halkla İlişkiler | Marka İtibar Yönetimi | Renee DesignLab",
+        "meta_description": "Renee DesignLab, dijital PR ve marka itibar yönetiminde uzmanlaşmış Ankara merkezli ajansıdır. Medya ilişkileri, kriz yönetimi ve otorite inşası hizmetleri.",
+        "image_alt": "Dijital PR stratejisi ve medya yönetimi",
+        "features": ["Basın Bülteni", "Medya İlişkileri", "Kriz Yönetimi", "Influencer Partnership", "Thought Leadership", "Dijital Otorite İnşası", "İtibar İzleme", "Kurumsal İletişim"]
+      }
+    }
+  },
+  "References": {
+    "meta_title": "Referanslar | Müşteri Portföyümüz - Renee DesignLab",
+    "meta_description": "Renee DesignLab'ın müşteri portföyünü keşfedin. Dijitalde fark yarattığımız markalar ve projeler hakkında bilgi edinin.",
+    "title": "Referanslarımız",
+    "subtitle": "Birlikte değer yarattığımız markalar."
+  },
+  "About": {
+    "meta_title": "Hakkımızda | Renee DesignLab - Ankara Dijital Ajans",
+    "meta_description": "Strateji, estetik ve teknolojiyi bir araya getiren Ankara'nın yaratıcı dijital laboratuvarı Renee DesignLab'ı tanıyın. Vizyonumuz, misyonumuz ve kurucumuzla tanışın.",
+    "title": "Hakkımızda",
+    "hero_slogan": "Bir laboratuvardan daha fazlası.",
+    "subtitle": "Dijital Dönüşümün Estetik Mimarları",
+    "content": "Renee DesignLab, sıradan bir ajans değil; strateji, sanat ve teknolojinin moleküler düzeyde birleştiği bir dijital laboratuvardır. Her projeyi bir deney, her sonucu bir başyapıt olarak görüyoruz.",
+    "vision": {
+      "title": "Vizyon",
+      "text": "Geleceğin dijital standartlarını bugünden belirlemek ve estetiği fonksiyonellikle kusursuzca mühürlemek."
+    },
+    "mission": {
+      "title": "Misyon",
+      "text": "Markaları dijital gürültüden arındırıp, onlara özgün, yüksek performanslı ve kalıcı bir dijital kimlik kazandırmak."
+    },
+    "founder": {
+      "role": "Founder & Visionary",
+      "text": "Mükemmellik bir varış noktası değil, her pikselde devam eden bitmek bilmez bir arayıştır."
+    }
+  },
+  "Contact": {
+    "meta_title": "İletişim | Teklif Alın - Renee DesignLab",
+    "meta_description": "Projenize başlamaya hazır mısınız? Ankara'daki Renee DesignLab ile iletişime geçin. Telefon, e-posta veya iletişim formuyla bize ulaşın, en kısa sürede yanıt verelim.",
+    "title": "İletişim",
+    "subtitle": "Bir projeniz mi var? Gelin, birlikte hayata geçirelim.",
+    "form": {
+      "name": "Adınız",
+      "email": "E-posta Adresiniz",
+      "subject": "Konu",
+      "message": "Mesajınız",
+      "send": "Mesaj Gönder",
+      "phone": "Telefon",
+      "name_placeholder": "Adınız Soyadınız",
+      "email_placeholder": "siz@ornek.com",
+      "phone_placeholder": "+90 5xx xxx xx xx",
+      "message_placeholder": "Mesajınız...",
+      "sending": "Gönderiliyor...",
+      "success_title": "Mesajınız iletildi!",
+      "success_text": "En kısa sürede sizinle iletişime geçeceğiz. ✦"
+    },
+    "info": {
+      "address": "Adres",
+      "phone": "Telefon",
+      "email": "E-posta"
+    }
+  },
+  "WhyUs": {
+    "title": "Sıradanlığı Laboratuvarda Bırakıyoruz.",
+    "description": "Renee DesignLab, veri odaklı stratejileri estetik mükemmelle harmanlayarak markanızı dijitalin zirvesine taşır.",
+    "cta": "Hemen Başlayalım"
+  },
+  "LetsWork": {
+    "title": "Hadi birlikte çalışalım",
+    "subtitle": "Bir kahve eşliğinde konuşalım",
+    "available": "Projeler için müsait",
+    "cta": "İletişime Geç"
+  },
+  "Navbar": {
+    "home": "Anasayfa",
+    "services": "Hizmetlerimiz",
+    "about": "Hakkımızda",
+    "references": "Referanslar",
+    "contact": "İletişim"
+  },
+  "Footer": {
+    "address": "YDA Center, Çankaya, Ankara",
+    "rights": "© 2026 Renee DesignLab - Made with Passion",
+    "quick_links": "Hızlı Bağlantılar",
+    "social": "Sosyal Medya",
+    "contact": "İletişim",
+    "pages": "Sayfalar",
+    "brand_tagline": "Sanat ile teknolojinin kesiştiği noktada markanızın dijital anıtını inşa ediyoruz.",
+    "rights_suffix": "Tüm hakları saklıdır.",
+    "tagline": "Ankara, Türkiye ✦ Digital Laboratory",
+    "contact_info": "İletişim Bilgileri"
+  },
+  "Works": {
+    "section_label": "Vaka Çalışmaları",
+    "section_title": "Markaları Dönüştürdük",    "section_title_1": "Markaları",
+    "section_title_2": "Dönüştürdük",    "view_all": "Tümünü Gör",
+    "next_project": "Sıradaki Proje",
+    "services_label": "Hizmetler",
+    "back_home": "Ana Sayfa",
+    "challenge": "Zorluk",
+    "approach": "Yaklaşım",
+    "result": "Sonuç",
+    "drag_hint": "Sürükle veya üzerine gel →",
+    "brands": {
+      "arni": {
+        "title": "ARNİ",
+        "description": "Sıfırdan eksiksiz kurumsal kimlik: logo, renk paleti, kartvizit, bina cephesi ve marka kitabı."
+      },
+      "deru": {
+        "title": "DERU",
+        "description": "Cesur tipografi ve özgün logo sistemiyle sektörde fark yaratan bir kurumsal kimlik tasarlandı."
+      },
+      "erts": {
+        "title": "ERTS",
+        "description": "Mimarlık sektöründe güvenilir ve prestijli bir kurumsal imaj inşa edildi."
+      },
+      "every": {
+        "title": "EVERY",
+        "description": "Esnek ve ölçeklenebilir marka sistemiyle tüm temas noktalarında tutarlı bir kimlik oluşturuldu."
+      },
+      "peralta": {
+        "title": "PERALTA",
+        "description": "Premium konumlama için minimal ama güçlü bir kurumsal kimlik ve sunum sistemi tasarlandı."
+      },
+      "tepsta": {
+        "title": "TEPSTA",
+        "description": "Dinamik ve genç kitleye hitap eden enerjik bir marka kimliği ve sosyal medya şablon sistemi."
+      }
+    }
+  },
+  "Testimonials": {
+    "title": "Neler Söylediler?",
+    "subtitle": "Dijital yolculuğumuzda bize güvenen markaların yorumları.",
+    "items": {
+      "0": { "text": "Renee DesignLab ile çalışmak markamızın dijital yüzünü tamamen değiştirdi. Estetik ve hız bir arada." },
+      "1": { "text": "YDA Center'daki ofisimiz için hazırladıkları dijital strateji beklediğimizden çok daha profesyoneldi." },
+      "2": { "text": "ONR Mücevherat olarak lüks algımızı dijitale harika yansıttılar. Tasarımlar gerçekten nefes kesici." },
+      "3": { "text": "Sosyal medya yönetiminde yakaladıkları dil sayesinde etkileşim oranlarımız %200 arttı." },
+      "4": { "text": "Web sitesi hızı ve SEO sonuçları bizi Google'da ilk sıraya taşıdı. Harika bir ekip." },
+      "5": { "text": "Prodüksiyon kalitesi markamızın prestijini yukarı çekti. Video çekimleri tek kelimeyle kusursuz." },
+      "6": { "text": "Tasarım süreçleri çok hızlı ve çözüm odaklı. Renee ekibi ne istediğinizi anında anlıyor." },
+      "7": { "text": "PR ve itibar yönetimi konusunda Ankara'da çalışılabilecek en vizyoner ajans." },
+      "8": { "text": "Google Ads tarafındaki optimizasyonları sayesinde reklam maliyetlerimizi %40 düşürdük." }
+    }
+  },
+  "AnalysisModal": {
+    "button": "Markanı Analiz Et",
+    "eyebrow": "Analiz Talebi",
+    "step0_title": "Durumunu Belirle",
+    "step1a_title": "Mevcut Marka Bilgileri",
+    "step1b_title": "Yeni Marka Bilgileri",
+    "step2_title": "Talebini Tamamla",
+    "success_title": "Talebiniz Alındı!",
+    "step0_desc": "Durumunuzu seçin, size özel analiz tasarlayalım.",
+    "path_existing_title": "Markam Var",
+    "path_existing_sub": "Mevcut markanı analiz et ve büyüt",
+    "path_new_title": "Marka Kurmak İstiyorum",
+    "path_new_sub": "Sıfırdan güçlü bir marka inşa et",
+    "field_website": "Web Sitesi",
+    "field_name": "Ad Soyad *",
+    "field_email": "E-posta *",
+    "field_phone": "Telefon",
+    "field_sector": "Sektör *",
+    "field_sector_placeholder": "Örn: E-ticaret, Restoran, Teknoloji...",
+    "field_project_details": "Proje Detayları",
+    "field_project_placeholder": "Markanız hakkında kısaca anlatın...",
+    "field_services": "İstenen Hizmetler",
+    "summary_label": "Özet",
+    "summary_existing": "Mevcut marka",
+    "summary_new": "Yeni marka",
+    "field_request": "Talebiniz / Notunuz *",
+    "field_request_placeholder": "Bizden ne beklediğinizi, hedeflerinizi ve varsa sorularınızı buraya yazın...",
+    "success_text": "Ekibimiz en kısa sürede sizinle iletişime geçecek. ✦",
+    "btn_close": "Kapat",
+    "btn_back": "Geri",
+    "btn_next": "İleri",
+    "btn_sending": "Gönderiliyor...",
+    "btn_submit": "Teklif Al",
+    "placeholder_website": "https://markaniz.com",
+    "placeholder_instagram": "@hesabiniz",
+    "placeholder_linkedin": "linkedin.com/company/...",
+    "placeholder_name": "Adınız Soyadınız",
+    "placeholder_email": "siz@ornek.com",
+    "placeholder_phone": "+90 5xx xxx xx xx",
+    "services": ["SEO", "Google ADS", "Meta Reklam", "Web Tasarım", "Sosyal Medya", "Prodüksiyon", "Tasarım Hizmetleri", "PR"]
+  },
+  "HeroMain": {
+    "title_prefix": "Dijital",
+    "title_highlight": "DNA'nızı",
+    "title_suffix": "Yeniden Kodluyoruz",
+    "subtitle": "Renee DesignLab, estetiği matematiksel bir hassasiyetle birleştirerek markanız için benzersiz dijital formlar üretir.",
+    "cta": "Deneyi Başlat"
+  },
+  "Blog": {
+    "meta_title": "Blog | Dijital Pazarlama & Tasarım İçgörüleri - Renee DesignLab",
+    "meta_description": "Renee DesignLab ekibinden marka stratejisi, grafik tasarım ve dijital pazarlama üzerine yazılar. Sektörün en güncel trendlerini takip edin.",
+    "title_prefix": "Fikirler &",
+    "title_highlight": "İçgörüler",
+    "subtitle": "Marka, tasarım ve dijital pazarlama üzerine yazılar.",
+    "empty_title": "Henüz yazı yok.",
+    "empty_subtitle": "Yakında içerik gelecek!",
+    "recent": "Son Yazılar",
+    "categories": "Kategoriler"
+  }
+}

@@ -1,0 +1,398 @@
+{
+  "Index": {
+    "title": "Renee DesignLab - Modern Digital Solutions",
+    "description": "Digital design and advertising agency based in Ankara."
+  },
+  "Hero": {
+    "eyebrow": "Future Digital Standards",
+    "title": "We Blend Digital Art with Data",
+    "subtitle": "Renee DesignLab elevates your brand to the pinnacle of digital with laboratory precision.",
+    "headline": "Designs that Leave a Mark in Digital",
+    "slogan": "An agency that exists at the intersection of strategy, aesthetics and technology.",
+    "cta": "Explore the Lab"
+  },
+  "Services": {
+    "meta_title": "Our Services | SEO, Google Ads, Web Design & More - Renee DesignLab",
+    "meta_description": "From SEO and Google Ads to web design, social media, production and PR — Renee DesignLab offers comprehensive digital agency services in Ankara.",
+    "title": "Our Services",
+    "subtitle": "Molecular fusion of art and technology.",
+    "cta": "Get a Quote",
+    "back": "Back to Services",
+    "discovery_title": "Explore Our Other Solutions",
+    "strategy_section": "Our Strategy",
+    "tech_section": "Technology & Tools",
+    "scope": "Scope",
+    "about_suffix": "About",
+    "sections": {
+      "strategy": "Strategy",
+      "design": "Design",
+      "performance": "Performance"
+    },
+    "items": {
+      "seo": {
+        "title": "SEO",
+        "description": "We don't just help you be found in search engines, we ensure you dominate. We redefine visibility.",
+        "hero_quote": "SEO is not just a technical adjustment; it is the echo of your brand in the digital world. Ranking first on Google is not about being ahead of competitors — it's about being where they cannot reach.",
+        "intro": "As a digital agency based in Ankara, Renee DesignLab transforms search engine optimization into an art form. We don't just improve rankings; we make your brand's organic growth sustainable. Our team analyzes more than 200 Google ranking factors, managing every layer from technical SEO to content strategy, backlink management to user experience with precision. We have experience placing clients on the first page for highly competitive keywords like 'Ankara digital agency', 'corporate web design' and 'professional website development'.",
+        "strategy_title": "Our 3-Phase SEO Strategy",
+        "phase1_title": "1. Diagnosis & Technical Audit",
+        "phase1_text": "We conduct an in-depth analysis of your site's current state. We identify crawl errors, Core Web Vitals scores, page speed metrics, structured data (schema) gaps and canonicalization issues, then build a prioritized action plan. With competitor analysis, we map market gaps and identify opportunities to put you ahead.",
+        "phase2_title": "2. Keyword & Content Architecture",
+        "phase2_text": "We deeply understand your target audience's search intent. By discovering long-tail and high-conversion keywords, we restructure your content architecture. Using the pillar page & topic cluster model, we build your site's thematic authority and strategically embed critical keyword groups such as 'Ankara digital agency', 'corporate identity design', and 'professional website development'.",
+        "phase3_title": "3. Authority Building & Continuous Optimization",
+        "phase3_text": "We secure quality backlinks from industry authority sites, Turkish media platforms and niche-specific blogs. Digital PR initiatives grow your domain authority while smart internal linking evenly distributes page authority. Monthly detailed reports keep every step transparent, and A/B tests sustain ongoing optimization.",
+        "tech_title": "Our SEO Tools",
+        "tech_intro": "We use the industry's most powerful tools for data-driven decisions.",
+        "tech_tools": "Google Search Console · Ahrefs · Semrush · Screaming Frog · Moz Pro · Google Analytics 4 · PageSpeed Insights · Schema Markup Validator",
+        "body": "Renee DesignLab's SEO services deliver a holistic ecosystem that creates lasting digital value for your brand — far beyond a one-time optimization. We build content architectures that are resilient to Google algorithm updates and compliant with E-E-A-T (Experience, Expertise, Authority, Trustworthiness) standards. We produce comprehensive solutions for brands competing locally in Ankara, nationally across Turkey and in global markets — from local SEO to international multilingual SEO strategies. We define project-specific KPIs and manage organic traffic growth, keyword ranking improvements and conversion rate increases with measurable goals. Our team, which instantly adapts to the ever-changing dynamics of the industry, always keeps your brand one step ahead in digital competition.",
+        "meta_title": "SEO Services | Ankara Digital Agency | Renee DesignLab",
+        "meta_description": "Rank higher on Google with Renee DesignLab's professional SEO services. Our Ankara-based digital agency guarantees organic growth through technical SEO, content strategy, and backlink management.",
+        "image_alt": "Data-driven SEO strategy and analytics dashboard",
+        "features": ["On-Page SEO", "Technical SEO Audit", "Backlink Strategy", "Content Architecture", "Local SEO", "Core Web Vitals", "Schema Markup", "Monthly Reporting"]
+      },
+      "google-ads": {
+        "title": "Google ADS",
+        "description": "Data-driven and sniper-precision ad management that turns every click into an investment.",
+        "hero_quote": "In Google Ads, every penny is a weapon, every click an opportunity. We are here not to waste your budget, but to engineer the highest possible ROI.",
+        "intro": "Google Ads management, done right, is the fastest growth channel; done wrong, it's the most expensive mistake. At Renee DesignLab, with knowledge and experience at Google Premier Partner level, we manage the ad budgets of brands in Ankara and across Turkey with maximum efficiency. We build a 360° advertising ecosystem of Search, Display, Shopping, Remarketing and Performance Max campaigns, placing your brand in front of audiences ready to buy.",
+        "strategy_title": "Our 3-Phase Google Ads Strategy",
+        "phase1_title": "1. Campaign Architecture & Keyword Research",
+        "phase1_text": "We model cost-per-click (CPC) and conversion rate variables through competitive keyword analysis and design budget allocation with the optimal revenue/cost balance. We create negative keyword lists to keep budget waste near zero. We set up Ad Group structures with SKAG or theme-based approaches to maximize quality scores.",
+        "phase2_title": "2. Ad & Landing Page Optimization",
+        "phase2_text": "We continuously optimize ad copy, extensions and bidding through A/B testing. Conversion-focused landing page designs raise ad relevance and quality scores while lowering cost-per-click. With Responsive Search Ads (RSA) and Performance Max campaigns, we harness machine learning algorithms to deliver the right message to your audience at the right moment.",
+        "phase3_title": "3. Conversion Tracking & ROI Optimization",
+        "phase3_text": "Google Tag Manager and Analytics 4 integration ensures complete tracking of micro and macro conversions. ROAS-targeted bidding strategies direct your budget to the most efficient channels. Weekly performance reports and monthly strategy meetings continuously improve campaigns.",
+        "tech_title": "Our Google Ads Tools",
+        "tech_intro": "We activate the full power of the Google ecosystem for your brand.",
+        "tech_tools": "Google Ads Editor · Google Analytics 4 · Google Tag Manager · Google Merchant Center · Looker Studio · SEMrush · Keyword Planner · Optmyzr",
+        "body": "Renee DesignLab's Google Ads service is performance engineering far beyond just showing ads. In competitive markets across Ankara and Turkey, we analyze your competitors' advertising budgets and position you with strategic superiority in every auction. We develop tailored Google Ads strategies for businesses of all sizes — from e-commerce brands to B2B companies, from local businesses to national chains. We automatically capture opportunities within your site with Dynamic Search Ads and present product catalogs to shopping-ready users with Shopping campaigns. Our professional commitment: maintaining an advertising return on spend (ROAS) above the industry average for every client.",
+        "meta_title": "Google Ads Management | Ankara Digital Advertising Agency | Renee DesignLab",
+        "meta_description": "Convert your budget into maximum ROI with professional Google Ads management. Renee DesignLab, an Ankara-based digital advertising agency, specializes in Search, Display, Shopping and Remarketing campaigns.",
+        "image_alt": "Google Ads campaign performance analysis and dashboard",
+        "features": ["Search Campaigns", "Display Network", "Shopping Ads", "Remarketing", "Performance Max", "Video Ads", "Conversion Tracking", "ROAS Optimization"]
+      },
+      "meta-ads": {
+        "title": "Meta Ad Management",
+        "description": "Social media strategies that go beyond algorithms and touch the heart of your target audience.",
+        "hero_quote": "Meta advertising is not about helping people find products they want to buy — it's about helping them discover what they didn't even know they needed. This is the art of turning data into emotion.",
+        "intro": "Facebook and Instagram's more than 4 billion active users can become an unlimited growth engine for your brand with the right targeting. Renee DesignLab uses Meta Business Suite at full capacity to create micro-targeting, lookalike audiences and retargeting loops. By combining creative content strategy with algorithmic intelligence, we touch your target audience's emotional threshold.",
+        "strategy_title": "Our 3-Phase Meta Ads Strategy",
+        "phase1_title": "1. Audience Segmentation & Pixel Setup",
+        "phase1_text": "Meta Pixel and Conversions API integration preserves genuine conversion data despite iOS 14+ restrictions, maintaining campaign optimization quality. Demographic, psychographic and behavioral segmentation delivers your message to exactly the right audience.",
+        "phase2_title": "2. Creative Content & A/B Testing",
+        "phase2_text": "We test video, carousel, collection and dynamic ad formats to capture the highest engagement. Creative refreshes every two weeks prevent ad fatigue. We systematically test combinations of ad copy, visual language and CTAs.",
+        "phase3_title": "3. Funnel Management & Conversion Optimization",
+        "phase3_text": "We build differentiated campaign architectures for TOFU (awareness), MOFU (consideration) and BOFU (conversion) stages. Retargeting sequencing gently guides users toward purchase decisions.",
+        "tech_title": "Our Meta Tools",
+        "tech_intro": "We skillfully leverage every layer of the Meta ecosystem.",
+        "tech_tools": "Meta Ads Manager · Meta Business Suite · Meta Pixel · Conversions API · Meta Creative Hub · Advantage+ · Looker Studio",
+        "body": "Meta platforms have made paid advertising a necessity as organic reach has declined dramatically. At Renee DesignLab, we turn this necessity into a competitive advantage for your brand. We develop tailored Meta ad strategies for businesses of all sizes — from local brands in Ankara to growing e-commerce stores across Turkey. We activate the latest formats for your brand including click-to-message campaigns with WhatsApp integration, Instagram Shopping catalog optimization and Reels advertising.",
+        "meta_title": "Meta Ad Management | Facebook & Instagram Ads | Renee DesignLab",
+        "meta_description": "Reach your target audience with Facebook and Instagram ads. Renee DesignLab's Meta Ads specialists drive your brand's social media performance to new heights with conversion-focused campaigns.",
+        "image_alt": "Meta social media advertising campaign analysis",
+        "features": ["Facebook Ads", "Instagram Ads", "Lookalike Audience", "Retargeting", "Meta Pixel", "Conversions API", "Dynamic Ads", "Advantage+ Shopping"]
+      },
+      "web-design": {
+        "title": "Web Design & Dev",
+        "description": "We are not just building a site, we are building a digital monument for your brand. The perfect seal of aesthetics and functionality.",
+        "hero_quote": "Your website is your showroom in the digital world. The first impression a visitor forms in 0.05 seconds determines your brand's fate. That's why every pixel, every animation, every line of code must be intentional.",
+        "intro": "Renee DesignLab builds digital experiences far beyond ordinary templates — bespoke to your brand. We manage the entire process under one roof: from user experience (UX) research to UI design, from front-end development to back-end integration. Sites built with Next.js, React and Tailwind CSS stand at the highest level of speed, accessibility and SEO standards. We are Ankara's leading digital agency in corporate web design, e-commerce solutions and SaaS platform development.",
+        "strategy_title": "Our 3-Phase Web Design Process",
+        "phase1_title": "1. Discovery, Strategy & Wireframe",
+        "phase1_text": "We deeply understand your brand identity, target audience and business goals. Through competitor analysis and user research, we build the information architecture and clarify content structure with low- and high-fidelity wireframes. Every design decision has a strategic rationale.",
+        "phase2_title": "2. UI Design & Prototyping",
+        "phase2_text": "We create a design system unique to your brand: color palette, typography, iconography and component library. Pixel-perfect UI design and interactive prototypes in Figma accelerate the approval process. We ensure 100% compliance with mobile-first approach and WCAG 2.1 accessibility standards.",
+        "phase3_title": "3. Development, Testing & Launch",
+        "phase3_text": "We develop high-performance, SEO-friendly web applications with Next.js 15 App Router, TypeScript and Tailwind CSS. By keeping Core Web Vitals scores (LCP, FID, CLS) at the highest level, we achieve superiority in Google's page experience signals. After comprehensive cross-browser and device testing, we go live through a secure deployment process.",
+        "tech_title": "Our Technology Stack",
+        "tech_intro": "We build with the most advanced modern web standards.",
+        "tech_tools": "Next.js 15 · React 19 · TypeScript · Tailwind CSS · Framer Motion · Figma · Vercel · Supabase · Prisma · Stripe",
+        "body": "Renee DesignLab's web design and development services create a lasting and powerful digital presence for your brand. We develop projects across a wide spectrum — from corporate websites to e-commerce platforms, portfolio sites to SaaS applications. Every project takes shape at the intersection of user needs, business goals and technical excellence. We deliver sites targeting a 90+ Lighthouse score, fully compliant with Google's Core Web Vitals standards. Our specialized team in multilingual support (i18n), advanced animations and micro-interaction design, CMS integration and scalable architectural structures continues on the path to becoming Ankara's most sought-after web design agency.",
+        "meta_title": "Web Design & Development | Ankara Corporate Web Design | Renee DesignLab",
+        "meta_description": "Renee DesignLab is Ankara's leading web design agency. We develop corporate websites, e-commerce platforms and digital experiences with Next.js, React and modern technologies.",
+        "image_alt": "Modern web design and user interface development process",
+        "features": ["UI/UX Design", "Next.js Development", "Mobile Optimization", "E-commerce Solutions", "CMS Integration", "Performance Optimization", "Figma Design System", "Core Web Vitals"]
+      },
+      "social-media": {
+        "title": "Social Media Management",
+        "description": "We turn your brand's digital voice into a community, and your community into a loyalty ecosystem.",
+        "hero_quote": "Social media management is not chasing follower counts — it's building a meaningful community that touches people's lives and converts into profit.",
+        "intro": "Social media is the most powerful platform for brands to engage in real-time dialogue with customers. Renee DesignLab delivers holistic social media solutions that blend content strategy, creative design and community management. We position your brand with a strong and consistent voice across Instagram, LinkedIn, TikTok, X (Twitter) and YouTube.",
+        "strategy_title": "Our 3-Phase Social Media Strategy",
+        "phase1_title": "1. Brand Voice & Content Strategy",
+        "phase1_text": "We create a brand voice guide documenting your brand's tone, language and visual language. We plan monthly content calendars with audience analysis, competitor benchmarking and platform-specific content types.",
+        "phase2_title": "2. Content Production & Community Management",
+        "phase2_text": "We produce original digital assets with professional graphic design, short-form video production and copywriting. We strengthen community bonds by responding quickly and brand-consistently to comments, messages and mentions.",
+        "phase3_title": "3. Analytics & Growth Optimization",
+        "phase3_text": "We continuously optimize content strategy with weekly and monthly performance reports. By following algorithmic trends, we seize viral content opportunities; influencer collaborations grow organic reach.",
+        "tech_title": "Our Tools",
+        "tech_intro": "We perfectly blend data with creativity.",
+        "tech_tools": "Meta Business Suite · Hootsuite · Later · Canva Pro · Adobe Suite · CapCut Pro · Sprout Social · Google Analytics 4",
+        "body": "With Renee DesignLab's social media management service, your brand rises above the digital noise. Our team, well-versed in each platform's unique algorithm, content format and audience dynamics, blends Instagram Reels, LinkedIn thought leadership, TikTok trend content and YouTube Shorts strategies tailored to your brand. We have social media management experience across a wide portfolio — from local brands in Ankara to growing e-commerce brands nationwide.",
+        "meta_title": "Social Media Management | Instagram & LinkedIn Management | Renee DesignLab",
+        "meta_description": "Turn your social media into a strategic growth engine with Renee DesignLab. Content strategy, community management and growth optimization on Instagram, LinkedIn, TikTok and YouTube.",
+        "image_alt": "Social media content strategy and analytics dashboard",
+        "features": ["Content Calendar", "Graphic Design", "Community Management", "Reels & TikTok", "Influencer Marketing", "Hashtag Strategy", "Monthly Reporting", "Crisis Management"]
+      },
+      "production": {
+        "title": "Production",
+        "description": "We transform your story into digital cinema with light, sound and vision. The pinnacle of visual storytelling.",
+        "hero_quote": "The best content is what the viewer cannot stop watching, cannot resist sharing — it perfectly expresses an emotion, a moment or a need.",
+        "intro": "In the digital world, content is king; but poor quality content damages brand perception. Renee DesignLab's production team produces professional audio-visual content in every format — from corporate promotional films to social media content, product videos to event coverage. We operate in Ankara and throughout Turkey.",
+        "strategy_title": "Our 3-Phase Production Process",
+        "phase1_title": "1. Pre-Production: Concept & Planning",
+        "phase1_text": "We start with a brand brief, audience analysis and creative concept development. We meticulously prepare script writing, storyboarding, location scouting and shot planning.",
+        "phase2_title": "2. Production: Shoot",
+        "phase2_text": "We shoot with 4K/6K cameras, cinema lenses, professional lighting rigs and audio equipment. Drone footage, macro lens details and motion control add visual richness.",
+        "phase3_title": "3. Post-Production: Edit & Distribution",
+        "phase3_text": "We run a professional post-production process with color grading, sound mixing, motion graphics and 3D elements. We prepare outputs in platform-specific formats (9:16, 16:9, 1:1) and maximize viewing potential with a distribution strategy.",
+        "tech_title": "Equipment & Software",
+        "tech_intro": "We bring cinema quality to every project.",
+        "tech_tools": "Sony FX6 · DJI Ronin · Adobe Premiere Pro · DaVinci Resolve · After Effects · Cinema 4D · DJI Mavic 3 · Aputure Lighting",
+        "body": "Renee DesignLab's production team unites technical excellence with creative vision. From corporate promotional films to advertising spots, social media content series to any format, we tell your brand's story in the most powerful visual language. From our Ankara office we conduct shoots across Turkey and deliver projects with international-standard post-production.",
+        "meta_title": "Video Production | Corporate Promotional Film | Renee DesignLab Ankara",
+        "meta_description": "Renee DesignLab is an Ankara-based professional video production agency. Experienced team in corporate promotional films, advertising spots, drone shooting and social media content production.",
+        "image_alt": "Professional video production set and camera equipment",
+        "features": ["Corporate Film", "Ad Spot", "Drone Shooting", "Social Media Video", "Color Grading", "Motion Graphics", "3D Animation", "Live Streaming"]
+      },
+      "design": {
+        "title": "Design Services",
+        "description": "By processing your corporate identity like DNA, we make you feel luxury and nobility in every touch of your brand.",
+        "hero_quote": "Design is not just how something looks — it's how it feels. Great brands are remembered for great design, because design is the silent and most powerful language of communication.",
+        "intro": "Renee DesignLab's design services place your brand's visual identity on a systematic, aesthetic and strategic foundation. We offer original and scalable design solutions in every area — from logo design to corporate identity systems, from packaging design to digital asset production. Every color, every typographic choice, every form is a strategic decision.",
+        "strategy_title": "Our 3-Phase Design Process",
+        "phase1_title": "1. Brand Discovery & Research",
+        "phase1_text": "We conduct an in-depth discovery process into your brand's values, target audience, competitor positioning and sector aesthetic norms. We clarify the design direction with mood boards and reference analyses.",
+        "phase2_title": "2. Concept Development & Design",
+        "phase2_text": "We present multiple design concepts and refine toward the strongest direction based on feedback. We develop logo system design, color palette, typography selection and visual language guidelines.",
+        "phase3_title": "3. Brand Guidelines & Delivery",
+        "phase3_text": "We document all usage rules with a comprehensive brand book. We deliver production-ready file packages in all print and digital formats.",
+        "tech_title": "Our Design Tools",
+        "tech_intro": "We produce pixel-perfect results with industry-standard tools.",
+        "tech_tools": "Figma · Adobe Illustrator · Adobe Photoshop · Adobe InDesign · Framer · Spline · Procreate · Protopie",
+        "body": "Renee DesignLab's design team builds unique systems that will make your brand unrivaled in the visual world. From logo and corporate identity design to digital product design, from packaging graphic solutions to outdoor and interior applications, your brand's voice and appearance remains consistent and powerful at every touchpoint. Our agency, which provides design leadership to Ankara's established and innovative brands, transforms creativity into measurable business value.",
+        "meta_title": "Corporate Identity & Logo Design | Ankara Graphic Design | Renee DesignLab",
+        "meta_description": "Renee DesignLab is Ankara's leading graphic and corporate identity design agency. Logo design, brand identity, packaging design and comprehensive brand guidelines services.",
+        "image_alt": "Corporate identity design process and brand guidelines",
+        "features": ["Logo Design", "Corporate Identity", "Brand Book", "Packaging Design", "Digital Assets", "Social Media Templates", "UI Kit", "Print Design"]
+      },
+      "pr": {
+        "title": "Public Relations (PR)",
+        "description": "We don't just protect your reputation, we strategically build your brand's authority in the digital world.",
+        "hero_quote": "Building reputation takes decades; destroying it takes a single tweet. Digital PR is both a strategic shield and a growth engine that preserves this balance in your brand's favor.",
+        "intro": "Digital PR is a multi-layered strategic discipline that increases brand awareness, builds authority and simultaneously strengthens SEO. Renee DesignLab delivers a holistic PR ecosystem of media relations, press releases, influencer collaborations and crisis management. We adopt a data-driven approach to managing brand reputation in Ankara and across Turkey.",
+        "strategy_title": "Our 3-Phase PR Strategy",
+        "phase1_title": "1. Reputation Analysis & Strategy",
+        "phase1_text": "We analyze your brand's current digital reputation, media presence and competitor positioning. We create a target media list, key message documentation and annual communications agenda.",
+        "phase2_title": "2. Content & Media Distribution",
+        "phase2_text": "We produce thought leadership content that builds industry authority, press releases and research reports. We secure publication on digital media platforms, industry blogs and social media.",
+        "phase3_title": "3. Crisis Management & Monitoring",
+        "phase3_text": "We track every digital mention of your brand with 24/7 media monitoring tools. We develop ready action plans for crisis scenarios and neutralize negative content rapidly.",
+        "tech_title": "Our PR Tools",
+        "tech_intro": "We manage your brand's digital voice across every channel.",
+        "tech_tools": "Mention · Brand24 · Meltwater · PR Newswire · Semrush · BuzzSumo · Google Alerts · Cision",
+        "body": "Renee DesignLab's digital PR services ensure your brand is positioned as a strong and trusted authority in both media and search engines. Publications and backlinks on high-authority platforms grow your SEO authority while simultaneously earning your target audience's trust. We offer a comprehensive digital PR ecosystem spanning crisis communications, influencer partnership management, corporate communications consulting and content marketing.",
+        "meta_title": "Digital PR & Public Relations | Brand Reputation Management | Renee DesignLab",
+        "meta_description": "Renee DesignLab is an Ankara-based agency specializing in digital PR and brand reputation management. Media relations, crisis management and authority building services.",
+        "image_alt": "Digital PR strategy and media management",
+        "features": ["Press Release", "Media Relations", "Crisis Management", "Influencer Partnership", "Thought Leadership", "Digital Authority Building", "Reputation Monitoring", "Corporate Communications"]
+      }
+    }
+  },
+  "References": {
+    "meta_title": "References | Our Client Portfolio - Renee DesignLab",
+    "meta_description": "Explore Renee DesignLab's client portfolio. Discover the brands and projects we have delivered exceptional digital results for.",
+    "title": "Our References",
+    "subtitle": "Brands we create value together."
+  },
+  "About": {
+    "meta_title": "About Us | Renee DesignLab - Ankara Digital Agency",
+    "meta_description": "Learn about Renee DesignLab, Ankara's creative digital laboratory merging strategy, aesthetics and technology. Meet our vision, mission and founder.",
+    "title": "About Us",
+    "hero_slogan": "More than just a laboratory.",
+    "subtitle": "Aesthetic Architects of Digital Transformation",
+    "content": "Renee DesignLab is not an ordinary agency; it is a digital laboratory where strategy, art and technology merge at the molecular level. We see every project as an experiment and every result as a masterpiece.",
+    "vision": {
+      "title": "Vision",
+      "text": "To set the digital standards of the future from today and to perfectly seal aesthetics with functionality."
+    },
+    "mission": {
+      "title": "Mission",
+      "text": "To provide sustainable growth and digital excellence by blending data-driven strategies with creative designs."
+    },
+    "founder": {
+      "role": "Founder & Visionary",
+      "text": "Excellence is not a destination, but an endless search that continues in every pixel."
+    }
+  },
+  "Contact": {
+    "meta_title": "Contact | Get a Quote - Renee DesignLab",
+    "meta_description": "Ready to start your project? Contact Renee DesignLab in Ankara. Reach us by phone, email or our contact form — we'll respond as quickly as possible.",
+    "title": "Contact",
+    "subtitle": "Have a project in mind? Let's bring it to life together.",
+    "form": {
+      "name": "Your Name",
+      "email": "Your Email",
+      "subject": "Subject",
+      "message": "Your Message",
+      "send": "Send Message",
+      "phone": "Phone",
+      "name_placeholder": "Your Full Name",
+      "email_placeholder": "you@example.com",
+      "phone_placeholder": "+90 5xx xxx xx xx",
+      "message_placeholder": "Your message...",
+      "sending": "Sending...",
+      "success_title": "Your message has been sent!",
+      "success_text": "We'll get back to you as soon as possible. ✦"
+    },
+    "info": {
+      "address": "Address",
+      "phone": "Phone",
+      "email": "Email"
+    }
+  },
+  "WhyUs": {
+    "title": "Leaving Ordinaries in the Lab.",
+    "description": "Renee DesignLab blends data-driven strategies with aesthetic excellence to take your brand to the top of the digital world.",
+    "cta": "Let's Get Started"
+  },
+  "LetsWork": {
+    "title": "Let's work together",
+    "subtitle": "Let's talk over a coffee",
+    "available": "Available for projects",
+    "cta": "Get in Touch"
+  },
+  "Navbar": {
+    "home": "Home",
+    "services": "Services",
+    "about": "About Us",
+    "references": "References",
+    "contact": "Contact"
+  },
+  "Works": {
+    "section_label": "Case Studies",
+    "section_title": "Brands We Transformed",
+    "section_title_1": "Brands We",
+    "section_title_2": "Transformed",
+    "view_all": "View All",
+    "next_project": "Next Project",
+    "services_label": "Services",
+    "back_home": "Home",
+    "challenge": "Challenge",
+    "approach": "Approach",
+    "result": "Result",
+    "drag_hint": "Drag or hover →",
+    "brands": {
+      "arni": {
+        "title": "ARNİ",
+        "description": "Complete corporate identity from scratch: logo, color palette, business cards, facade and brand book."
+      },
+      "deru": {
+        "title": "DERU",
+        "description": "Bold typography and a unique logo system created a standout corporate identity."
+      },
+      "erts": {
+        "title": "ERTS",
+        "description": "A trustworthy and prestigious corporate image built for the architecture sector."
+      },
+      "every": {
+        "title": "EVERY",
+        "description": "A flexible, scalable brand system ensuring consistency across all touchpoints."
+      },
+      "peralta": {
+        "title": "PERALTA",
+        "description": "Minimal yet powerful corporate identity and presentation system for premium positioning."
+      },
+      "tepsta": {
+        "title": "TEPSTA",
+        "description": "Energetic brand identity and social media template system targeting a dynamic, young audience."
+      }
+    }
+  },
+  "Footer": {
+    "address": "YDA Center, Cankaya, Ankara",
+    "rights": "© 2026 Renee DesignLab - Made with Passion",
+    "quick_links": "Quick Links",
+    "social": "Social Media",
+    "contact": "Contact",
+    "pages": "Pages",
+    "brand_tagline": "We build your brand's digital monument at the intersection of art and technology.",
+    "rights_suffix": "All rights reserved.",
+    "tagline": "Ankara, Turkey ✦ Digital Laboratory",
+    "contact_info": "Contact Information"
+  },
+  "Testimonials": {
+    "title": "What Did They Say?",
+    "subtitle": "Reviews from brands that trusted us on our digital journey.",
+    "items": {
+      "0": { "text": "Working with Renee DesignLab completely transformed our brand's digital face. Aesthetics and speed in one package." },
+      "1": { "text": "The digital strategy they prepared for our office at YDA Center was far more professional than we expected." },
+      "2": { "text": "As ONR Jewelry, they brilliantly reflected our luxury perception digitally. The designs are truly breathtaking." },
+      "3": { "text": "Thanks to the tone they captured in social media management, our engagement rates increased by 200%." },
+      "4": { "text": "Website speed and SEO results brought us to the top of Google. An amazing team." },
+      "5": { "text": "The production quality elevated our brand's prestige. The video shoots were flawless in every sense." },
+      "6": { "text": "Design processes are very fast and solution-oriented. The Renee team understands what you want instantly." },
+      "7": { "text": "The most visionary agency in Ankara you can work with for PR and reputation management." },
+      "8": { "text": "Thanks to their Google Ads optimizations, we reduced our advertising costs by 40%." }
+    }
+  },
+  "AnalysisModal": {
+    "button": "Analyze Your Brand",
+    "eyebrow": "Analysis Request",
+    "step0_title": "Define Your Status",
+    "step1a_title": "Existing Brand Details",
+    "step1b_title": "New Brand Details",
+    "step2_title": "Complete Your Request",
+    "success_title": "Your Request Has Been Received!",
+    "step0_desc": "Select your situation, let us design a tailored analysis for you.",
+    "path_existing_title": "I Have a Brand",
+    "path_existing_sub": "Analyze and grow your existing brand",
+    "path_new_title": "I Want to Build a Brand",
+    "path_new_sub": "Build a powerful brand from scratch",
+    "field_website": "Website",
+    "field_name": "Full Name *",
+    "field_email": "Email *",
+    "field_phone": "Phone",
+    "field_sector": "Industry *",
+    "field_sector_placeholder": "e.g. E-commerce, Restaurant, Tech...",
+    "field_project_details": "Project Details",
+    "field_project_placeholder": "Tell us briefly about your brand...",
+    "field_services": "Requested Services",
+    "summary_label": "Summary",
+    "summary_existing": "Existing brand",
+    "summary_new": "New brand",
+    "field_request": "Your Request / Note *",
+    "field_request_placeholder": "Write your expectations, goals, and any questions you have...",
+    "success_text": "Our team will get in touch with you as soon as possible. ✦",
+    "btn_close": "Close",
+    "btn_back": "Back",
+    "btn_next": "Next",
+    "btn_sending": "Sending...",
+    "btn_submit": "Get a Quote",
+    "placeholder_website": "https://yourbrand.com",
+    "placeholder_instagram": "@youraccount",
+    "placeholder_linkedin": "linkedin.com/company/...",
+    "placeholder_name": "Your Full Name",
+    "placeholder_email": "you@example.com",
+    "placeholder_phone": "+90 5xx xxx xx xx",
+    "services": ["SEO", "Google ADS", "Meta Ads", "Web Design", "Social Media", "Production", "Design Services", "PR"]
+  },
+  "HeroMain": {
+    "title_prefix": "Re-engineering",
+    "title_highlight": "Your Digital",
+    "title_suffix": "DNA",
+    "subtitle": "Renee DesignLab merges aesthetics with mathematical precision to craft unique digital forms for your brand.",
+    "cta": "Start the Experiment"
+  },
+  "Blog": {
+    "meta_title": "Blog | Digital Marketing & Design Insights - Renee DesignLab",
+    "meta_description": "Articles on brand strategy, graphic design and digital marketing from the Renee DesignLab team. Stay informed with the latest trends in the industry.",
+    "title_prefix": "Ideas &",
+    "title_highlight": "Insights",
+    "subtitle": "Articles on brand, design and digital marketing.",
+    "empty_title": "No posts yet.",
+    "empty_subtitle": "Content coming soon!",
+    "recent": "Recent Posts",
+    "categories": "Categories"
+  }
+}
