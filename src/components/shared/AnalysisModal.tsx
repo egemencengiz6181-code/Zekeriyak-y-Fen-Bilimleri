@@ -159,9 +159,24 @@ export default function AnalysisModal() {
 
   return (
     <>
+      {/* ── Desktop trigger butonu ── */}
       <GradientButton onClick={() => setOpen(true)}>
         {at('button')}
       </GradientButton>
+
+      {/* ── Mobil sticky CTA — ekranın en altında sabit ── */}
+      <div className="md:hidden fixed bottom-0 left-0 right-0 z-40 px-4 pb-4 pt-2 bg-gradient-to-t from-black via-black/90 to-transparent pointer-events-none">
+        <button
+          onClick={() => setOpen(true)}
+          className="pointer-events-auto w-full flex items-center justify-center gap-2 py-4 rounded-2xl bg-[#ec2027] text-white font-bold text-base tracking-wide shadow-[0_0_32px_rgba(236,32,39,0.5)] active:scale-95 transition-transform"
+        >
+          <span className="relative flex h-2 w-2">
+            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-white opacity-75" />
+            <span className="relative inline-flex rounded-full h-2 w-2 bg-white" />
+          </span>
+          {at('button')}
+        </button>
+      </div>
 
       <AnimatePresence>
         {open && (
