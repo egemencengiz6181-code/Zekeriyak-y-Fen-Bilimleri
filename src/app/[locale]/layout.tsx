@@ -4,6 +4,7 @@ import {getMessages, getTranslations} from 'next-intl/server';
 import Navbar from '@/components/shared/Navbar';
 import Footer from '@/components/shared/Footer';
 import MobileStickyButton from '@/components/shared/MobileStickyButton';
+import { ThemeProvider } from '@/components/shared/ThemeProvider';
 import {locales} from '@/config/locales';
 import Image from 'next/image';
 import { Inter } from 'next/font/google';
@@ -62,7 +63,7 @@ export default async function LocaleLayout({
   const messages = await getMessages();
 
   return (
-    <html lang={locale} className={`dark ${inter.variable}`}>
+    <html lang={locale} className={inter.variable} suppressHydrationWarning>
       <body className="bg-background text-foreground antialiased selection:bg-primary/30 min-h-screen relative font-sans">
         {/* Arka Plan İkonu (Global Mühür) */}
         <div className="fixed top-[15%] right-[-250px] w-[900px] h-[900px] opacity-[0.08] rotate-12 pointer-events-none z-0">
@@ -75,15 +76,17 @@ export default async function LocaleLayout({
           />
         </div>
 
-        <NextIntlClientProvider locale={locale} messages={messages}>
-          <Navbar />
-          <main className="relative z-10 pb-20 md:pb-0">
-            {children}
-          </main>
-          <Footer />
-          {/* Mobil sticky buton — her sayfada görünür, layout seviyesinde */}
-          <MobileStickyButton />
-        </NextIntlClientProvider>
+        <ThemeProvider attribute="class" defaultTheme="dark" enableSystem={false}>
+          <NextIntlClientProvider locale={locale} messages={messages}>
+            <Navbar />
+            <main className="relative z-10 pb-20 md:pb-0">
+              {children}
+            </main>
+            <Footer />
+            {/* Mobil sticky buton — her sayfada görünür, layout seviyesinde */}
+            <MobileStickyButton />
+          </NextIntlClientProvider>
+        </ThemeProvider>
       </body>
     </html>
   );

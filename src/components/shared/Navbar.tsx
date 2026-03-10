@@ -9,6 +9,7 @@ import { useTranslations } from 'next-intl'
 import LanguageSwitcher from "./LanguageSwitcher"
 import Image from "next/image"
 import AnalysisModal from "./AnalysisModal"
+import ThemeToggle from "./ThemeToggle"
 
 interface NavItem {
   name: string
@@ -113,7 +114,7 @@ export default function Navbar() {
 
       {/* Nav Linkleri - Orta Kısım (sadece desktop) */}
       <div className="pointer-events-auto hidden md:flex flex-col items-center">
-        <div className="flex items-center gap-1 bg-white/5 border border-white/10 backdrop-blur-lg py-1 px-1 rounded-full shadow-lg relative max-w-fit">
+        <div className="flex items-center gap-1 bg-black/5 dark:bg-white/5 border border-black/10 dark:border-white/10 backdrop-blur-lg py-1 px-1 rounded-full shadow-lg relative max-w-fit">
           {navItems.map((item) => {
             const isActive = activeTab === item.name
 
@@ -128,8 +129,8 @@ export default function Navbar() {
                   href={item.url}
                   className={cn(
                     "relative cursor-pointer text-sm font-semibold px-6 py-2 rounded-full transition-colors flex items-center gap-2",
-                    "text-white/60 hover:text-white",
-                    isActive && "text-white"
+                    "text-black/60 hover:text-black dark:text-white/60 dark:hover:text-white",
+                    isActive && "text-black dark:text-white"
                   )}
                 >
                   <span className="relative z-10 flex items-center gap-2">
@@ -159,7 +160,8 @@ export default function Navbar() {
               </div>
             )
           })}
-          <div className="pr-4 border-l border-white/10 ml-2 pl-4 flex items-center h-8">
+          <div className="border-l border-black/10 dark:border-white/10 ml-2 pl-3 flex items-center h-8">
+            <ThemeToggle />
           </div>
         </div>
 
@@ -173,21 +175,21 @@ export default function Navbar() {
               transition={{ duration: 0.18 }}
               onMouseEnter={() => openMenu(servicesLabel)}
               onMouseLeave={() => closeMenu()}
-              className="absolute top-full mt-3 w-[640px] p-6 bg-background/95 border border-white/10 backdrop-blur-2xl rounded-[32px] shadow-2xl z-50"
+              className="absolute top-full mt-3 w-[640px] p-6 bg-background/95 border border-black/10 dark:border-white/10 backdrop-blur-2xl rounded-[32px] shadow-2xl z-50"
             >
               <div className="grid grid-cols-2 gap-4">
                 {services.map((service) => (
                   <Link
                     key={service.title}
                     href={service.href}
-                    className="flex items-start gap-4 p-4 rounded-2xl hover:bg-white/5 transition-colors group"
+                    className="flex items-start gap-4 p-4 rounded-2xl hover:bg-black/5 dark:hover:bg-white/5 transition-colors group"
                   >
                     <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
                       <service.icon className="w-5 h-5 text-primary-light" />
                     </div>
                     <div>
-                      <div className="text-sm font-bold text-white mb-1">{service.title}</div>
-                      <div className="text-xs text-white/40 line-clamp-1">{service.description}</div>
+                      <div className="text-sm font-bold text-black dark:text-white mb-1">{service.title}</div>
+                      <div className="text-xs text-black/40 dark:text-white/40 line-clamp-1">{service.description}</div>
                     </div>
                   </Link>
                 ))}
@@ -204,7 +206,7 @@ export default function Navbar() {
 
       {/* Hamburger butonu (sadece mobil) */}
       <button
-        className="pointer-events-auto md:hidden flex items-center justify-center w-10 h-10 rounded-full bg-white/10 border border-white/10 backdrop-blur-lg text-white"
+        className="pointer-events-auto md:hidden flex items-center justify-center w-10 h-10 rounded-full bg-black/10 dark:bg-white/10 border border-black/10 dark:border-white/10 backdrop-blur-lg text-black dark:text-white"
         onClick={() => setIsMobileOpen((v) => !v)}
         aria-label="Menüyü aç/kapat"
       >
@@ -231,10 +233,10 @@ export default function Navbar() {
           animate={{ opacity: 1, x: 0 }}
           exit={{ opacity: 0, x: "100%" }}
           transition={{ type: "spring", stiffness: 260, damping: 30 }}
-          className="fixed inset-0 z-40 flex flex-col bg-[#0a0a0f]/95 backdrop-blur-2xl md:hidden"
+          className="fixed inset-0 z-40 flex flex-col bg-[#f4f4f8] dark:bg-[#0a0a0f] backdrop-blur-2xl md:hidden"
         >
           {/* Üst bar */}
-          <div className="flex items-center justify-between px-6 py-5 border-b border-white/10">
+          <div className="flex items-center justify-between px-6 py-5 border-b border-black/10 dark:border-white/10">
             <Link href="/" onClick={() => setIsMobileOpen(false)}>
               <Image
                 src="/logos/Fen%20bilimleri%20logo.png"
@@ -247,7 +249,7 @@ export default function Navbar() {
             </Link>
             <button
               onClick={() => setIsMobileOpen(false)}
-              className="w-10 h-10 rounded-full bg-white/10 border border-white/10 flex items-center justify-center text-white"
+              className="w-10 h-10 rounded-full bg-black/10 dark:bg-white/10 border border-black/10 dark:border-white/10 flex items-center justify-center text-black dark:text-white"
               aria-label="Kapat"
             >
               <X className="w-5 h-5" />
@@ -265,7 +267,7 @@ export default function Navbar() {
                       onClick={() => setMobileServicesOpen((v) => !v)}
                       className={cn(
                         "w-full flex items-center justify-between px-4 py-4 rounded-2xl text-left text-base font-semibold transition-colors",
-                        isActive ? "bg-primary/10 text-white" : "text-white/60 hover:text-white hover:bg-white/5"
+                        isActive ? "bg-primary/10 text-black dark:text-white" : "text-black/60 hover:text-black hover:bg-black/5 dark:text-white/60 dark:hover:text-white dark:hover:bg-white/5"
                       )}
                     >
                       <span>{item.name}</span>
@@ -286,12 +288,12 @@ export default function Navbar() {
                                 key={service.title}
                                 href={service.href}
                                 onClick={() => setIsMobileOpen(false)}
-                                className="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-white/5 transition-colors group"
+                                className="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-black/5 dark:hover:bg-white/5 transition-colors group"
                               >
                                 <div className="w-8 h-8 rounded-lg bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors shrink-0">
                                   <service.icon className="w-4 h-4 text-primary-light" />
                                 </div>
-                                <span className="text-sm font-medium text-white/70 group-hover:text-white transition-colors">{service.title}</span>
+                                <span className="text-sm font-medium text-black/60 group-hover:text-black dark:text-white/70 dark:group-hover:text-white transition-colors">{service.title}</span>
                               </Link>
                             ))}
                           </div>
@@ -308,7 +310,7 @@ export default function Navbar() {
                   onClick={() => setIsMobileOpen(false)}
                   className={cn(
                     "px-4 py-4 rounded-2xl text-base font-semibold transition-colors",
-                    isActive ? "bg-primary/10 text-white" : "text-white/60 hover:text-white hover:bg-white/5"
+                    isActive ? "bg-primary/10 text-black dark:text-white" : "text-black/60 hover:text-black hover:bg-black/5 dark:text-white/60 dark:hover:text-white dark:hover:bg-white/5"
                   )}
                 >
                   {item.name}
@@ -318,7 +320,11 @@ export default function Navbar() {
           </nav>
 
           {/* Alt bar - dil + analiz butonu */}
-          <div className="px-6 py-6 border-t border-white/10 flex flex-col gap-4">
+          <div className="px-6 py-6 border-t border-black/10 dark:border-white/10 flex flex-col gap-4">
+            <div className="flex items-center gap-3">
+              <ThemeToggle className="flex-shrink-0" />
+              <span className="text-xs text-black/40 dark:text-white/40 select-none">Tema</span>
+            </div>
             <AnalysisModal />
           </div>
         </motion.div>
