@@ -1,10 +1,5 @@
 import { getTranslations } from 'next-intl/server';
-import dynamic from 'next/dynamic';
-
-const ReferencesMarquee = dynamic(
-  () => import('@/components/sections/ReferencesMarquee'),
-  { ssr: false }
-);
+import ReferencesMarquee from '@/components/sections/ReferencesMarquee';
 
 type Student = {
   name: string;
