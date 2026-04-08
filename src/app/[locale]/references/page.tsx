@@ -3,10 +3,12 @@
 import { useTranslations } from 'next-intl';
 import { motion, useMotionValue, useTransform, animate } from 'framer-motion';
 import { Trophy, Star, GraduationCap, BookOpen, ArrowUpRight, Medal, Flame } from 'lucide-react';
-import LetsWorkSection from '@/components/ui/lets-work-section';
-import TestimonialsSection from '@/components/sections/Testimonials';
+import dynamic from 'next/dynamic';
 import { GlowingEffect } from '@/components/ui/glowing-effect';
 import { useEffect, useRef, useState } from 'react';
+
+const LetsWorkSection = dynamic(() => import('@/components/ui/lets-work-section'));
+const TestimonialsSection = dynamic(() => import('@/components/sections/Testimonials'));
 
 const successStories = [
   { icon: Trophy,        label: 'LGS 500 Net',        name: 'Elif K.',    school: 'Kabataş Erkek Lisesi',     year: '2025', color: '#ec2027', type: 'LGS', gridArea: '1/1/3/2' },
