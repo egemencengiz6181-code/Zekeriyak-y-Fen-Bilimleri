@@ -1,7 +1,8 @@
 "use client";
 
-import { motion } from "framer-motion";
-import { ArrowRight, MessageCircle } from "lucide-react";
+import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { ArrowRight, MessageCircle, Phone, X } from "lucide-react";
 import dynamic from "next/dynamic";
 import { useTranslations } from "next-intl";
 import { useTheme } from "next-themes";
@@ -22,7 +23,9 @@ export default function HeroMain() {
   const t = useTranslations("HeroMain");
   const { resolvedTheme } = useTheme();
   const wavesBg = resolvedTheme === "dark" ? "#000000" : "#f4f4f8";
+  const [showContact, setShowContact] = useState(false);
   return (
+    <>
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* ── WAVES BACKGROUND — sadece desktop (mobilde performans tasarrufu) ── */}
       <div className="hidden md:block absolute inset-0 z-0">
@@ -124,21 +127,85 @@ export default function HeroMain() {
           animate="visible"
           className="flex flex-col sm:flex-row items-center justify-center gap-4"
         >
-          <a
-            href="https://wa.me/902122015848"
-            target="_blank"
-            rel="noopener noreferrer"
+          <button
+            onClick={() => setShowContact(true)}
             className="group inline-flex items-center gap-3 px-8 py-4 rounded-full bg-[#ec2027] hover:bg-[#c8191f] text-white font-semibold text-sm tracking-wide transition-all duration-300 hover:scale-105 active:scale-95 shadow-[0_0_32px_rgba(236,32,39,0.45)] hover:shadow-[0_0_48px_rgba(236,32,39,0.6)]"
           >
             <MessageCircle className="w-4 h-4" />
             {t("cta")}
             <ArrowRight className="w-4 h-4 -translate-x-1 group-hover:translate-x-0 transition-transform" />
-          </a>
+          </button>
         </motion.div>
       </div>
 
       {/* ── BOTTOM FADE ──────────────────────────────────────── */}
       <div className="absolute bottom-0 left-0 right-0 h-32 z-[2] bg-gradient-to-t from-background to-transparent" />
     </section>
+
+    {/* ── CONTACT POPUP ──────────────────────────────────────── */}
+    <AnimatePresence>
+      {showContact && (
+        <motion.div
+          key="contact-overlay"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          transition={{ duration: 0.2 }}
+          className="fixed inset-0 z-[200] flex items-center justify-center px-4"
+          onClick={() => setShowContact(false)}
+        >
+          <div className="absolute inset-0 bg-black/60 [backdrop-filter:blur(8px)]" />
+          <motion.div
+            initial={{ opacity: 0, scale: 0.92, y: 16 }}
+            animate={{ opacity: 1, scale: 1, y: 0 }}
+            exit={{ opacity: 0, scale: 0.92, y: 16 }}
+            transition={{ duration: 0.22, ease: [0.22, 1, 0.36, 1] }}
+            className="relative w-full max-w-sm bg-[rgba(10,10,15,0.92)] border border-white/10 [backdrop-filter:blur(30px)] rounded-3xl p-6 shadow-[0_24px_64px_rgba(0,0,0,0.7)]"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <button
+              onClick={() => setShowContact(false)}
+              className="absolute top-4 right-4 w-8 h-8 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center text-white/70 hover:text-white transition-colors"
+            >
+              <X className="w-4 h-4" />
+            </button>
+
+            <h3 className="text-lg font-bold text-white mb-1">Bize Ulaşın</h3>
+            <p className="text-sm text-white/50 mb-6">Kayıt ve bilgi için arayın veya WhatsApp’tan yazın.</p>
+
+            <div className="flex flex-col gap-3">
+              <a
+                href="tel:02122015848"
+                className="flex items-center gap-4 px-5 py-4 rounded-2xl bg-white/10 hover:bg-white/15 border border-white/10 hover:border-white/20 transition-all group"
+              >
+                <div className="w-10 h-10 rounded-xl bg-[#ec2027]/20 flex items-center justify-center shrink-0 group-hover:bg-[#ec2027]/30 transition-colors">
+                  <Phone className="w-5 h-5 text-[#ec2027]" />
+                </div>
+                <div>
+                  <div className="text-xs text-white/50 mb-0.5">Telefon ile Ara</div>
+                  <div className="text-sm font-semibold text-white">0212 201 58 48</div>
+                </div>
+              </a>
+
+              <a
+                href="https://wa.me/905453491773"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-4 px-5 py-4 rounded-2xl bg-white/10 hover:bg-white/15 border border-white/10 hover:border-white/20 transition-all group"
+              >
+                <div className="w-10 h-10 rounded-xl bg-[#25D366]/20 flex items-center justify-center shrink-0 group-hover:bg-[#25D366]/30 transition-colors">
+                  <MessageCircle className="w-5 h-5 text-[#25D366]" />
+                </div>
+                <div>
+                  <div className="text-xs text-white/50 mb-0.5">WhatsApp’tan Yaz</div>
+                  <div className="text-sm font-semibold text-white">0545 349 17 73</div>
+                </div>
+              </a>
+            </div>
+          </motion.div>
+        </motion.div>
+      )}
+    </AnimatePresence>
+    </>
   );
 }

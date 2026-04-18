@@ -99,7 +99,7 @@ export default function Navbar() {
 
   return (
     <>
-    <header className="fixed top-0 left-0 right-0 z-50 w-full px-6 md:px-12 py-5 flex items-center justify-between pointer-events-none">
+    <header className="fixed top-0 left-0 right-0 z-50 w-full px-6 md:px-12 py-5 flex items-center justify-between pointer-events-none bg-black/40 [backdrop-filter:blur(25px)] [-webkit-backdrop-filter:blur(25px)] border-b border-white/10 md:bg-transparent md:[backdrop-filter:none] md:[-webkit-backdrop-filter:none] md:border-b-0">
       {/* Logo - Sol Taraf */}
       <div className="pointer-events-auto w-[200px] md:w-[260px] flex items-center">
         <Link href="/" className="flex items-center">
@@ -116,7 +116,7 @@ export default function Navbar() {
 
       {/* Nav Linkleri - Orta Kısım (sadece desktop) */}
       <div className="pointer-events-auto hidden md:flex flex-col items-center">
-        <div className="flex items-center gap-1 bg-black/5 dark:bg-white/5 border border-black/10 dark:border-white/10 backdrop-blur-lg py-1 px-1 rounded-full shadow-lg relative max-w-fit">
+        <div className="flex items-center gap-1 bg-black/10 dark:bg-white/[0.08] border border-black/[0.12] dark:border-white/[0.15] [backdrop-filter:blur(20px)] [-webkit-backdrop-filter:blur(20px)] py-1 px-1 rounded-full shadow-[0_4px_24px_rgba(0,0,0,0.25)] relative max-w-fit">
           {navItems.map((item) => {
             const isActive = activeTab === item.name
 
@@ -131,7 +131,7 @@ export default function Navbar() {
                   href={item.url}
                   className={cn(
                     "relative cursor-pointer text-sm font-semibold px-6 py-2 rounded-full transition-colors flex items-center gap-2",
-                    "text-black/60 hover:text-black dark:text-white/60 dark:hover:text-white",
+                    "text-black/70 hover:text-black dark:text-white/80 dark:hover:text-white [text-shadow:0_2px_4px_rgba(0,0,0,0.5)]",
                     isActive && "text-black dark:text-white"
                   )}
                 >
@@ -143,7 +143,7 @@ export default function Navbar() {
                   {isActive && (
                     <motion.div
                       layoutId="lamp"
-                      className="absolute inset-0 bg-primary/10 rounded-full -z-10"
+                      className="absolute inset-0 bg-white/15 dark:bg-white/10 rounded-full -z-10 ring-1 ring-inset ring-white/20"
                       initial={false}
                       transition={{
                         type: "spring",
@@ -162,7 +162,7 @@ export default function Navbar() {
               </div>
             )
           })}
-          <div className="border-l border-black/10 dark:border-white/10 ml-2 pl-3 flex items-center h-8">
+          <div className="border-l border-white/20 ml-2 pl-3 flex items-center h-8">
             <ThemeToggle />
           </div>
         </div>
@@ -177,21 +177,21 @@ export default function Navbar() {
               transition={{ duration: 0.18 }}
               onMouseEnter={() => openMenu(servicesLabel)}
               onMouseLeave={() => closeMenu()}
-              className="absolute top-full mt-3 w-[640px] p-6 bg-background/95 border border-black/10 dark:border-white/10 backdrop-blur-2xl rounded-[32px] shadow-2xl z-50"
+              className="absolute top-full mt-3 w-[640px] p-6 bg-[rgba(10,10,15,0.92)] border border-white/[0.12] [backdrop-filter:blur(40px)_saturate(180%)] [-webkit-backdrop-filter:blur(40px)_saturate(180%)] rounded-[32px] shadow-[0_24px_64px_rgba(0,0,0,0.7),inset_0_1px_0_rgba(255,255,255,0.08)] z-50"
             >
               <div className="grid grid-cols-2 gap-4">
                 {services.map((service) => (
                   <Link
                     key={service.title}
                     href={service.href}
-                    className="flex items-start gap-4 p-4 rounded-2xl hover:bg-black/5 dark:hover:bg-white/5 transition-colors group"
+                    className="flex items-start gap-4 p-4 rounded-2xl hover:bg-white/10 transition-colors group"
                   >
-                    <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
+                    <div className="w-10 h-10 rounded-xl bg-white/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
                       <service.icon className="w-5 h-5 text-primary-light" />
                     </div>
                     <div>
-                      <div className="text-sm font-bold text-black dark:text-white mb-1">{service.title}</div>
-                      <div className="text-xs text-black/40 dark:text-white/40 line-clamp-1">{service.description}</div>
+                      <div className="text-sm font-bold text-white mb-1 [text-shadow:0_2px_4px_rgba(0,0,0,0.5)]">{service.title}</div>
+                      <div className="text-xs text-white/50 line-clamp-1">{service.description}</div>
                     </div>
                   </Link>
                 ))}
@@ -208,7 +208,7 @@ export default function Navbar() {
 
       {/* Hamburger butonu (sadece mobil) */}
       <button
-        className="pointer-events-auto md:hidden flex items-center justify-center w-10 h-10 rounded-full bg-black/10 dark:bg-white/10 border border-black/10 dark:border-white/10 backdrop-blur-lg text-black dark:text-white"
+        className="pointer-events-auto md:hidden flex items-center justify-center w-10 h-10 rounded-full bg-white/15 border border-white/20 text-white shadow-[0_2px_8px_rgba(0,0,0,0.3)]"
         onClick={() => setIsMobileOpen((v) => !v)}
         aria-label="Menüyü aç/kapat"
       >
