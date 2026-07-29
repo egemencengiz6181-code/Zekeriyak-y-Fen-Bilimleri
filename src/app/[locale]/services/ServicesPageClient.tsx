@@ -96,17 +96,17 @@ export function SectionHeader({ title }: { title: string }) {
 interface ServicesGridProps {
   pageTitle: string;
   pageSubtitle: string;
+  sectionOrtaokul: string;
   sectionLise: string;
-  sectionMezun: string;
   sectionVip: string;
   sectionDestek: string;
   cards: Array<{ slug: string; icon: string; span?: string; title: string; description: string }>;
 }
 
-export default function ServicesPageClient({ pageTitle, pageSubtitle, sectionLise, sectionMezun, sectionVip, sectionDestek, cards }: ServicesGridProps) {
-  const lise = cards.filter(c => ['9-sinif','10-sinif','11-sinif','12-sinif'].includes(c.slug));
-  const mezun = cards.filter(c => ['mezun','acik-lise'].includes(c.slug));
-  const vip = cards.filter(c => ['12-sinif-vip','mezun-vip'].includes(c.slug));
+export default function ServicesPageClient({ pageTitle, pageSubtitle, sectionOrtaokul, sectionLise, sectionVip, sectionDestek, cards }: ServicesGridProps) {
+  const ortaokul = cards.filter(c => ['6-sinif','7-sinif','8-sinif'].includes(c.slug));
+  const lise = cards.filter(c => ['9-sinif','10-sinif','11-sinif','12-sinif','mezun'].includes(c.slug));
+  const vip = cards.filter(c => ['8-sinif-vip','12-sinif-vip'].includes(c.slug));
   const destek = cards.filter(c => ['ozel-ders','deneme-kulubu'].includes(c.slug));
 
   return (
@@ -133,18 +133,18 @@ export default function ServicesPageClient({ pageTitle, pageSubtitle, sectionLis
         </div>
 
         <section className="mb-32">
-          <SectionHeader title={sectionLise} />
+          <SectionHeader title={sectionOrtaokul} />
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {lise.map((card) => (
+            {ortaokul.map((card) => (
               <ServiceCard key={card.slug} {...card} />
             ))}
           </div>
         </section>
 
         <section className="mb-32">
-          <SectionHeader title={sectionMezun} />
+          <SectionHeader title={sectionLise} />
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {mezun.map((card) => (
+            {lise.map((card) => (
               <ServiceCard key={card.slug} {...card} />
             ))}
           </div>

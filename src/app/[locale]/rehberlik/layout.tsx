@@ -7,12 +7,12 @@ export async function generateMetadata({
   params: Promise<{ locale: string }>;
 }): Promise<Metadata> {
   const { locale } = await params;
-  const t = await getTranslations({ locale, namespace: 'Services.items.rehberlik' });
+  const t = await getTranslations({ locale, namespace: 'Navbar' });
   const origin = 'https://www.bahcelievlersevinc.com';
   const path = `${origin}/${locale}/rehberlik`;
 
-  const title = t('meta_title');
-  const description = t('meta_description');
+  const title = `${t('guidance')} | Bahçelievler Sevinç Dershanesi`;
+  const description = 'Psikolojik danışmanlık ve rehberlik hizmetleri ile öğrencilerimizin akademik ve kişisel gelişimlerini destekliyoruz.';
 
   return {
     title,
@@ -21,7 +21,6 @@ export async function generateMetadata({
       canonical: path,
       languages: {
         tr: `${origin}/tr/rehberlik`,
-        en: `${origin}/en/rehberlik`,
       },
     },
     openGraph: {

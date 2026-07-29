@@ -4,22 +4,24 @@ import { locales } from '@/config/locales';
 import ServiceSlugContent from './ServiceSlugContent';
 
 const VALID_SLUGS = [
-  '9-sinif', '10-sinif', '11-sinif', '12-sinif', 'mezun',
-  '12-sinif-vip', 'mezun-vip', 'acik-lise',
+  '6-sinif', '7-sinif', '8-sinif', '9-sinif', '10-sinif', '11-sinif', '12-sinif', 'mezun',
+  '8-sinif-vip', '12-sinif-vip',
   'deneme-kulubu', 'ozel-ders',
 ] as const;
 
 type ServiceSlug = (typeof VALID_SLUGS)[number];
 
 const slugImages: Record<ServiceSlug, { hero: string; tech: string; alt: string }> = {
+  '6-sinif':       { hero: 'https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=1400&q=80', tech: 'https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?w=1400&q=80', alt: '6. sınıf ders programı' },
+  '7-sinif':       { hero: 'https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=1400&q=80', tech: 'https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?w=1400&q=80', alt: '7. sınıf ders programı' },
+  '8-sinif':       { hero: 'https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=1400&q=80', tech: 'https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?w=1400&q=80', alt: '8. sınıf LGS hazırlık' },
   '9-sinif':       { hero: 'https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=1400&q=80', tech: 'https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?w=1400&q=80', alt: '9. sınıf ders programı' },
   '10-sinif':      { hero: 'https://images.unsplash.com/photo-1509062522246-3755977927d7?w=1400&q=80', tech: 'https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?w=1400&q=80', alt: '10. sınıf ders programı' },
   '11-sinif':      { hero: 'https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=1400&q=80', tech: 'https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?w=1400&q=80', alt: '11. sınıf YKS hazırlık' },
   '12-sinif':      { hero: 'https://images.unsplash.com/photo-1509062522246-3755977927d7?w=1400&q=80', tech: 'https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?w=1400&q=80', alt: '12. sınıf YKS hazırlık' },
   'mezun':         { hero: 'https://images.unsplash.com/photo-1509062522246-3755977927d7?w=1400&q=80', tech: 'https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?w=1400&q=80', alt: 'Mezun YKS hazırlık' },
+  '8-sinif-vip':   { hero: 'https://images.unsplash.com/photo-1509062522246-3755977927d7?w=1400&q=80', tech: 'https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?w=1400&q=80', alt: '8. sınıf VIP LGS hazırlık' },
   '12-sinif-vip':  { hero: 'https://images.unsplash.com/photo-1509062522246-3755977927d7?w=1400&q=80', tech: 'https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?w=1400&q=80', alt: '12. sınıf VIP YKS hazırlık' },
-  'mezun-vip':     { hero: 'https://images.unsplash.com/photo-1509062522246-3755977927d7?w=1400&q=80', tech: 'https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?w=1400&q=80', alt: 'Mezun VIP YKS hazırlık' },
-  'acik-lise':     { hero: 'https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=1400&q=80', tech: 'https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?w=1400&q=80', alt: 'Açık Lise Dershanesi' },
   'deneme-kulubu': { hero: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1400&q=80', tech: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1400&q=80', alt: 'Deneme kulübü ve sınav analizi' },
   'ozel-ders':     { hero: 'https://images.unsplash.com/photo-1491438590914-bc09fcaaf77a?w=1400&q=80', tech: 'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=1400&q=80', alt: 'Birebir özel ders' },
 };
@@ -27,7 +29,7 @@ const slugImages: Record<ServiceSlug, { hero: string; tech: string; alt: string 
 const defaultImages = {
   hero: 'https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=1400&q=80',
   tech: 'https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?w=1400&q=80',
-  alt: 'Şirinevler Final Dershanesi programları',
+  alt: 'Bahçelievler Sevinç Dershanesi programları',
 };
 
 export function generateStaticParams() {
