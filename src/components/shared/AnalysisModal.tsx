@@ -121,6 +121,16 @@ export default function AnalysisModal() {
     return () => window.removeEventListener('open-analysis-modal', handler);
   }, []);
 
+  // Modal açıkken arka plan scroll'unu kilitle
+  useEffect(() => {
+    if (open) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+    return () => { document.body.style.overflow = ''; };
+  }, [open]);
+
   const totalSteps = 3;
 
   const set = (key: keyof FormData, value: string | string[]) =>
@@ -190,7 +200,7 @@ export default function AnalysisModal() {
                   onClick={handleClose}
                 >
               <div
-                className="relative w-full max-w-lg bg-white dark:bg-[#0a0514] border border-[#E35205]/20 rounded-3xl shadow-[0_0_80px_rgba(227,82,5,0.2)] overflow-hidden"
+                className="relative w-full max-w-lg max-h-[85vh] overflow-y-auto overscroll-contain bg-white dark:bg-[#0a0514] border border-[#E35205]/20 rounded-3xl shadow-[0_0_80px_rgba(227,82,5,0.2)]"
                 onClick={(e) => e.stopPropagation()}
               >
                 {/* Purple glow top */}
