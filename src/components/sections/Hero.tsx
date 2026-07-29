@@ -31,7 +31,7 @@ function AnimatedBackground() {
 
       {/* Primary aura — follows cursor */}
       <motion.div
-        className="absolute w-[900px] h-[900px] rounded-full blur-[140px] opacity-20"
+        className="absolute w-[900px] h-[900px] rounded-full  opacity-20"
         style={{
           background: 'radial-gradient(circle, #6d28d9 0%, #4c1d95 50%, transparent 80%)',
           x: auraX,
@@ -43,7 +43,7 @@ function AnimatedBackground() {
 
       {/* Accent halo — slow idle float */}
       <motion.div
-        className="absolute w-[600px] h-[600px] rounded-full blur-[120px]"
+        className="absolute w-[600px] h-[600px] rounded-full "
         style={{
           background: 'radial-gradient(circle, #a855f7 0%, transparent 70%)',
           opacity: 0.15,
@@ -64,7 +64,7 @@ function AnimatedBackground() {
 
       {/* Deep cold violet — bottom right */}
       <motion.div
-        className="absolute w-[500px] h-[500px] rounded-full blur-[100px] opacity-10"
+        className="absolute w-[500px] h-[500px] rounded-full  opacity-10"
         style={{
           background: 'radial-gradient(circle, #312e81 0%, transparent 70%)',
           right: '10%',

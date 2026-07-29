@@ -88,8 +88,8 @@ const SectionWithMockup: React.FC<SectionWithMockupProps> = ({ title, descriptio
       <div className="absolute bottom-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-black/10 dark:via-white/10 to-transparent" />
 
       {/* Ambient glows */}
-      <div className="pointer-events-none absolute -top-40 -left-40 w-[640px] h-[640px] rounded-full bg-[#E35205]/[0.06] blur-[120px]" />
-      <div className="pointer-events-none absolute -bottom-40 -right-40 w-[480px] h-[480px] rounded-full bg-[#A03500]/[0.08] blur-[100px]" />
+      <div className="pointer-events-none absolute -top-40 -left-40 w-[640px] h-[640px] rounded-full bg-[#E35205]/[0.06] " />
+      <div className="pointer-events-none absolute -bottom-40 -right-40 w-[480px] h-[480px] rounded-full bg-[#A03500]/[0.08] " />
 
       <div className="relative z-10 max-w-[1200px] mx-auto px-6 md:px-10">
 
@@ -155,7 +155,7 @@ const SectionWithMockup: React.FC<SectionWithMockupProps> = ({ title, descriptio
               whileInView={{ opacity: 1, scale: 1, y: 0 }}
               transition={{ duration: 0.7, delay: 0.6, ease: [0.22, 1, 0.36, 1] }}
               viewport={{ once: true }}
-              className="absolute bottom-4 right-2 sm:bottom-8 sm:right-2 md:-right-4 z-20 flex items-center gap-2 sm:gap-3 px-3 sm:px-4 py-2 sm:py-3 rounded-2xl border border-black/10 dark:border-white/10 bg-white/60 dark:bg-black/60 backdrop-blur-xl shadow-xl"
+              className="absolute bottom-4 right-2 sm:bottom-8 sm:right-2 md:-right-4 z-20 flex items-center gap-2 sm:gap-3 px-3 sm:px-4 py-2 sm:py-3 rounded-2xl border border-black/10 dark:border-white/10 bg-white/60 dark:bg-black/60  shadow-xl"
             >
               <div className="w-9 h-9 rounded-xl bg-[#E35205]/20 flex items-center justify-center shrink-0">
                 <Trophy className="w-4 h-4 text-[#E35205]" />
@@ -167,7 +167,7 @@ const SectionWithMockup: React.FC<SectionWithMockupProps> = ({ title, descriptio
             </motion.div>
 
             {/* Red glow */}
-            <div className="absolute bottom-0 left-1/4 w-1/2 h-16 bg-[#E35205]/15 blur-[52px] rounded-full pointer-events-none" />
+            <div className="absolute bottom-0 left-1/4 w-1/2 h-16 bg-[#E35205]/15  rounded-full pointer-events-none" />
           </motion.div>
 
           {/* ── Right: text + stats ── */}

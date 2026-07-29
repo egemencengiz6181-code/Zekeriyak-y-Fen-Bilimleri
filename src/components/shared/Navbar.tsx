@@ -134,7 +134,7 @@ export default function Navbar() {
 
       {/* Nav Linkleri - Orta Kısım (sadece desktop) */}
       <div className="pointer-events-auto hidden md:flex flex-col items-center">
-        <div className="flex items-center gap-1 bg-white/10 dark:bg-black/25 border border-white/20 dark:border-white/10 backdrop-blur-2xl py-1 px-1 rounded-full shadow-xl relative max-w-fit" style={{ backdropFilter: 'blur(24px)', WebkitBackdropFilter: 'blur(24px)' }}>
+        <div className="flex items-center gap-1 bg-white/10 dark:bg-black/25 border border-white/20 dark:border-white/10  py-1 px-1 rounded-full shadow-xl relative max-w-fit" style={{ backdropFilter: 'blur(24px)', WebkitBackdropFilter: 'blur(24px)' }}>
           {navItems.map((item) => {
             const isActive = activeTab === item.name
 
@@ -234,7 +234,7 @@ export default function Navbar() {
 
       {/* Hamburger butonu (sadece mobil) */}
       <button
-        className="pointer-events-auto md:hidden flex items-center justify-center w-10 h-10 rounded-full bg-black/10 dark:bg-white/10 border border-black/10 dark:border-white/10 backdrop-blur-lg text-black dark:text-white"
+        className="pointer-events-auto md:hidden flex items-center justify-center w-10 h-10 rounded-full bg-black/10 dark:bg-white/10 border border-black/10 dark:border-white/10  text-black dark:text-white"
         onClick={() => setIsMobileOpen((v) => !v)}
         aria-label="Menüyü aç/kapat"
       >

@@ -91,7 +91,7 @@ export default function ServiceSlugContent({ slug, images, i18n }: Props) {
   return (
     <div className="min-h-screen bg-background text-foreground">
       {/* ── AMBIENT GLOW ─────────────────────────────────────────────── */}
-      <div className="fixed top-0 left-1/2 -translate-x-1/2 w-[900px] h-[600px] bg-[#E35205]/8 blur-[180px] rounded-full pointer-events-none -z-10" />
+      <div className="fixed top-0 left-1/2 -translate-x-1/2 w-[900px] h-[600px] bg-[#E35205]/8  rounded-full pointer-events-none -z-10" />
 
       {/* ── BACK NAV ─────────────────────────────────────────────────── */}
       <div className="max-w-5xl mx-auto px-6 pt-36 pb-0">

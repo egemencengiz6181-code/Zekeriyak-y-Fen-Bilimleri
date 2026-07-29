@@ -137,7 +137,7 @@ export default function Footer() {
       </div>
 
       {/* Background Accent */}
-      <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-full max-w-4xl h-[300px] bg-primary/5 blur-[120px] rounded-full pointer-events-none -z-10" />
+      <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-full max-w-4xl h-[300px] bg-primary/5  rounded-full pointer-events-none -z-10" />
     </footer>
   );
 }

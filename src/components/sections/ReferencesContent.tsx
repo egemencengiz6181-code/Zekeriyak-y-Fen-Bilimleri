@@ -91,7 +91,7 @@ function StoryCard({ s, i }: { s: typeof successStories[0]; i: number }) {
 
         {/* glass body */}
         <div
-          className="relative h-full flex flex-col gap-5 p-6 rounded-3xl bg-black/[0.03] dark:bg-white/[0.03] backdrop-blur-xl transition-colors duration-500 overflow-hidden"
+          className="relative h-full flex flex-col gap-5 p-6 rounded-3xl bg-black/[0.03] dark:bg-white/[0.03]  transition-colors duration-500 overflow-hidden"
           style={{ backgroundColor: hovered ? `${s.color}08` : undefined }}
         >
           {/* top row */}
@@ -166,8 +166,8 @@ export default function ReferencesContent({
   return (
     <div className="min-h-screen pt-40 pb-24 relative overflow-hidden bg-transparent z-10">
       {/* Ambient background glows */}
-      <div className="absolute top-0 left-1/4 w-[600px] h-[600px] bg-[#E21F26]/6 blur-[160px] rounded-full pointer-events-none -z-10" />
-      <div className="absolute top-40 right-1/4 w-[500px] h-[500px] bg-[#2E3192]/6 blur-[160px] rounded-full pointer-events-none -z-10" />
+      <div className="absolute top-0 left-1/4 w-[600px] h-[600px] bg-[#E21F26]/6  rounded-full pointer-events-none -z-10" />
+      <div className="absolute top-40 right-1/4 w-[500px] h-[500px] bg-[#2E3192]/6  rounded-full pointer-events-none -z-10" />
 
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         {/* ── BAŞLIK ── */}
@@ -200,7 +200,7 @@ export default function ReferencesContent({
           {stats.map((stat, i) => (
             <div
               key={i}
-              className="flex flex-col items-center gap-2 rounded-2xl border border-black/[0.07] dark:border-white/[0.07] bg-black/[0.03] dark:bg-white/[0.03] backdrop-blur-xl p-5"
+              className="flex flex-col items-center gap-2 rounded-2xl border border-black/[0.07] dark:border-white/[0.07] bg-black/[0.03] dark:bg-white/[0.03]  p-5"
             >
               <stat.icon className="w-4 h-4 text-slate-400 dark:text-white/20 mb-1" />
               <span className="text-3xl font-black text-slate-900 dark:text-white tracking-tight">

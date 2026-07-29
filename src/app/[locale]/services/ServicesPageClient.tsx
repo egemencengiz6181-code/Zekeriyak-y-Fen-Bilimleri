@@ -58,8 +58,8 @@ export function ServiceCard({ slug, icon, span = 'col-span-1', title, descriptio
       className={`${span} group relative`}
     >
       <Link href={`/services/${slug}`} className="block h-full">
-        <div className="relative h-full p-8 rounded-[32px] bg-black/[0.02] dark:bg-white/[0.02] backdrop-blur-xl border border-black/5 dark:border-white/5 overflow-hidden transition-all duration-500 hover:border-primary/30">
-          <div className="absolute -inset-20 bg-primary/20 blur-[80px] rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none -z-10" />
+        <div className="relative h-full p-8 rounded-[32px] bg-black/[0.02] dark:bg-white/[0.02]  border border-black/5 dark:border-white/5 overflow-hidden transition-all duration-500 hover:border-primary/30">
+          <div className="absolute -inset-20 bg-primary/20  rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none -z-10" />
           <div className="relative z-10 h-full flex flex-col">
             <div className="w-14 h-14 rounded-2xl bg-black/5 dark:bg-white/5 flex items-center justify-center mb-8 group-hover:bg-primary/20 transition-colors duration-500">
               <Icon className="w-7 h-7 text-primary-light" />
@@ -111,7 +111,7 @@ export default function ServicesPageClient({ pageTitle, pageSubtitle, sectionOrt
 
   return (
     <div className="min-h-screen pt-40 pb-32 relative overflow-hidden bg-transparent z-10">
-      <div className="absolute top-0 right-0 w-full h-[800px] bg-primary/5 blur-[150px] rounded-full -z-10" />
+      <div className="absolute top-0 right-0 w-full h-[800px] bg-primary/5  rounded-full -z-10" />
 
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         <div className="mb-32">

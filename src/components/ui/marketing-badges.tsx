@@ -128,7 +128,7 @@ export default function MarketingBadges() {
       {/* ── DESKTOP: yüzen scattered layout ── */}
       <div className="hidden md:flex relative h-[500px] w-full items-center justify-center overflow-visible">
         {/* Background Ambience */}
-        <div className="absolute inset-0 bg-primary/5 blur-[120px] rounded-full pointer-events-none" />
+        <div className="absolute inset-0 bg-primary/5  rounded-full pointer-events-none" />
 
         {badges.map((badge, index) => {
           const isHovered = hoveredId === badge.id;

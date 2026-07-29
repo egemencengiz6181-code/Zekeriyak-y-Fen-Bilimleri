@@ -278,10 +278,10 @@ export default function RehberlikPage() {
   return (
     <div className="min-h-screen bg-background text-foreground overflow-x-hidden">
 
-      {/* ambient glows */}
-      <div className="fixed top-[-80px] left-1/2 -translate-x-1/2 w-[900px] h-[600px] bg-[#2E3192]/8 blur-[180px] rounded-full pointer-events-none -z-10" />
-      <div className="fixed top-[40%] right-[-80px] w-[500px] h-[500px] bg-[#E21F26]/5 blur-[150px] rounded-full pointer-events-none -z-10" />
-      <div className="fixed bottom-0 left-[-80px] w-[400px] h-[400px] bg-[#2E3192]/5 blur-[140px] rounded-full pointer-events-none -z-10" />
+      {/* ambient glows - Safari safe (no blur) */}
+      <div className="fixed top-[-80px] left-1/2 -translate-x-1/2 w-[900px] h-[600px] bg-[#2E3192]/5 rounded-full pointer-events-none -z-10" />
+      <div className="fixed top-[40%] right-[-80px] w-[500px] h-[500px] bg-[#E21F26]/3 rounded-full pointer-events-none -z-10" />
+      <div className="fixed bottom-0 left-[-80px] w-[400px] h-[400px] bg-[#2E3192]/3 rounded-full pointer-events-none -z-10" />
 
       {/* ══ HERO ════════════════════════════════════════════════════════ */}
       <section ref={heroRef} className="relative min-h-[85vh] flex items-center pt-32 pb-20 px-6">
@@ -336,8 +336,8 @@ export default function RehberlikPage() {
             </div>
 
             <motion.div variants={fadeUp} custom={4} initial="hidden" animate="show" className="relative">
-              <div className="absolute -inset-4 rounded-[40px] blur-[60px] opacity-25 pointer-events-none" style={{ background: `linear-gradient(135deg,${BLUE}50,${RED}30)` }} />
-              <div className="relative rounded-3xl border border-black/[0.07] dark:border-white/[0.07] bg-black/[0.03] dark:bg-white/[0.03] backdrop-blur-2xl p-8">
+              <div className="absolute -inset-4 rounded-[40px]  opacity-25 pointer-events-none" style={{ background: `linear-gradient(135deg,${BLUE}50,${RED}30)` }} />
+              <div className="relative rounded-3xl border border-black/[0.07] dark:border-white/[0.07] bg-black/[0.03] dark:bg-white/[0.03]  p-8">
                 <GlowingEffect spread={50} glow disabled={false} proximity={80} inactiveZone={0.01} borderWidth={2} />
 
                 <div className="flex items-center gap-3 mb-6 px-4 py-3 rounded-2xl border border-[#E21F26]/20 bg-[#E21F26]/[0.07]">

@@ -194,7 +194,7 @@ export default function AnalysisModal() {
                 onClick={(e) => e.stopPropagation()}
               >
                 {/* Purple glow top */}
-                <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[400px] h-[200px] bg-[#E35205]/10 blur-[80px] rounded-full pointer-events-none" />
+                <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[400px] h-[200px] bg-[#E35205]/10  rounded-full pointer-events-none" />
 
                 <div className="relative p-8">
                   {/* Header */}
