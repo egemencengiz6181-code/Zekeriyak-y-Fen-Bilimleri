@@ -1,13 +1,18 @@
 "use client";
 
 import { useTranslations } from "next-intl";
+import { usePathname } from "next/navigation";
 
 export default function MobileStickyButton() {
   const at = useTranslations("AnalysisModal");
+  const pathname = usePathname();
 
   const handleClick = () => {
     window.dispatchEvent(new CustomEvent("open-analysis-modal"));
   };
+
+  // Form sayfasında gizle — zaten form var, sticky buton gereksiz
+  if (pathname?.includes('/form')) return null;
 
   return (
     <div

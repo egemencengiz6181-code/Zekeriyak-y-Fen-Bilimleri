@@ -79,7 +79,7 @@ export default function FormPage() {
   }
 
   return (
-    <div className="min-h-screen pt-32 pb-24 relative overflow-hidden bg-transparent">
+    <div className="min-h-screen pt-32 pb-32 md:pb-24 relative bg-transparent">
       {/* Background decoration */}
       <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-primary/5 rounded-full pointer-events-none -z-10" />
       <div className="absolute bottom-0 left-0 w-[300px] h-[300px] bg-accent/5 rounded-full pointer-events-none -z-10" />
