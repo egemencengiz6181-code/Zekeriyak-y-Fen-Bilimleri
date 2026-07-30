@@ -1,4 +1,4 @@
-import { getTranslations } from 'next-intl/server';
+import { getTranslations, setRequestLocale } from 'next-intl/server';
 import ReferencesMarquee from '@/components/sections/ReferencesMarquee';
 
 type Student = {
@@ -56,7 +56,13 @@ function AchievementCard({ name, achievement, exam }: Student) {
   );
 }
 
-export default async function ReferencesPage() {
+export default async function ReferencesPage({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}) {
+  const { locale } = await params;
+  setRequestLocale(locale); // statik render için gerekli
   const t = await getTranslations('References');
 
   return (

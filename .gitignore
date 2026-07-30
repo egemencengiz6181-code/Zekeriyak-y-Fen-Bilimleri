@@ -27,4 +27,6 @@ tsconfig.tsbuildinfo
 
 # OS files
 .DS_Store
+._*
+.AppleDouble
 Thumbs.db

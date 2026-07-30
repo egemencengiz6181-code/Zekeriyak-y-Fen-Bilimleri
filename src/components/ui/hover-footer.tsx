@@ -5,7 +5,6 @@ import Image from "next/image";
 import { Link } from "@/navigation";
 import { Mail, MapPin, Phone, ExternalLink } from "lucide-react";
 import { useTranslations } from "next-intl";
-import { motion } from "framer-motion";
 
 // ── TextHoverEffect ───────────────────────────────────────────────────────────
 function TextHoverEffect({ text }: { text: string }) {

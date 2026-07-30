@@ -1,7 +1,8 @@
 import type { Metadata } from 'next';
+import { ogImages } from '@/config/site';
 import HeroMain from '@/components/ui/hero-main';
 import ServicesGrid from '@/components/sections/ServicesGrid';
-import { getTranslations } from 'next-intl/server';
+import { getTranslations, setRequestLocale } from 'next-intl/server';
 import Link from 'next/link';
 import dynamic from 'next/dynamic';
 
@@ -23,17 +24,19 @@ export async function generateMetadata({
     description: t('description'),
     alternates: {
       canonical: `${origin}/${locale}`,
-      languages: { tr: `${origin}/tr`, en: `${origin}/en` },
+      languages: { tr: `${origin}/tr` },
     },
     openGraph: {
       title: t('title'),
       description: t('description'),
       url: `${origin}/${locale}`,
-      locale: locale === 'en' ? 'en_US' : 'tr_TR',
+      locale: 'tr_TR',
+      images: ogImages,
     },
     twitter: {
       title: t('title'),
       description: t('description'),
+      images: ogImages,
     },
   };
 }
@@ -44,6 +47,7 @@ export default async function IndexPage({
   params: Promise<{locale: string}>;
 }) {
   const {locale} = await params;
+  setRequestLocale(locale); // statik render için gerekli
   const t = await getTranslations('WhyUs');
   const tt = await getTranslations('Testimonials');
   const testimonialItems = tt.raw('items') as { name: string; role: string; text: string }[];
@@ -84,12 +88,14 @@ export default async function IndexPage({
           title={
             <>
               Sağlam Temel,<br />
-              <span className="bg-gradient-to-r from-[#E21F26] via-[#E65F5F] to-[#fff] bg-clip-text text-transparent">
+              {/* Gradient eskiden #fff ile bitiyordu — bölümün zemini açık temada
+                  beyaz olduğu için başlığın sonu görünmez oluyordu. */}
+              <span className="bg-gradient-to-r from-[#E21F26] via-[#E65F5F] to-[#2E3192] bg-clip-text text-transparent">
                 Kanıtlanmış Başarı
               </span>
             </>
           }
-          description="Şirinevler Final Dershanesi, 9. sınıftan mezun seviyesine kadar öğrencilerin YKS’de hedef üniversitelerine ulaşmalarını sağlamak için deneyimli öğretmen kadrosu ve zengin eğitim materyalleriyle akademik seviyelerini yükseltmeye odaklanır. Sunduğumuz programlar öğrencilerin yalnızca teorik bilgi değil, aynı zamanda pratik becerilerini de geliştirerek sınavlarda yüksek başarı göstermelerini sağlar."
+          description="Bahçelievler Sevinç Dershanesi, 9. sınıftan mezun seviyesine kadar öğrencilerin YKS’de hedef üniversitelerine ulaşmalarını sağlamak için deneyimli öğretmen kadrosu ve zengin eğitim materyalleriyle akademik seviyelerini yükseltmeye odaklanır. Sunduğumuz programlar öğrencilerin yalnızca teorik bilgi değil, aynı zamanda pratik becerilerini de geliştirerek sınavlarda yüksek başarı göstermelerini sağlar."
         />
 
         <TestimonialsSection items={testimonialItems} title={testimonialsTitle} subtitle={testimonialsSubtitle} />

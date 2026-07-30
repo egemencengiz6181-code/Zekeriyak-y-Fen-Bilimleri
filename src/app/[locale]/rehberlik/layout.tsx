@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { ogImages } from '@/config/site';
 import { getTranslations } from 'next-intl/server';
 
 export async function generateMetadata({
@@ -27,7 +28,8 @@ export async function generateMetadata({
       title,
       description,
       url: path,
-      locale: locale === 'en' ? 'en_US' : 'tr_TR',
+      locale: 'tr_TR',
+      images: ogImages,
     },
     twitter: {
       title,

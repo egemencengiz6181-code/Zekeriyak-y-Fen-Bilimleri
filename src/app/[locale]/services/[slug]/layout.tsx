@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { ogImages } from '@/config/site';
 import { getTranslations } from 'next-intl/server';
 
 // Valid service slugs that match messages keys
@@ -50,14 +51,14 @@ export async function generateMetadata({
       canonical: path,
       languages: {
         tr: `${origin}/tr/services/${slug}`,
-        en: `${origin}/en/services/${slug}`,
       },
     },
     openGraph: {
       title,
       description,
       url: path,
-      locale: locale === 'en' ? 'en_US' : 'tr_TR',
+      locale: 'tr_TR',
+      images: ogImages,
     },
     twitter: {
       title,

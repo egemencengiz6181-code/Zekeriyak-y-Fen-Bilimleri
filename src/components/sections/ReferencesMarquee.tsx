@@ -1,6 +1,4 @@
-"use client"
-
-import { motion } from "framer-motion"
+// Server component — marquee tamamen CSS keyframe'i, client JS gerekmiyor.
 
 const row1 = [
   "Galatasaray Lisesi",
@@ -31,24 +29,19 @@ const row2 = [
 function MarqueeRow({
   items,
   direction,
-  duration = 40,
+  duration,
 }: {
   items: string[]
   direction: "left" | "right"
-  duration?: number
+  duration: number
 }) {
   const doubled = [...items, ...items]
 
   return (
     <div className="flex overflow-hidden py-3">
-      <motion.div
-        animate={
-          direction === "left"
-            ? { x: ["0%", "-50%"] }
-            : { x: ["-50%", "0%"] }
-        }
-        transition={{ duration, repeat: Infinity, ease: "linear" }}
-        className="flex shrink-0"
+      <div
+        className="flex shrink-0 w-max"
+        style={{ animation: `marquee-${direction} ${duration}s linear infinite` }}
       >
         {doubled.map((item, idx) => (
           <span
@@ -59,7 +52,7 @@ function MarqueeRow({
             {item}
           </span>
         ))}
-      </motion.div>
+      </div>
     </div>
   )
 }
@@ -67,7 +60,7 @@ function MarqueeRow({
 export default function ReferencesMarquee() {
   return (
     <section className="py-16 border-t border-black/5 dark:border-white/5 relative overflow-hidden">
-      {/* Edge fades */}
+      {/* Kenar geçişleri */}
       <div className="absolute top-0 left-0 w-40 h-full bg-gradient-to-r from-background to-transparent z-10 pointer-events-none" />
       <div className="absolute top-0 right-0 w-40 h-full bg-gradient-to-l from-background to-transparent z-10 pointer-events-none" />
 

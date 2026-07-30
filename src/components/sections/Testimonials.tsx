@@ -1,6 +1,6 @@
-'use client';
+// Server component — marquee saf CSS keyframe, etkileşim yok.
+// (Önceden 'use client' + React.memo idi; ikisi de gereksizdi.)
 
-import { memo } from 'react';
 import { Quote } from 'lucide-react';
 
 interface TestimonialItem {
@@ -9,9 +9,9 @@ interface TestimonialItem {
   text: string;
 }
 
-const TestimonialCard = memo(function TestimonialCard({ item }: { item: TestimonialItem }) {
+function TestimonialCard({ item }: { item: TestimonialItem }) {
   return (
-    <div className="w-[300px] shrink-0 mx-3 rounded-2xl border border-black/[0.06] dark:border-white/[0.06] bg-black/[0.04] dark:bg-white/[0.04] backdrop-blur-md p-5 flex flex-col gap-3 hover:border-black/[0.10] dark:hover:border-white/[0.10] hover:bg-black/[0.07] dark:hover:bg-white/[0.07] transition-colors duration-300">
+    <div className="w-[300px] shrink-0 mx-3 rounded-2xl border border-black/[0.06] dark:border-white/[0.06] bg-black/[0.04] dark:bg-white/[0.04] p-5 flex flex-col gap-3 hover:border-black/[0.10] dark:hover:border-white/[0.10] transition-colors duration-300">
       <Quote className="w-4 h-4 text-[#E35205] opacity-50 shrink-0" />
       <p className="text-slate-600 dark:text-white/60 text-sm leading-relaxed italic flex-1">
         &ldquo;{item.text}&rdquo;
@@ -22,25 +22,24 @@ const TestimonialCard = memo(function TestimonialCard({ item }: { item: Testimon
       </div>
     </div>
   );
-});
+}
 
-const MarqueeRow = memo(function MarqueeRow({ items, direction }: { items: TestimonialItem[]; direction: 'left' | 'right' }) {
-  const doubled = [...(items ?? []), ...(items ?? [])];
-  const animStyle: React.CSSProperties = {
-    animation: `marquee-${direction} ${(items?.length ?? 1) * 7}s linear infinite`,
-    display: 'flex',
-    width: 'max-content',
-  };
+function MarqueeRow({ items, direction }: { items: TestimonialItem[]; direction: 'left' | 'right' }) {
+  if (!items.length) return null;
+  const doubled = [...items, ...items];
   return (
     <div className="overflow-hidden">
-      <div style={animStyle}>
+      <div
+        className="flex w-max"
+        style={{ animation: `marquee-${direction} ${items.length * 7}s linear infinite` }}
+      >
         {doubled.map((item, i) => (
           <TestimonialCard key={i} item={item} />
         ))}
       </div>
     </div>
   );
-});
+}
 
 export default function TestimonialsSection({
   items: rawItems = [],
@@ -60,7 +59,7 @@ export default function TestimonialsSection({
 
   return (
     <section className="py-24 relative overflow-hidden">
-      {/* fade edges */}
+      {/* Kenar geçişleri */}
       <div className="pointer-events-none absolute inset-y-0 left-0 w-32 bg-gradient-to-r from-background to-transparent z-10" />
       <div className="pointer-events-none absolute inset-y-0 right-0 w-32 bg-gradient-to-l from-background to-transparent z-10" />
 

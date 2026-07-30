@@ -3,14 +3,6 @@
     "title": "Bahçelievler Sevinç Dershanesi | Bahçelievler İstanbul",
     "description": "Bahçelievler Sevinç Dershanesi — Bahçelievler'de ortaokul, lise ve YKS hazırlık ders programları."
   },
-  "Hero": {
-    "eyebrow": "Bahçelievler / İstanbul",
-    "title": "Başarıya Giden Yol",
-    "subtitle": "Hedeflediğin okula ulaşmak için doğru adres.",
-    "headline": "Hedefine Giden Yolu Birlikte Çiziyoruz",
-    "slogan": "Deneyimli öğretmenler, bireysel takip ve kanıtlanmış ders programlarıyla yanındayız.",
-    "cta": "Programları Keşfet"
-  },
   "HeroMain": {
     "title_prefix": "Başarıya",
     "title_highlight": "giden yol",
@@ -482,46 +474,6 @@
     "tagline": "Bahçelievler, İstanbul · Sevinç Dershanesi",
     "contact_info": "İletişim Bilgileri"
   },
-  "Works": {
-    "section_label": "Başarı Hikayeleri",
-    "section_title": "Hedeflerine Ulaştırdık",
-    "section_title_1": "Hedeflerine",
-    "section_title_2": "Ulaştırdık",
-    "view_all": "Tümünü Gör",
-    "next_project": "Sonraki Vaka",
-    "services_label": "Program",
-    "back_home": "Ana Sayfa",
-    "challenge": "Hedef",
-    "approach": "Yaklaşım",
-    "result": "Sonuç",
-    "drag_hint": "Sürükle veya üzerine gel →",
-    "brands": {
-      "arni": {
-        "title": "ARNİ",
-        "description": "Sıfırdan eksiksiz kurumsal kimlik: logo, renk paleti, kartvizit, bina cephesi ve marka kitabı."
-      },
-      "deru": {
-        "title": "DERU",
-        "description": "Cesur tipografi ve özgün logo sistemiyle sektörde fark yaratan bir kurumsal kimlik tasarlandı."
-      },
-      "erts": {
-        "title": "ERTS",
-        "description": "Mimarlık sektöründe güvenilir ve prestijli bir kurumsal imaj inşa edildi."
-      },
-      "every": {
-        "title": "EVERY",
-        "description": "Esnek ve ölçeklenebilir marka sistemiyle tüm temas noktalarında tutarlı bir kimlik oluşturuldu."
-      },
-      "peralta": {
-        "title": "PERALTA",
-        "description": "Premium konumlama için minimal ama güçlü bir kurumsal kimlik ve sunum sistemi tasarlandı."
-      },
-      "tepsta": {
-        "title": "TEPSTA",
-        "description": "Dinamik ve genç kitleye hitap eden enerjik bir marka kimliği ve sosyal medya şablon sistemi."
-      }
-    }
-  },
   "Testimonials": {
     "title": "Öğrenci & Veli Görüşleri",
     "subtitle": "Onların başarısı bizim motivasyonumuz",
@@ -620,21 +572,5 @@
       "Özel Ders",
       "Rehberlik"
     ]
-  },
-  "Blog": {
-    "meta_title": "Eğitim Blogu | Bahçelievler Sevinç Dershanesi",
-    "meta_description": "LGS, YKS ve eğitim hayatı hakkında faydalı yazılar.",
-    "title_prefix": "Eğitim",
-    "title_highlight": "Blogu",
-    "subtitle": "LGS, YKS ve eğitim hayatı hakkında faydalı yazılar.",
-    "empty_title": "Henüz yazı yok",
-    "empty_subtitle": "Yakında içerikler eklenecek.",
-    "recent": "Son Yazılar",
-    "categories": {
-      "lgs": "LGS",
-      "yks": "YKS",
-      "tips": "Çalışma Tüyoları",
-      "motivation": "Motivasyon"
-    }
   }
 }

@@ -1,7 +1,6 @@
 'use client';
 
-import { motion, useScroll, useTransform, AnimatePresence } from 'framer-motion';
-import { useRef, useState } from 'react';
+import { useState } from 'react';
 import { Link } from '@/navigation';
 import {
   Brain, BarChart2, Users, Presentation, FileText,
@@ -9,19 +8,16 @@ import {
   Sparkles, FlaskConical, Bot, CalendarCheck, Bell,
 } from 'lucide-react';
 import { GlowingEffect } from '@/components/ui/glowing-effect';
+import Reveal from '@/components/ui/reveal';
 import dynamic from 'next/dynamic';
-const LetsWorkSection = dynamic(() => import('@/components/ui/lets-work-section'), { ssr: false, loading: () => <div className="h-64" /> });
+
+const LetsWorkSection = dynamic(() => import('@/components/ui/lets-work-section'), {
+  ssr: false,
+  loading: () => <div className="h-64" />,
+});
 
 const BLUE = '#2E3192';
-const RED  = '#E21F26';
-
-const fadeUp = {
-  hidden: { opacity: 0, y: 32 },
-  show: (i = 0) => ({
-    opacity: 1, y: 0,
-    transition: { delay: i * 0.1, duration: 0.7, ease: [0.22, 1, 0.36, 1] },
-  }),
-};
+const RED = '#E21F26';
 
 /* ─── Data ─────────────────────────────────────────────────────────── */
 type SectionItem = {
@@ -146,27 +142,26 @@ const SECTIONS: SectionItem[] = [
   },
 ];
 
-/* ─── Section Card (accordion) ──────────────────────────────────────── */
+/* ─── Akordiyon kartı — CSS grid-rows geçişi (AnimatePresence yok) ──── */
 function SectionCard({ section, index }: { section: SectionItem; index: number }) {
   const [open, setOpen] = useState(false);
   const Icon = section.icon;
   const color = section.color;
+  const bodyId = `rehberlik-${section.id}`;
 
   return (
-    <motion.div
-      variants={fadeUp} custom={index * 0.5}
-      initial="hidden" whileInView="show" viewport={{ once: true, margin: '-40px' }}
-      className="relative rounded-3xl"
-    >
+    <Reveal delay={Math.min(index, 4) * 0.05} className="relative rounded-3xl">
       <div
-        className="relative rounded-3xl border transition-colors duration-500"
-        style={{ borderColor: open ? color + '30' : 'rgba(255,255,255,0.06)' }}
+        className="relative rounded-3xl border transition-colors duration-500 group"
+        style={{ borderColor: open ? color + '30' : 'rgba(127,127,127,0.14)' }}
       >
-        <GlowingEffect spread={30} glow disabled={false} proximity={60} inactiveZone={0.01} borderWidth={2} />
+        <GlowingEffect borderWidth={2} />
 
         <button
-          onClick={() => setOpen(o => !o)}
-          className="w-full flex items-center gap-5 p-7 text-left group"
+          onClick={() => setOpen((o) => !o)}
+          aria-expanded={open}
+          aria-controls={bodyId}
+          className="w-full flex items-center gap-5 p-7 text-left"
         >
           <div
             className="w-14 h-14 rounded-2xl flex items-center justify-center shrink-0 transition-all duration-300"
@@ -175,19 +170,26 @@ function SectionCard({ section, index }: { section: SectionItem; index: number }
               border: `1px solid ${color}${open ? '50' : '30'}`,
             }}
           >
-            <Icon className="w-7 h-7 transition-transform duration-300 group-hover:scale-110" style={{ color }} />
+            <Icon className="w-7 h-7" style={{ color }} />
           </div>
 
           <div className="flex-1 min-w-0">
             <div className="flex items-center gap-3 mb-1">
-              <span className="text-[10px] font-black uppercase tracking-[0.25em]" style={{ color: color + 'aa' }}>
+              <span
+                className="text-[10px] font-black uppercase tracking-[0.25em]"
+                style={{ color: color + 'aa' }}
+              >
                 {String(index + 1).padStart(2, '0')}
               </span>
-              <h3 className="text-lg font-bold text-slate-900 dark:text-white leading-tight">{section.title}</h3>
+              <h3 className="text-lg font-bold text-slate-900 dark:text-white leading-tight">
+                {section.title}
+              </h3>
             </div>
-            <p className="text-slate-500 dark:text-white/40 text-sm leading-relaxed line-clamp-1">{section.lead}</p>
+            <p className="text-slate-500 dark:text-white/40 text-sm leading-relaxed line-clamp-1">
+              {section.lead}
+            </p>
             <div className="flex flex-wrap gap-2 mt-3">
-              {section.tags.map(tag => (
+              {section.tags.map((tag) => (
                 <span
                   key={tag}
                   className="px-2.5 py-1 rounded-full text-[10px] font-semibold border"
@@ -202,48 +204,55 @@ function SectionCard({ section, index }: { section: SectionItem; index: number }
           <div
             className="w-9 h-9 rounded-xl flex items-center justify-center shrink-0 transition-all duration-300"
             style={{
-              backgroundColor: open ? color + '20' : 'rgba(255,255,255,0.04)',
+              backgroundColor: open ? color + '20' : 'rgba(127,127,127,0.08)',
               transform: open ? 'rotate(180deg)' : 'rotate(0deg)',
             }}
           >
-            <ChevronDown className="w-4 h-4 text-white/50" />
+            <ChevronDown className="w-4 h-4 text-slate-500 dark:text-white/50" />
           </div>
         </button>
 
-        <AnimatePresence initial={false}>
-          {open && (
-            <motion.div
-              key="body"
-              initial={{ height: 0, opacity: 0 }}
-              animate={{ height: 'auto', opacity: 1 }}
-              exit={{ height: 0, opacity: 0 }}
-              transition={{ duration: 0.45, ease: [0.22, 1, 0.36, 1] }}
-              className="overflow-hidden"
-            >
-              <div className="px-7 pb-7">
-                <div className="h-px mb-6 rounded-full" style={{ background: `linear-gradient(to right,${color}40,transparent)` }} />
-                <div className="space-y-4">
-                  {section.blocks.map((block, i) => (
-                    <div key={i} className="flex gap-3">
-                      <div className="w-1.5 h-1.5 rounded-full mt-2.5 shrink-0" style={{ backgroundColor: color }} />
-                      <p className="text-slate-600 dark:text-white/60 leading-relaxed text-sm">{block.text}</p>
-                    </div>
-                  ))}
-                  {section.list && (
-                    <div className="mt-2 grid grid-cols-1 sm:grid-cols-2 gap-2">
-                      {section.list.map((item, i) => (
-                        <div key={i} className="flex items-center gap-3 px-4 py-3 rounded-2xl border border-black/[0.05] dark:border-white/[0.05] bg-black/[0.02] dark:bg-white/[0.02]">
-                          <div className="w-2 h-2 rounded-full shrink-0" style={{ backgroundColor: color }} />
-                          <span className="text-slate-600 dark:text-white/65 text-sm">{item}</span>
-                        </div>
-                      ))}
-                    </div>
-                  )}
-                </div>
+        <div
+          id={bodyId}
+          className={`grid transition-[grid-template-rows] duration-500 ease-out ${
+            open ? 'grid-rows-[1fr]' : 'grid-rows-[0fr]'
+          }`}
+        >
+          <div className="overflow-hidden">
+            <div className="px-7 pb-7">
+              <div
+                className="h-px mb-6 rounded-full"
+                style={{ background: `linear-gradient(to right,${color}40,transparent)` }}
+              />
+              <div className="space-y-4">
+                {section.blocks.map((block, i) => (
+                  <div key={i} className="flex gap-3">
+                    <div
+                      className="w-1.5 h-1.5 rounded-full mt-2.5 shrink-0"
+                      style={{ backgroundColor: color }}
+                    />
+                    <p className="text-slate-600 dark:text-white/60 leading-relaxed text-sm">
+                      {block.text}
+                    </p>
+                  </div>
+                ))}
+                {section.list && (
+                  <div className="mt-2 grid grid-cols-1 sm:grid-cols-2 gap-2">
+                    {section.list.map((item, i) => (
+                      <div
+                        key={i}
+                        className="flex items-center gap-3 px-4 py-3 rounded-2xl border border-black/[0.05] dark:border-white/[0.05] bg-black/[0.02] dark:bg-white/[0.02]"
+                      >
+                        <div className="w-2 h-2 rounded-full shrink-0" style={{ backgroundColor: color }} />
+                        <span className="text-slate-600 dark:text-white/65 text-sm">{item}</span>
+                      </div>
+                    ))}
+                  </div>
+                )}
               </div>
-            </motion.div>
-          )}
-        </AnimatePresence>
+            </div>
+          </div>
+        </div>
 
         <div
           className="absolute bottom-0 left-0 h-[2px] rounded-b-3xl transition-all duration-500"
@@ -253,54 +262,47 @@ function SectionCard({ section, index }: { section: SectionItem; index: number }
           }}
         />
       </div>
-    </motion.div>
+    </Reveal>
   );
 }
 
-/* ─── Stat card ──────────────────────────────────────────────────────── */
+/* ─── İstatistik kartı ───────────────────────────────────────────────── */
 function StatCard({ icon: Icon, label, color }: { icon: React.ElementType; label: string; color: string }) {
   return (
-    <div className="flex items-center gap-3 p-5 rounded-2xl border border-black/[0.06] dark:border-white/[0.06] bg-black/[0.02] dark:bg-white/[0.02] backdrop-blur-sm">
-      <div className="w-9 h-9 rounded-xl flex items-center justify-center shrink-0" style={{ backgroundColor: color + '20' }}>
+    <div className="flex items-center gap-3 p-5 rounded-2xl border border-black/[0.06] dark:border-white/[0.06] bg-black/[0.02] dark:bg-white/[0.02]">
+      <div
+        className="w-9 h-9 rounded-xl flex items-center justify-center shrink-0"
+        style={{ backgroundColor: color + '20' }}
+      >
         <Icon className="w-5 h-5" style={{ color }} />
       </div>
-      <span className="text-sm font-semibold text-slate-700 dark:text-white/80 leading-tight">{label}</span>
+      <span className="text-sm font-semibold text-slate-700 dark:text-white/80 leading-tight">
+        {label}
+      </span>
     </div>
   );
 }
 
 export default function RehberlikPage() {
-  const heroRef = useRef<HTMLDivElement>(null);
-  const { scrollYProgress } = useScroll({ target: heroRef, offset: ['start start', 'end start'] });
-  const heroY  = useTransform(scrollYProgress, [0, 1], ['0%', '18%']);
-  const heroOp = useTransform(scrollYProgress, [0, 0.7], [1, 0]);
-
   return (
     <div className="min-h-screen bg-background text-foreground overflow-x-hidden">
-
-      {/* ambient glows - Safari safe (no blur) */}
-      <div className="fixed top-[-80px] left-1/2 -translate-x-1/2 w-[900px] h-[600px] bg-[#2E3192]/5 rounded-full pointer-events-none -z-10" />
-      <div className="fixed top-[40%] right-[-80px] w-[500px] h-[500px] bg-[#E21F26]/3 rounded-full pointer-events-none -z-10" />
-      <div className="fixed bottom-0 left-[-80px] w-[400px] h-[400px] bg-[#2E3192]/3 rounded-full pointer-events-none -z-10" />
+      {/* Ambiyans gradient'leri — blur filtresi yok */}
+      <div className="fixed top-[-80px] left-1/2 -translate-x-1/2 w-[900px] max-w-[140vw] h-[600px] bg-[#2E3192]/5 rounded-full pointer-events-none -z-10" />
+      <div className="fixed top-[40%] right-[-80px] w-[500px] max-w-[100vw] h-[500px] bg-[#E21F26]/[0.03] rounded-full pointer-events-none -z-10" />
 
       {/* ══ HERO ════════════════════════════════════════════════════════ */}
-      <section ref={heroRef} className="relative min-h-[85vh] flex items-center pt-32 pb-20 px-6">
-        <motion.div style={{ y: heroY, opacity: heroOp }} className="max-w-6xl mx-auto w-full">
+      <section className="relative min-h-[85vh] flex items-center pt-32 pb-20 px-6">
+        <div className="max-w-6xl mx-auto w-full">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-
             <div>
-              <motion.div
-                variants={fadeUp} custom={0} initial="hidden" animate="show"
-                className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-[#2E3192]/30 bg-[#2E3192]/[0.08] backdrop-blur-sm mb-8"
-              >
+              <div className="animate-fade-up inline-flex items-center gap-2 px-4 py-2 rounded-full border border-[#2E3192]/30 bg-[#2E3192]/[0.08] mb-8">
                 <Sparkles className="w-3.5 h-3.5 text-[#2E3192]" />
-                <span className="text-xs font-bold uppercase tracking-[0.3em] text-[#2E3192]">Şirinevler Final Dershanesi</span>
-              </motion.div>
+                <span className="text-xs font-bold uppercase tracking-[0.3em] text-[#2E3192]">
+                  Bahçelievler Sevinç Dershanesi
+                </span>
+              </div>
 
-              <motion.h1
-                variants={fadeUp} custom={1} initial="hidden" animate="show"
-                className="text-4xl md:text-5xl xl:text-6xl font-black tracking-tighter leading-[1.05] mb-6"
-              >
+              <h1 className="animate-fade-up delay-1 text-4xl md:text-5xl xl:text-6xl font-black tracking-tighter leading-[1.05] mb-6">
                 <span className="bg-gradient-to-br from-slate-900 via-slate-900 to-slate-900/40 dark:from-white dark:via-white dark:to-white/40 bg-clip-text text-transparent">
                   Psikolojik Danışmanlık
                 </span>
@@ -308,20 +310,19 @@ export default function RehberlikPage() {
                 <span className="bg-gradient-to-r from-[#2E3192] to-[#E21F26] bg-clip-text text-transparent">
                   ve Rehberlik Hizmetleri
                 </span>
-              </motion.h1>
+              </h1>
 
-              <motion.p
-                variants={fadeUp} custom={2} initial="hidden" animate="show"
-                className="text-base text-slate-500 dark:text-white/50 font-light leading-relaxed mb-10 max-w-lg"
-              >
-                Seviye Belirleme Sınavı&apos;ndan başlayarak her öğrenciye özel oluşturulan kapsamlı danışmanlık programı; psikolojik testler, yapay zeka destekli analiz ve düzenli veli raporlarını bir arada sunar.
-              </motion.p>
+              <p className="animate-fade-up delay-2 text-base text-slate-500 dark:text-white/50 font-light leading-relaxed mb-10 max-w-lg">
+                Seviye Belirleme Sınavı&apos;ndan başlayarak her öğrenciye özel oluşturulan kapsamlı
+                danışmanlık programı; psikolojik testler, yapay zeka destekli analiz ve düzenli veli
+                raporlarını bir arada sunar.
+              </p>
 
-              <motion.div variants={fadeUp} custom={3} initial="hidden" animate="show" className="flex flex-wrap gap-4">
+              <div className="animate-fade-up delay-3 flex flex-wrap gap-4">
                 <Link
                   href="/contact"
-                  className="inline-flex items-center gap-2 px-7 py-4 rounded-2xl font-bold text-sm text-white transition-all duration-300 group"
-                  style={{ background: `linear-gradient(135deg,${BLUE},#0d4f70)`, boxShadow: `0 0 40px ${BLUE}40` }}
+                  className="inline-flex items-center gap-2 px-7 py-4 rounded-2xl font-bold text-sm text-white transition-transform duration-300 hover:scale-[1.03] group"
+                  style={{ background: `linear-gradient(135deg,${BLUE},#0d4f70)`, boxShadow: `0 0 30px ${BLUE}40` }}
                 >
                   Görüşme Talep Et
                   <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
@@ -332,45 +333,53 @@ export default function RehberlikPage() {
                 >
                   Detayları Gör
                 </a>
-              </motion.div>
+              </div>
             </div>
 
-            <motion.div variants={fadeUp} custom={4} initial="hidden" animate="show" className="relative">
-              <div className="absolute -inset-4 rounded-[40px]  opacity-25 pointer-events-none" style={{ background: `linear-gradient(135deg,${BLUE}50,${RED}30)` }} />
-              <div className="relative rounded-3xl border border-black/[0.07] dark:border-white/[0.07] bg-black/[0.03] dark:bg-white/[0.03]  p-8">
-                <GlowingEffect spread={50} glow disabled={false} proximity={80} inactiveZone={0.01} borderWidth={2} />
+            <div className="animate-fade-up delay-4 relative">
+              <div
+                className="absolute -inset-4 rounded-[40px] opacity-25 pointer-events-none"
+                style={{ background: `linear-gradient(135deg,${BLUE}50,${RED}30)` }}
+              />
+              <div className="relative rounded-3xl border border-black/[0.07] dark:border-white/[0.07] bg-black/[0.03] dark:bg-white/[0.03] p-8 group">
+                <GlowingEffect borderWidth={2} />
 
                 <div className="flex items-center gap-3 mb-6 px-4 py-3 rounded-2xl border border-[#E21F26]/20 bg-[#E21F26]/[0.07]">
-                  <Bot className="w-5 h-5 text-[#E21F26]" />
+                  <Bot className="w-5 h-5 text-[#E21F26] shrink-0" />
                   <div>
                     <p className="text-slate-900 dark:text-white text-sm font-bold">Dijital Analiz</p>
-                    <p className="text-slate-500 dark:text-white/40 text-xs">Dijital analiz ve kişisel soru bankası</p>
+                    <p className="text-slate-500 dark:text-white/40 text-xs">
+                      Dijital analiz ve kişisel soru bankası
+                    </p>
                   </div>
                 </div>
 
                 <div className="grid grid-cols-2 gap-3">
                   <StatCard icon={CalendarCheck} label="Haftalık Randevulu Görüşme" color={BLUE} />
-                  <StatCard icon={Bell}          label="Aylık Veli Bilgilendirme"   color={RED}  />
-                  <StatCard icon={FlaskConical}   label="Psikolojik Testler"         color={BLUE} />
-                  <StatCard icon={BarChart2}      label="Denemede Özel Analiz"       color={RED}  />
+                  <StatCard icon={Bell} label="Aylık Veli Bilgilendirme" color={RED} />
+                  <StatCard icon={FlaskConical} label="Psikolojik Testler" color={BLUE} />
+                  <StatCard icon={BarChart2} label="Denemede Özel Analiz" color={RED} />
                 </div>
               </div>
-            </motion.div>
+            </div>
           </div>
-        </motion.div>
+        </div>
         <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-background to-transparent pointer-events-none" />
       </section>
 
-      {/* ══ ACCORDION SECTIONS ══════════════════════════════════════════ */}
+      {/* ══ AKORDİYON ═══════════════════════════════════════════════════ */}
       <section id="detaylar" className="max-w-4xl mx-auto px-6 pb-32 space-y-4">
-        <motion.div
-          variants={fadeUp} custom={0} initial="hidden" whileInView="show" viewport={{ once: true }}
-          className="mb-10 text-center"
-        >
-          <p className="text-xs font-bold uppercase tracking-[0.35em] mb-3" style={{ color: BLUE }}>Hizmet Başlıkları</p>
-          <h2 className="text-3xl font-black text-slate-900 dark:text-white tracking-tight">Tüm Hizmetlerimiz</h2>
-          <p className="text-slate-500 dark:text-white/35 mt-3 text-sm">Genişletmek için bölüme tıklayın</p>
-        </motion.div>
+        <Reveal className="mb-10 text-center">
+          <p className="text-xs font-bold uppercase tracking-[0.35em] mb-3" style={{ color: BLUE }}>
+            Hizmet Başlıkları
+          </p>
+          <h2 className="text-3xl font-black text-slate-900 dark:text-white tracking-tight">
+            Tüm Hizmetlerimiz
+          </h2>
+          <p className="text-slate-500 dark:text-white/35 mt-3 text-sm">
+            Genişletmek için bölüme tıklayın
+          </p>
+        </Reveal>
 
         {SECTIONS.map((section, i) => (
           <SectionCard key={section.id} section={section} index={i} />

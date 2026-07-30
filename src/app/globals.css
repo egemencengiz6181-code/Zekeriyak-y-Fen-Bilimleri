@@ -5,11 +5,20 @@
 :root {
   --background: #f4f4f8;
   --foreground: #0f0a1a;
+  --muted: #ebebf2;
+  /* Navbar / mobil menü yüzeyleri — backdrop blur YOK (Safari GPU kilidi) */
+  --surface: rgba(255, 255, 255, 0.94);
+  --surface-strong: #f4f4f8;
+  --surface-border: rgba(0, 0, 0, 0.08);
 }
 
 .dark {
   --background: #05010d;
   --foreground: #f2f2f2;
+  --muted: #0b0616;
+  --surface: rgba(10, 10, 15, 0.94);
+  --surface-strong: #0a0a0f;
+  --surface-border: rgba(255, 255, 255, 0.08);
 }
 
 body {
@@ -17,6 +26,21 @@ body {
   background: var(--background);
   font-family: var(--font-inter), system-ui, -apple-system, sans-serif;
   overflow-x: hidden;
+}
+
+/* ── Yüzeyler ────────────────────────────────────────────────────────────────
+   Eskiden backdrop blur: blur(24-30px) kullanılıyordu. iOS Safari'de sabit
+   konumlu geniş bir blur katmanı tüm sayfayı GPU'ya taşıyıp ilk boyamayı
+   saniyelerce geciktiriyor. Yerine opak/yarı-opak düz renk kullanıyoruz. */
+@layer components {
+  .surface {
+    background-color: var(--surface);
+    border-color: var(--surface-border);
+  }
+  .surface-strong {
+    background-color: var(--surface-strong);
+    border-color: var(--surface-border);
+  }
 }
 
 @layer utilities {
@@ -30,8 +54,13 @@ body {
   .preserve-3d {
     transform-style: preserve-3d;
   }
+  /* Kart çevirme — framer-motion yerine saf CSS transform */
+  .flip-y-180 {
+    transform: rotateY(180deg);
+  }
 }
 
+/* ── Marquee (Testimonials / ReferencesMarquee) ───────────────────────────── */
 @keyframes marquee-left {
   from { transform: translateX(0); }
   to   { transform: translateX(-50%); }
@@ -41,23 +70,113 @@ body {
   to   { transform: translateX(0); }
 }
 
+/* ── Giriş animasyonları (framer-motion yerine) ───────────────────────────── */
 @keyframes fade-in {
   from { opacity: 0; }
-  to { opacity: 1; }
+  to   { opacity: 1; }
 }
 
 @keyframes fade-up {
   from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fade-right {
+  from { opacity: 0; transform: translateX(-20px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes pop-in {
+  from { opacity: 0; transform: scale(0.94) translateY(16px); }
+  to   { opacity: 1; transform: scale(1) translateY(0); }
 }
 
 .animate-fade-in {
-  animation: fade-in 0.8s ease-out forwards;
+  animation: fade-in 0.5s ease-out both;
 }
 
 .animate-fade-up {
-  animation: fade-up 0.8s ease-out forwards;
+  animation: fade-up 0.6s cubic-bezier(0.22, 1, 0.36, 1) both;
 }
+
+.animate-fade-right {
+  animation: fade-right 0.5s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.animate-pop-in {
+  animation: pop-in 0.28s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+/* Sıralı gecikmeler — <div className="animate-fade-up delay-2"> */
+.delay-1 { animation-delay: 0.08s; }
+.delay-2 { animation-delay: 0.16s; }
+.delay-3 { animation-delay: 0.24s; }
+.delay-4 { animation-delay: 0.32s; }
+.delay-5 { animation-delay: 0.40s; }
+.delay-6 { animation-delay: 0.48s; }
+
+/* ── Scroll ile ortaya çıkma (Reveal component'i .is-visible ekler) ───────── */
+/* `transform` yerine tek başına `translate` özelliği kullanılıyor; böylece
+   Tailwind'in transform yardımcıları (hover:scale-*, hover:-translate-y-*)
+   aynı elemanda çakışmadan çalışabiliyor. Desteklemeyen tarayıcıda sadece
+   opaklık geçişi olur — içerik yine görünür. */
+.reveal {
+  opacity: 0;
+  translate: 0 24px;
+  transition: opacity 0.6s cubic-bezier(0.22, 1, 0.36, 1),
+              translate 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  translate: 0 0;
+}
+
+/* ── Shimmer (watermark başlık) ───────────────────────────────────────────── */
+@keyframes shimmer-sweep {
+  0%   { background-position: -100% 50%; }
+  60%  { background-position: 250% 50%; }
+  100% { background-position: 250% 50%; }
+}
+
+.shimmer-text {
+  background-image: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 0.06) 0%,
+    rgba(0, 0, 0, 0.15) 40%,
+    rgba(0, 0, 0, 0.15) 60%,
+    rgba(0, 0, 0, 0.06) 100%
+  );
+  background-size: 50% 200%;
+  background-repeat: no-repeat;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shimmer-sweep 4.8s linear 1s infinite;
+}
+
+.dark .shimmer-text {
+  background-image: linear-gradient(
+    to right,
+    rgba(255, 255, 255, 0.08) 0%,
+    rgba(255, 255, 255, 0.22) 40%,
+    rgba(255, 255, 255, 0.22) 60%,
+    rgba(255, 255, 255, 0.08) 100%
+  );
+}
+
+/* ── Yüzen görsel (section-with-mockup) ──────────────────────────────────── */
+@keyframes float-a {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(-14px); }
+}
+@keyframes float-b {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(10px); }
+}
+
+.animate-float-a { animation: float-a 9s ease-in-out infinite; }
+.animate-float-b { animation: float-b 7s ease-in-out 1.2s infinite; }
 
 /* ── Gradient Button ─────────────────────────────────────────────────────── */
 @property --grad-pos {
@@ -129,109 +248,18 @@ body {
   color: #a8d8f0;
 }
 
-/* ── Blog content typography ─────────────────────────────────────────────── */
-.blog-content {
-  color: rgba(15, 10, 26, 0.7);
-  line-height: 1.85;
-  font-size: 1.0625rem;
-  font-weight: 300;
+/* ── Hareket azaltma tercihi ──────────────────────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  .reveal {
+    opacity: 1;
+    translate: 0 0;
+  }
 }
-
-.dark .blog-content {
-  color: rgba(255, 255, 255, 0.7);
-}
-
-.blog-content h1,
-.blog-content h2,
-.blog-content h3 {
-  color: #0f0a1a;
-  font-weight: 900;
-  letter-spacing: -0.03em;
-  line-height: 1.1;
-  margin-top: 2.5rem;
-  margin-bottom: 1rem;
-}
-
-.dark .blog-content h1,
-.dark .blog-content h2,
-.dark .blog-content h3 {
-  color: #fff;
-}
-
-.blog-content h1 { font-size: 2.5rem; }
-.blog-content h2 { font-size: 1.75rem; }
-.blog-content h3 { font-size: 1.25rem; font-weight: 800; }
-
-.blog-content p { margin-bottom: 1.5rem; }
-
-.blog-content a {
-  color: #E35205;
-  text-decoration: underline;
-  text-underline-offset: 3px;
-}
-.blog-content a:hover { color: #A03500; }
-
-.blog-content strong { color: #0f0a1a; font-weight: 700; }
-.dark .blog-content strong { color: #fff; }
-.blog-content em { font-style: italic; color: rgba(15,10,26,0.85); }
-.dark .blog-content em { color: rgba(255,255,255,0.85); }
-
-.blog-content ul,
-.blog-content ol {
-  margin: 1.25rem 0 1.5rem 1.5rem;
-  space-y: 0.5rem;
-}
-.blog-content ul { list-style-type: disc; }
-.blog-content ol { list-style-type: decimal; }
-.blog-content li { margin-bottom: 0.5rem; }
-
-.blog-content hr {
-  border: none;
-  border-top: 1px solid rgba(0,0,0,0.1);
-  margin: 3rem 0;
-}
-
-.dark .blog-content hr {
-  border-top-color: rgba(255,255,255,0.1);
-}
-
-.blog-content img {
-  border-radius: 1rem;
-  max-width: 100%;
-  height: auto;
-  margin: 2rem 0;
-}
-
-.blog-content blockquote {
-  border-left: 3px solid #E35205;
-  padding-left: 1.5rem;
-  margin: 2rem 0;
-  color: rgba(15,10,26,0.5);
-  font-style: italic;
-}
-
-.dark .blog-content blockquote {
-  color: rgba(255,255,255,0.5);
-}
-
-.blog-content code {
-  background: rgba(0,0,0,0.06);
-  border-radius: 0.375rem;
-  padding: 0.125rem 0.375rem;
-  font-size: 0.875em;
-  color: #E35205;
-}
-
-.dark .blog-content code {
-  background: rgba(255,255,255,0.08);
-}
-
-/* TipTap editor placeholder */
-.tiptap p.is-editor-empty:first-child::before {
-  color: rgba(255,255,255,0.2);
-  content: attr(data-placeholder);
-  float: left;
-  height: 0;
-  pointer-events: none;
-}
-

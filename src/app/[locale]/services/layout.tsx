@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { ogImages } from '@/config/site';
 import { getTranslations } from 'next-intl/server';
 
 export async function generateMetadata({
@@ -18,14 +19,14 @@ export async function generateMetadata({
       canonical: path,
       languages: {
         tr: `${origin}/tr/services`,
-        en: `${origin}/en/services`,
       },
     },
     openGraph: {
       title: t('meta_title'),
       description: t('meta_description'),
       url: path,
-      locale: locale === 'en' ? 'en_US' : 'tr_TR',
+      locale: 'tr_TR',
+      images: ogImages,
     },
     twitter: {
       title: t('meta_title'),

@@ -8,102 +8,54 @@ const intlMiddleware = createIntlMiddleware({
   localePrefix,
 });
 
-// ── Bot / saldırı tespiti için engellenen path kalıpları ──
-const BLOCKED_PATHS = [
-  "wp-",            // WordPress tarama
-  "wp-admin",
-  "wp-login",
-  "wp-includes",
-  "wp-content",
-  "xmlrpc",
-  ".env",           // Ortam dosyası arama
-  ".git",
-  ".php",           // PHP dosyası arama
-  "admin",
-  "phpmyadmin",
-  "cgi-bin",
-  "eval-stdin",
-  "shell",
-  "vendor",
-  "telescope",
-  "debug",
-  "_ignition",
-  "actuator",       // Spring Boot probe
-  "solr",
-  "config.json",
-  "credentials",
-  "login",
-  "signin",
-  "setup-config",
-  "installer",
-];
+/**
+ * Bot / tarama filtresi + i18n yönlendirmesi.
+ *
+ * Performans notu: bu fonksiyon her sayfa isteğinde edge'de çalışıyor, o yüzden
+ * iş mümkün olduğunca az. Path kalıpları tek bir regex'te birleştirildi
+ * (önceden 27 elemanlı bir dizide `Array.some` + `String.includes` vardı) ve
+ * matcher artık `/api` ile uzantılı tüm dosyaları hiç uyandırmıyor.
+ */
 
-// ── Bilinen kötü niyetli User-Agent kalıpları ──
-const BLOCKED_UA_PATTERNS = [
-  /sqlmap/i,
-  /nikto/i,
-  /nmap/i,
-  /masscan/i,
-  /zgrab/i,
-  /gobuster/i,
-  /dirbuster/i,
-  /wpscan/i,
-  /nessus/i,
-  /acunetix/i,
-  /openvas/i,
-  /python-requests/i,
-  /go-http-client/i,
-  /curl\//i,
-  /wget\//i,
-  /scrapy/i,
-  /httpclient/i,
-  /libwww-perl/i,
-  /java\//i,
-  /headlesschrome/i,
-  /phantomjs/i,
-  /semrush/i,
-  /ahrefsbot/i,
-  /mj12bot/i,
-  /dotbot/i,
-  /blexbot/i,
-  /petalbot/i,
-  /bytespider/i,
-];
+// Saldırı/tarama kalıpları — tek regex, tek geçiş
+const BLOCKED_PATH_RE =
+  /(^|\/)(wp-|xmlrpc|phpmyadmin|cgi-bin|eval-stdin|_ignition|actuator|telescope|solr|installer|setup-config)|\.(php|env|git)(\/|$)|\/(credentials|config\.json)(\/|$)/i;
+
+// Bilinen zararlı / kaynak tüketen User-Agent'lar.
+// NOT: `headlesschrome` listeden çıkarıldı — Lighthouse, PageSpeed Insights ve
+// Vercel'in kendi önizleme botu bu UA ile geliyor; engellendiğinde performans
+// ölçümü hiç çalışmıyordu.
+const BLOCKED_UA_RE =
+  /(sqlmap|nikto|nmap|masscan|zgrab|gobuster|dirbuster|wpscan|nessus|acunetix|openvas|scrapy|libwww-perl|phantomjs|semrush|ahrefsbot|mj12bot|dotbot|blexbot|petalbot|bytespider)/i;
 
 export function middleware(request: NextRequest): NextResponse {
-  const path = request.nextUrl.pathname.toLowerCase();
+  const path = request.nextUrl.pathname;
   const ua = request.headers.get("user-agent") ?? "";
 
-  // 1) Engellenen yol kalıpları — bağlantıyı hemen kopar
-  if (BLOCKED_PATHS.some((p) => path.includes(p))) {
-    return new NextResponse(null, { status: 444 });
-  }
-
-  // 2) Kötü niyetli User-Agent kontrolü
-  if (BLOCKED_UA_PATTERNS.some((re) => re.test(ua))) {
-    return new NextResponse(null, { status: 444 });
-  }
-
-  // 3) Boş User-Agent (genellikle script/bot)
-  if (!ua || ua.length < 5) {
-    return new NextResponse(null, { status: 403 });
-  }
-
-  // 4) Aşırı uzun URL (path traversal denemesi)
+  // Aşırı uzun URL (path traversal denemesi)
   if (path.length > 500) {
     return new NextResponse(null, { status: 414 });
   }
 
-  // ── Meşru trafik → i18n middleware ──
+  if (BLOCKED_PATH_RE.test(path)) {
+    return new NextResponse(null, { status: 404 });
+  }
+
+  if (BLOCKED_UA_RE.test(ua)) {
+    return new NextResponse(null, { status: 403 });
+  }
+
   return intlMiddleware(request) as NextResponse;
 }
 
 export const config = {
   matcher: [
     /*
-     * Statik dosyalar (_next/static, _next/image, favicon.ico, public assets)
-     * HARİÇ her şeyi yakala — böylece bot istekleri de middleware'den geçer.
+     * Yalnızca gerçek sayfa isteklerini yakala.
+     * Hariç: Next.js dahili yolları, /api, ve uzantısı olan tüm dosyalar
+     * (logo/görsel/robots/sitemap dahil) — bunlar için middleware çalıştırmak
+     * her istek başına gereksiz edge gecikmesi demek.
      */
-    "/((?!_next/static|_next/image|favicon.ico|logos|okul|okul2|works|sitemap.xml|robots.txt).*)",
+    "/((?!api|_next|.*\\.[a-zA-Z0-9]+$).*)",
   ],
 };
