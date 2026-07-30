@@ -159,7 +159,7 @@ export default function Navbar() {
             <div
               onMouseEnter={() => openMenu(servicesLabel)}
               onMouseLeave={() => closeMenu()}
-              className="enter-up absolute top-full mt-3 w-[640px] p-6 bg-background/95 border border-black/10 dark:border-white/10 rounded-[32px] shadow-2xl z-50"
+              className="enter-up absolute top-full mt-3 w-[640px] p-6 bg-surface dark:bg-[#0d0d16] border border-black/10 dark:border-white/10 rounded-[32px] shadow-[0_24px_60px_-12px_rgba(0,0,0,0.28)] dark:shadow-[0_24px_60px_-12px_rgba(0,0,0,0.75)] z-50"
             >
               <div className="grid grid-cols-2 gap-4">
                 {services.map((service) => (

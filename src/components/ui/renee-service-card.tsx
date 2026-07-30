@@ -65,7 +65,7 @@ export default function ReneeServiceCard({ title, description, slug, href, featu
 
         {/* Back Face */}
         <div 
-          className="absolute inset-0 backface-hidden rounded-[32px] border border-primary/30 bg-background/60 p-8 flex flex-col justify-between [transform:rotateY(180deg)]"
+          className="absolute inset-0 backface-hidden rounded-[32px] border border-primary/30 bg-surface dark:bg-[#0d0d16] p-8 flex flex-col justify-between [transform:rotateY(180deg)]"
         >
           <div className="space-y-6">
             <div className="flex items-center gap-3">

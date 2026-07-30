@@ -10,10 +10,17 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        background: "var(--background)",
+        // Yüzey renkleri `<alpha-value>` destekler — bu olmadan `bg-background/95`
+        // gibi opaklık değiştiricileri Tailwind tarafından sessizce atılıyor ve
+        // eleman hiç arka plan almıyordu (açılır menü şeffaf kalıyordu).
+        background: "rgb(var(--background) / <alpha-value>)",
+        muted: "rgb(var(--muted) / <alpha-value>)",
+        surface: "rgb(var(--surface) / <alpha-value>)",
+        // foreground bilerek hex `var(...)` olarak bırakıldı (kanal değeri DEĞİL).
+        // Bu biçimi Tailwind ayrıştıramadığı için `text-foreground/40` gibi
+        // sınıflar bugüne kadar olduğu gibi üretilmemeye devam eder. Alpha'yı
+        // açmak sitedeki tüm soluk gövde metnini bir anda açardı (kontrast ~3:1).
         foreground: "var(--foreground)",
-        muted: "var(--muted)",
-        surface: "var(--surface)",
         primary: {
           DEFAULT: "#ec2027",
           light: "#f04e53",

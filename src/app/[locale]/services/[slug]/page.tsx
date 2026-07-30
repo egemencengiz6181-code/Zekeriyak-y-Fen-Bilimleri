@@ -197,7 +197,7 @@ export default function ServicePage({
           <div className="absolute inset-0 bg-gradient-to-r from-background/30 via-transparent to-background/30" />
           {/* Floating service title on image */}
           <div className="absolute bottom-8 left-8">
-            <div className="px-4 py-2 rounded-xl bg-background/80 border border-black/10 dark:border-white/10 inline-flex">
+            <div className="px-4 py-2 rounded-xl bg-background/95 border border-black/10 dark:border-white/10 inline-flex">
               <span className="text-sm font-bold text-slate-900 dark:text-white">{t(`items.${slug}.title`)}</span>
             </div>
           </div>

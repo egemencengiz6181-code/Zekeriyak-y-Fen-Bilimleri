@@ -2,23 +2,27 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Renkler RGB kanal değeri olarak tutulur (hex değil).
+   Sebep: tailwind.config'de `rgb(var(--x) / <alpha-value>)` yazabilmek için.
+   Hex tutulduğunda `bg-background/95` gibi opaklık değiştiricileri Tailwind
+   tarafından SESSİZCE atılıyor ve eleman hiç arka plan almıyordu. */
 :root {
-  --background: #f4f4f8;
+  --background: 244 244 248;  /* #f4f4f8 */
+  --muted: 232 232 240;       /* #e8e8f0 */
+  --surface: 255 255 255;     /* #ffffff */
   --foreground: #0f0a1a;
-  --muted: #e8e8f0;
-  --surface: #ffffff;
 }
 
 .dark {
-  --background: #05010d;
+  --background: 5 1 13;       /* #05010d */
+  --muted: 11 6 22;           /* #0b0616 */
+  --surface: 10 10 18;        /* #0a0a12 */
   --foreground: #f2f2f2;
-  --muted: #0b0616;
-  --surface: #0a0a12;
 }
 
 body {
   color: var(--foreground);
-  background: var(--background);
+  background: rgb(var(--background));
   font-family: var(--font-inter), system-ui, -apple-system, sans-serif;
   overflow-x: hidden;
 }
