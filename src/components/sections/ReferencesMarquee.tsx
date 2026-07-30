@@ -1,7 +1,3 @@
-"use client"
-
-import { motion } from "framer-motion"
-
 const row1 = [
   "İstanbul Fen Lisesi",
   "Galatasaray Lisesi",
@@ -42,14 +38,14 @@ function MarqueeRow({
 
   return (
     <div className="flex overflow-hidden py-3">
-      <motion.div
-        animate={
-          direction === "left"
-            ? { x: ["0%", "-50%"] }
-            : { x: ["-50%", "0%"] }
-        }
-        transition={{ duration, repeat: Infinity, ease: "linear" }}
-        className="flex shrink-0"
+      {/* CSS keyframe marquee — framer-motion yerine saf transform animasyonu,
+          compositor'da çalışır ve ana thread'i hiç meşgul etmez. */}
+      <div
+        className="flex shrink-0 motion-reduce:animate-none"
+        style={{
+          animation: `marquee-${direction} ${duration}s linear infinite`,
+          willChange: 'transform',
+        }}
       >
         {doubled.map((item, idx) => (
           <span
@@ -60,7 +56,7 @@ function MarqueeRow({
             {item}
           </span>
         ))}
-      </motion.div>
+      </div>
     </div>
   )
 }

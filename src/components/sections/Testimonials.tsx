@@ -10,7 +10,7 @@ interface TestimonialItem {
 
 function TestimonialCard({ item }: { item: TestimonialItem }) {
   return (
-    <div className="w-[300px] shrink-0 mx-3 rounded-2xl border border-black/[0.06] dark:border-white/[0.06] bg-black/[0.04] dark:bg-white/[0.04] backdrop-blur-md p-5 flex flex-col gap-3 hover:border-black/[0.10] dark:hover:border-white/[0.10] hover:bg-black/[0.07] dark:hover:bg-white/[0.07] transition-colors duration-300">
+    <div className="w-[300px] shrink-0 mx-3 rounded-2xl border border-black/[0.06] dark:border-white/[0.06] bg-black/[0.04] dark:bg-white/[0.04] p-5 flex flex-col gap-3 hover:border-black/[0.10] dark:hover:border-white/[0.10] hover:bg-black/[0.07] dark:hover:bg-white/[0.07] transition-colors duration-300">
       <Quote className="w-4 h-4 text-[#ec2027] opacity-50 shrink-0" />
       <p className="text-slate-600 dark:text-white/60 text-sm leading-relaxed italic flex-1">
         &ldquo;{item.text}&rdquo;

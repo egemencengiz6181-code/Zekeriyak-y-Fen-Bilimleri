@@ -4,13 +4,28 @@ const withNextIntl = createNextIntlPlugin('./src/i18n.ts');
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  reactStrictMode: true,
   poweredByHeader: false,
   compress: true,
-  experimental: {},
+
+  // Prod build'de console.* çağrılarını at (error/warn hariç) — hem bundle
+  // küçülür hem de mobil cihazlarda gereksiz iş kalkar.
+  compiler: {
+    removeConsole:
+      process.env.NODE_ENV === 'production' ? { exclude: ['error', 'warn'] } : false,
+  },
+
+  experimental: {
+    // Barrel import'ları tek tek modüllere çevirir; lucide-react'te bu tek
+    // başına ciddi bir bundle farkı yaratıyor (tüm ikon seti yerine kullanılan
+    // ikonlar).
+    optimizePackageImports: ['lucide-react', 'next-intl'],
+  },
+
   images: {
     formats: ['image/avif', 'image/webp'],
     deviceSizes: [640, 750, 828, 1080, 1200, 1920],
-    minimumCacheTTL: 60 * 60 * 24 * 30, // 30 days
+    minimumCacheTTL: 60 * 60 * 24 * 30, // 30 gün
     remotePatterns: [
       {
         protocol: 'https',
@@ -19,6 +34,7 @@ const nextConfig = {
       },
     ],
   },
+
   async headers() {
     return [
       {
@@ -39,12 +55,16 @@ const nextConfig = {
         ],
       },
       {
-        source: '/(_next/static|logos|works|okul|okul2)(.*)',
+        // Hash'li build çıktıları ve değişmeyen statik varlıklar
+        source: '/(_next/static|logos|okul|okul2)(.*)',
         headers: [
-          {
-            key: 'Cache-Control',
-            value: 'public, max-age=31536000, immutable',
-          },
+          { key: 'Cache-Control', value: 'public, max-age=31536000, immutable' },
+        ],
+      },
+      {
+        source: '/:path*.(js|css|woff|woff2|png|jpg|jpeg|webp|avif|svg|ico)',
+        headers: [
+          { key: 'Cache-Control', value: 'public, max-age=31536000, immutable' },
         ],
       },
     ];

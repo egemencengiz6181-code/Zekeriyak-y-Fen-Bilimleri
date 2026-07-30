@@ -5,11 +5,15 @@
 :root {
   --background: #f4f4f8;
   --foreground: #0f0a1a;
+  --muted: #e8e8f0;
+  --surface: #ffffff;
 }
 
 .dark {
   --background: #05010d;
   --foreground: #f2f2f2;
+  --muted: #0b0616;
+  --surface: #0a0a12;
 }
 
 body {
@@ -20,6 +24,15 @@ body {
 }
 
 @layer utilities {
+  /* Yumuşak "glow" kenarı — filter/backdrop-filter KULLANMADAN.
+     Eskiden bu efektler `blur-[120px]` ile yapılıyordu; iOS Safari'de büyük
+     yarıçaplı filter'lar her frame'de GPU'yu kilitliyordu. mask-image sadece
+     kompozit aşamasında çalışır, bedeli neredeyse sıfırdır. */
+  .glow-soft {
+    -webkit-mask-image: radial-gradient(closest-side, #000 0%, rgba(0, 0, 0, 0.6) 45%, transparent 100%);
+    mask-image: radial-gradient(closest-side, #000 0%, rgba(0, 0, 0, 0.6) 45%, transparent 100%);
+  }
+
   .perspective-1000 {
     perspective: 1000px;
   }
@@ -39,6 +52,84 @@ body {
 @keyframes marquee-right {
   from { transform: translateX(-50%); }
   to   { transform: translateX(0); }
+}
+
+/* ── Reveal (framer-motion whileInView yerine) ─────────────────────────────── */
+.reveal {
+  opacity: 0;
+  translate: 0 24px;
+  transition: opacity 0.6s cubic-bezier(0.22, 1, 0.36, 1),
+              translate 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  translate: 0 0;
+}
+
+/* Mount anında oynayan giriş animasyonları — kademeli gecikme için
+   `style={{ animationDelay }}` ile kullanılır. */
+.enter-up {
+  opacity: 0;
+  animation: fade-up 0.6s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+.enter-fade {
+  opacity: 0;
+  animation: fade-in 0.6s ease-out forwards;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal,
+  .reveal.is-visible {
+    opacity: 1;
+    translate: 0 0;
+    transition: none;
+  }
+  .enter-up,
+  .enter-fade {
+    opacity: 1;
+    animation: none;
+  }
+}
+
+/* Shimmer (watermark başlık) — renk temaya göre CSS değişkeninden gelir */
+.shimmer-text {
+  --shimmer-lo: rgba(0, 0, 0, 0.06);
+  --shimmer-hi: rgba(0, 0, 0, 0.15);
+  background-image: linear-gradient(
+    to right,
+    var(--shimmer-lo) 0%,
+    var(--shimmer-hi) 40%,
+    var(--shimmer-hi) 60%,
+    var(--shimmer-lo) 100%
+  );
+  background-size: 50% 200%;
+  background-repeat: no-repeat;
+  background-position: 250% 50%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation-name: shimmer-sweep;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+.dark .shimmer-text {
+  --shimmer-lo: rgba(255, 255, 255, 0.08);
+  --shimmer-hi: rgba(255, 255, 255, 0.22);
+}
+
+/* Yüzen görsel — `alternate` ile gidip gelir. Sadece transform kullanır. */
+@keyframes float-y {
+  from { transform: translateY(0); }
+  to   { transform: translateY(var(--float-distance, -12px)); }
+}
+
+@keyframes shimmer-sweep {
+  0%   { background-position: -100% 50%; }
+  60%  { background-position: 250% 50%; }
+  100% { background-position: 250% 50%; }
 }
 
 @keyframes fade-in {

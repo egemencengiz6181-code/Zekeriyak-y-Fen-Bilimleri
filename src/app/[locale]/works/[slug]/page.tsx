@@ -4,10 +4,10 @@ import { notFound } from "next/navigation";
 import { use } from "react";
 import Image from "next/image";
 import { Link } from "@/navigation";
-import { motion } from "framer-motion";
 import { works, getWorkBySlug, getLocalizedWork } from "@/config/works";
 import { ArrowLeft, ArrowUpRight } from "lucide-react";
 import { useTranslations } from "next-intl";
+import Reveal from '@/components/ui/reveal';
 
 // ── Gallery image block ───────────────────────────────────────────────────────
 function ParallaxImage({
@@ -20,13 +20,7 @@ function ParallaxImage({
   index: number;
 }) {
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 50 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: "-80px" }}
-      transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1], delay: index * 0.1 }}
-      className="rounded-3xl overflow-hidden"
-    >
+    <Reveal as="div" className="rounded-3xl overflow-hidden">
       {/* eslint-disable-next-line @next/next/no-img-element */}
       <img
         src={src}
@@ -34,7 +28,7 @@ function ParallaxImage({
         loading="lazy"
         className="w-full h-auto block"
       />
-    </motion.div>
+    </Reveal>
   );
 }
 
@@ -49,15 +43,9 @@ function RevealText({
   className?: string;
 }) {
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 40 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: "-60px" }}
-      transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1], delay }}
-      className={className}
-    >
+    <Reveal as="div" className={className}>
       {children}
-    </motion.div>
+    </Reveal>
   );
 }
 
@@ -104,7 +92,7 @@ export default function WorkDetailPage({
         <div className="absolute top-28 left-6 md:left-12">
           <Link
             href={"/" as any}
-            className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-white/15 bg-white/5 backdrop-blur-sm text-white/60 hover:text-white text-sm font-medium transition-all hover:border-white/30"
+            className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-white/15 bg-white/5 text-white/60 hover:text-white text-sm font-medium transition-all hover:border-white/30"
           >
             <ArrowLeft className="w-4 h-4" />
             {t("back_home")}
@@ -113,11 +101,7 @@ export default function WorkDetailPage({
 
         {/* Hero content */}
         <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-12 pb-20 w-full">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-          >
+          <div className="enter-up">
             <span
               className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-[0.2em] mb-6"
               style={{
@@ -156,7 +140,7 @@ export default function WorkDetailPage({
                 </div>
               ))}
             </div>
-          </motion.div>
+          </div>
         </div>
       </section>
 

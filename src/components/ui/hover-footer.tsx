@@ -1,72 +1,39 @@
 "use client";
 
-import { useRef, useEffect, useState } from "react";
 import Image from "next/image";
 import { Link } from "@/navigation";
 import { Instagram, Mail, MapPin, Phone, ExternalLink } from "lucide-react";
 import { useTranslations } from "next-intl";
-import { motion } from "framer-motion";
 
 // ── TextHoverEffect ───────────────────────────────────────────────────────────
+// İmleci takip eden SVG mask efekti kaldırıldı: her mousemove'da iki setState
+// tetikliyor, bu da her harekette tam re-render + SVG mask'ın yeniden
+// rasterize edilmesi demekti (Safari'de belirgin takılma). Yerine saf CSS ile
+// hover'da açılan statik bir gradient kullanılıyor.
 function TextHoverEffect({ text }: { text: string }) {
-  const svgRef = useRef<SVGSVGElement>(null);
-  const [cursor, setCursor] = useState({ x: 0, y: 0 });
-  const [hovered, setHovered] = useState(false);
-  const [maskPos, setMaskPos] = useState({ cx: "50%", cy: "50%" });
-
-  useEffect(() => {
-    if (!svgRef.current || !hovered) return;
-    const svg = svgRef.current;
-    const rect = svg.getBoundingClientRect();
-    const x = ((cursor.x - rect.left) / rect.width) * 100;
-    const y = ((cursor.y - rect.top) / rect.height) * 100;
-    setMaskPos({ cx: `${x}%`, cy: `${y}%` });
-  }, [cursor, hovered]);
-
   return (
     <svg
-      ref={svgRef}
       width="100%"
       viewBox="0 0 800 100"
       xmlns="http://www.w3.org/2000/svg"
-      onMouseEnter={() => setHovered(true)}
-      onMouseLeave={() => setHovered(false)}
-      onMouseMove={(e) => setCursor({ x: e.clientX, y: e.clientY })}
-      className="select-none cursor-default"
+      className="select-none cursor-default group/txt"
+      aria-hidden
     >
       <defs>
-        {/* Base gradient */}
         <linearGradient id="footer-text-grad-base" x1="0%" y1="0%" x2="100%" y2="0%">
           <stop offset="0%" stopColor="#7a1010" />
           <stop offset="50%" stopColor="#ec2027" />
           <stop offset="100%" stopColor="#7a1010" />
         </linearGradient>
 
-        {/* Hover gradient */}
         <linearGradient id="footer-text-grad-hover" x1="0%" y1="0%" x2="100%" y2="100%">
           <stop offset="0%" stopColor="#ec2027" />
           <stop offset="40%" stopColor="#f06060" />
           <stop offset="100%" stopColor="#12648f" />
         </linearGradient>
-
-        {/* Radial mask for hover reveal */}
-        <radialGradient
-          id="footer-reveal-mask"
-          cx={maskPos.cx}
-          cy={maskPos.cy}
-          r="30%"
-          gradientUnits="userSpaceOnUse"
-        >
-          <stop offset="0%" stopColor="white" stopOpacity="1" />
-          <stop offset="100%" stopColor="white" stopOpacity="0" />
-        </radialGradient>
-
-        <mask id="footer-mask">
-          <rect width="100%" height="100%" fill={`url(#footer-reveal-mask)`} />
-        </mask>
       </defs>
 
-      {/* Stroke-only base layer */}
+      {/* Stroke katmanı — hover'da soluyor */}
       <text
         x="50%"
         y="75%"
@@ -77,12 +44,13 @@ function TextHoverEffect({ text }: { text: string }) {
         fill="none"
         stroke="url(#footer-text-grad-base)"
         strokeWidth="1"
-        style={{ fontFamily: "inherit", opacity: hovered ? 0.4 : 0.25, transition: "opacity 0.4s ease" }}
+        className="opacity-25 transition-opacity duration-500 group-hover/txt:opacity-0"
+        style={{ fontFamily: "inherit" }}
       >
         {text}
       </text>
 
-      {/* Hover-revealed filled layer */}
+      {/* Dolgu katmanı — hover'da beliriyor */}
       <text
         x="50%"
         y="75%"
@@ -91,10 +59,8 @@ function TextHoverEffect({ text }: { text: string }) {
         letterSpacing="-2"
         fontWeight="900"
         fill="url(#footer-text-grad-hover)"
-        stroke="url(#footer-text-grad-hover)"
-        strokeWidth="0.5"
-        mask="url(#footer-mask)"
-        style={{ fontFamily: "inherit", opacity: hovered ? 1 : 0, transition: "opacity 0.3s ease" }}
+        className="opacity-0 transition-opacity duration-500 group-hover/txt:opacity-90"
+        style={{ fontFamily: "inherit" }}
       >
         {text}
       </text>
@@ -122,7 +88,7 @@ export default function HoverFooter() {
     <footer className="relative overflow-hidden border-t border-black/5 dark:border-white/5 bg-transparent">
       {/* Ambient background */}
       <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[900px] h-[400px] bg-[#ec2027]/10 blur-[120px] rounded-full" />
+        <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[900px] h-[400px] bg-[#ec2027]/10 rounded-full glow-soft" />
       </div>
 
       <div className="relative max-w-7xl mx-auto px-6 pt-20 pb-8">
@@ -132,7 +98,7 @@ export default function HoverFooter() {
           <div className="space-y-6">
             <Link href="/" className="inline-block pointer-events-auto">
               <Image
-                src="/logos/Fen%20bilimleri%20logo.png"
+                src="/logos/fen-bilimleri-logo.png"
                 alt="Zekeriyaköy Fen Bilimleri Dershanesi"
                 width={180}
                 height={60}

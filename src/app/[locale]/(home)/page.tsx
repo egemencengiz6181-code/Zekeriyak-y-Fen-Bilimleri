@@ -4,6 +4,7 @@ import ServicesGrid from '@/components/sections/ServicesGrid';
 import { getTranslations } from 'next-intl/server';
 import Link from 'next/link';
 import dynamic from 'next/dynamic';
+import { OG_IMAGE, TWITTER_IMAGE } from '@/config/site';
 
 const TestimonialsSection = dynamic(() => import('@/components/sections/Testimonials'));
 const LetsWorkSection = dynamic(() => import('@/components/ui/lets-work-section'));
@@ -26,12 +27,15 @@ export async function generateMetadata({
       languages: { tr: `${origin}/tr`, en: `${origin}/en` },
     },
     openGraph: {
+      images: OG_IMAGE,
       title: t('title'),
       description: t('description'),
       url: `${origin}/${locale}`,
       locale: locale === 'en' ? 'en_US' : 'tr_TR',
     },
     twitter: {
+      card: 'summary_large_image' as const,
+      images: TWITTER_IMAGE,
       title: t('title'),
       description: t('description'),
     },

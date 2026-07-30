@@ -1,7 +1,6 @@
 'use client';
 
 import React, { useState, useCallback } from 'react';
-import { motion } from 'framer-motion';
 import { type LucideIcon, ArrowRight, BookOpen, GraduationCap, Trophy, FileText } from 'lucide-react';
 import { Link } from '@/navigation';
 
@@ -41,14 +40,14 @@ export default function ReneeServiceCard({ title, description, slug, href, featu
       onMouseLeave={() => setIsFlipped(false)}
       onClick={handleClick}
     >
-      <motion.div
-        className="relative w-full h-full transition-all duration-700 preserve-3d"
-        animate={{ rotateY: isFlipped ? 180 : 0 }}
-        transition={{ type: "spring", stiffness: 260, damping: 20 }}
+      {/* Flip — CSS transform geçişi; rotateY compositor'da çalışır */}
+      <div
+        className="relative w-full h-full transition-transform duration-700 ease-out preserve-3d"
+        style={{ transform: `rotateY(${isFlipped ? 180 : 0}deg)` }}
       >
         {/* Front Face */}
-        <div className="absolute inset-0 backface-hidden rounded-[32px] border border-black/10 dark:border-white/10 bg-gradient-to-br from-black/5 dark:from-white/5 to-primary/10 backdrop-blur-xl p-8 flex flex-col items-center justify-center text-center overflow-hidden">
-          <div className="absolute inset-0 bg-primary/5 opacity-0 group-hover:opacity-100 transition-opacity blur-3xl -z-10" />
+        <div className="absolute inset-0 backface-hidden rounded-[32px] border border-black/10 dark:border-white/10 bg-gradient-to-br from-black/5 dark:from-white/5 to-primary/10 p-8 flex flex-col items-center justify-center text-center overflow-hidden">
+          <div className="absolute inset-0 bg-primary/5 opacity-0 group-hover:opacity-100 transition-opacity glow-soft rounded-full -z-10" />
           
           <div className="w-20 h-20 rounded-2xl bg-primary/10 flex items-center justify-center mb-8 border border-primary/20 group-hover:scale-110 transition-transform duration-500">
             <Icon className="w-10 h-10 text-primary-light" />
@@ -66,7 +65,7 @@ export default function ReneeServiceCard({ title, description, slug, href, featu
 
         {/* Back Face */}
         <div 
-          className="absolute inset-0 backface-hidden rounded-[32px] border border-primary/30 bg-background/60 backdrop-blur-2xl p-8 flex flex-col justify-between [transform:rotateY(180deg)]"
+          className="absolute inset-0 backface-hidden rounded-[32px] border border-primary/30 bg-background/60 p-8 flex flex-col justify-between [transform:rotateY(180deg)]"
         >
           <div className="space-y-6">
             <div className="flex items-center gap-3">
@@ -98,7 +97,7 @@ export default function ReneeServiceCard({ title, description, slug, href, featu
             <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
           </Link>
         </div>
-      </motion.div>
+      </div>
     </div>
   );
 }

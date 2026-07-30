@@ -2,9 +2,9 @@
 
 import { useState } from 'react';
 import Image from 'next/image';
-import { motion, AnimatePresence } from 'framer-motion';
 import { useTranslations } from 'next-intl';
 import { MessageCircle, Mail, Send, Loader2, CheckCircle2, ChevronDown } from 'lucide-react';
+import Reveal from '@/components/ui/reveal';
 
 export default function LetsWorkSection() {
   const t = useTranslations('LetsWork');
@@ -53,12 +53,7 @@ export default function LetsWorkSection() {
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         <div className="flex flex-col items-center text-center">
           {/* Badge */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-black/5 dark:border-white/5 bg-black/5 dark:bg-white/5 backdrop-blur-md mb-8"
-          >
+          <Reveal as="div" className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-black/5 dark:border-white/5 bg-black/5 dark:bg-white/5 mb-8">
             <span className="relative flex h-2 w-2">
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75" />
               <span className="relative inline-flex rounded-full h-2 w-2 bg-green-500" />
@@ -66,37 +61,19 @@ export default function LetsWorkSection() {
             <span className="text-xs font-medium text-foreground/60 uppercase tracking-widest">
               {t('available')}
             </span>
-          </motion.div>
+          </Reveal>
 
           {/* Title */}
-          <motion.h2
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.1 }}
-            className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-bold tracking-tighter leading-tight mb-8 bg-gradient-to-b from-slate-900 to-slate-900/40 dark:from-white dark:to-white/40 bg-clip-text text-transparent"
-          >
+          <Reveal as="h2" className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-bold tracking-tighter leading-tight mb-8 bg-gradient-to-b from-slate-900 to-slate-900/40 dark:from-white dark:to-white/40 bg-clip-text text-transparent">
             {t('title')}
-          </motion.h2>
+          </Reveal>
 
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.2 }}
-            className="text-xl md:text-2xl text-foreground/40 font-light mb-12 max-w-2xl"
-          >
+          <Reveal as="p" className="text-xl md:text-2xl text-foreground/40 font-light mb-12 max-w-2xl">
             {t('subtitle')}
-          </motion.p>
+          </Reveal>
 
           {/* CTA buttons */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.3 }}
-            className="flex flex-col sm:flex-row gap-6 items-center mb-10"
-          >
+          <Reveal as="div" className="flex flex-col sm:flex-row gap-6 items-center mb-10">
             <button
               onClick={() => setShowForm(!showForm)}
               className="group relative inline-flex items-center gap-3 px-10 py-5 rounded-full bg-[#ec2027] text-white font-medium transition-all hover:scale-105 active:scale-95 shadow-[0_0_20px_rgba(236,32,39,0.3)] hover:shadow-[0_0_30px_rgba(236,32,39,0.5)]"
@@ -115,18 +92,11 @@ export default function LetsWorkSection() {
               </div>
               <span className="font-light text-sm sm:text-base truncate">zekeriyakoyfenbilimleri@gmail.com</span>
             </a>
-          </motion.div>
+          </Reveal>
 
           {/* Inline contact form */}
-          <AnimatePresence>
-            {showForm && (
-              <motion.div
-                initial={{ opacity: 0, height: 0, y: -10 }}
-                animate={{ opacity: 1, height: 'auto', y: 0 }}
-                exit={{ opacity: 0, height: 0, y: -10 }}
-                transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
-                className="w-full max-w-xl overflow-hidden"
-              >
+          {showForm && (
+              <div className="enter-up w-full max-w-xl overflow-hidden">
                 <div className="bg-white dark:bg-[#0a0514] border border-[#ec2027]/20 rounded-3xl p-8 shadow-[0_0_60px_rgba(236,32,39,0.15)] text-left">
                   {sent ? (
                     <div className="flex flex-col items-center py-8 gap-4 text-center">
@@ -155,14 +125,13 @@ export default function LetsWorkSection() {
                     </form>
                   )}
                 </div>
-              </motion.div>
-            )}
-          </AnimatePresence>
+              </div>
+          )}
         </div>
       </div>
 
       {/* Background Ambience */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-primary/5 blur-[120px] rounded-full pointer-events-none z-[1]" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-primary/5 rounded-full glow-soft pointer-events-none z-[1]" />
     </section>
   );
 }

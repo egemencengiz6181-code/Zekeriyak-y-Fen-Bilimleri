@@ -12,6 +12,8 @@ const config: Config = {
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
+        muted: "var(--muted)",
+        surface: "var(--surface)",
         primary: {
           DEFAULT: "#ec2027",
           light: "#f04e53",

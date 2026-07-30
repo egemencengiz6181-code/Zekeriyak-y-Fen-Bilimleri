@@ -1,7 +1,7 @@
 'use client';
 
 import React from 'react';
-import { motion } from 'framer-motion';
+import Reveal from '@/components/ui/reveal';
 
 export default function LocationMap() {
   return (
@@ -24,16 +24,11 @@ export default function LocationMap() {
       <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-background via-background/80 to-transparent pointer-events-none" />
       
       {/* Konum Etiketi */}
-      <motion.div 
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        className="absolute bottom-12 left-12 p-6 rounded-3xl bg-background/60 backdrop-blur-xl border border-black/10 dark:border-white/10 pointer-events-none z-20 hidden md:block"
-      >
+      <Reveal className="absolute bottom-12 left-12 p-6 rounded-3xl bg-background/60 border border-black/10 dark:border-white/10 pointer-events-none z-20 hidden md:block">
         <div className="text-primary-light font-bold text-xs uppercase tracking-widest mb-2">Konum</div>
         <div className="text-slate-900 dark:text-white font-medium">Kilyos Caddesi 238/2, Zekeriyaköy</div>
         <div className="text-slate-500 dark:text-white/40 text-sm font-light">Sarıyer / İstanbul</div>
-      </motion.div>
+      </Reveal>
     </section>
   );
 }

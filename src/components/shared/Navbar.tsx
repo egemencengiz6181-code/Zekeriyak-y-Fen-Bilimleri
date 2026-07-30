@@ -1,7 +1,7 @@
 "use client"
 
 import React, { useEffect, useState, useRef } from "react"
-import { motion, AnimatePresence } from "framer-motion"
+
 import { Link, usePathname } from "@/navigation"
 import { LucideIcon, ChevronDown, GraduationCap, BookOpen, Users, FileText, Menu, X, Trophy, Award } from "lucide-react"
 import { cn } from "@/lib/utils"
@@ -104,7 +104,7 @@ export default function Navbar() {
       <div className="pointer-events-auto w-[200px] md:w-[260px] flex items-center">
         <Link href="/" className="flex items-center">
           <Image 
-                      src="/logos/Fen%20bilimleri%20logo.png" 
+                      src="/logos/fen-bilimleri-logo.png" 
             alt="Zekeriyaköy Fen Bilimleri Dershanesi" 
             width={240} 
             height={72} 
@@ -116,7 +116,7 @@ export default function Navbar() {
 
       {/* Nav Linkleri - Orta Kısım (sadece desktop) */}
       <div className="pointer-events-auto hidden md:flex flex-col items-center">
-        <div className="flex items-center gap-1 bg-black/5 dark:bg-white/5 border border-black/10 dark:border-white/10 backdrop-blur-lg py-1 px-1 rounded-full shadow-lg relative max-w-fit">
+        <div className="flex items-center gap-1 bg-black/5 dark:bg-white/5 border border-black/10 dark:border-white/10 py-1 px-1 rounded-full shadow-lg relative max-w-fit">
           {navItems.map((item) => {
             const isActive = activeTab === item.name
 
@@ -141,22 +141,9 @@ export default function Navbar() {
                   </span>
                   
                   {isActive && (
-                    <motion.div
-                      layoutId="lamp"
-                      className="absolute inset-0 bg-primary/10 rounded-full -z-10"
-                      initial={false}
-                      transition={{
-                        type: "spring",
-                        stiffness: 300,
-                        damping: 30,
-                      }}
-                    >
-                      <div className="absolute -top-2 left-1/2 -translate-x-1/2 w-8 h-1 bg-primary-light rounded-t-full shadow-[0_-4px_8px_0_rgba(139,92,246,0.8)]">
-                        <div className="absolute w-12 h-6 bg-primary/20 blur-md -top-2 -left-2" />
-                        <div className="absolute w-8 h-6 bg-primary/20 blur-md -top-1" />
-                        <div className="absolute w-4 h-4 bg-primary/20 blur-sm top-0 left-2" />
-                      </div>
-                    </motion.div>
+                    <div className="absolute inset-0 bg-primary/10 rounded-full -z-10">
+                      <div className="absolute -top-2 left-1/2 -translate-x-1/2 w-8 h-1 bg-primary-light rounded-t-full shadow-[0_-4px_8px_0_rgba(236,32,39,0.8)]" />
+                    </div>
                   )}
                 </Link>
               </div>
@@ -168,16 +155,11 @@ export default function Navbar() {
         </div>
 
         {/* Mega Menu — sibling to the nav pill, centered below it */}
-        <AnimatePresence>
-          {isHovered === servicesLabel && (
-            <motion.div
-              initial={{ opacity: 0, y: 8, scale: 0.97 }}
-              animate={{ opacity: 1, y: 0, scale: 1 }}
-              exit={{ opacity: 0, y: 8, scale: 0.97 }}
-              transition={{ duration: 0.18 }}
+        {isHovered === servicesLabel && (
+            <div
               onMouseEnter={() => openMenu(servicesLabel)}
               onMouseLeave={() => closeMenu()}
-              className="absolute top-full mt-3 w-[640px] p-6 bg-background/95 border border-black/10 dark:border-white/10 backdrop-blur-2xl rounded-[32px] shadow-2xl z-50"
+              className="enter-up absolute top-full mt-3 w-[640px] p-6 bg-background/95 border border-black/10 dark:border-white/10 rounded-[32px] shadow-2xl z-50"
             >
               <div className="grid grid-cols-2 gap-4">
                 {services.map((service) => (
@@ -196,9 +178,8 @@ export default function Navbar() {
                   </Link>
                 ))}
               </div>
-            </motion.div>
+            </div>
           )}
-        </AnimatePresence>
       </div>
 
       {/* Sağ taraf - Analiz butonu (sadece desktop) */}
@@ -208,40 +189,42 @@ export default function Navbar() {
 
       {/* Hamburger butonu (sadece mobil) */}
       <button
-        className="pointer-events-auto md:hidden flex items-center justify-center w-10 h-10 rounded-full bg-black/10 dark:bg-white/10 border border-black/10 dark:border-white/10 backdrop-blur-lg text-black dark:text-white"
+        className="pointer-events-auto md:hidden flex items-center justify-center w-10 h-10 rounded-full bg-black/10 dark:bg-white/10 border border-black/10 dark:border-white/10 text-black dark:text-white"
         onClick={() => setIsMobileOpen((v) => !v)}
         aria-label="Menüyü aç/kapat"
       >
-        <AnimatePresence mode="wait" initial={false}>
-          {isMobileOpen ? (
-            <motion.span key="close" initial={{ rotate: -90, opacity: 0 }} animate={{ rotate: 0, opacity: 1 }} exit={{ rotate: 90, opacity: 0 }} transition={{ duration: 0.18 }}>
-              <X className="w-5 h-5" />
-            </motion.span>
-          ) : (
-            <motion.span key="open" initial={{ rotate: 90, opacity: 0 }} animate={{ rotate: 0, opacity: 1 }} exit={{ rotate: -90, opacity: 0 }} transition={{ duration: 0.18 }}>
-              <Menu className="w-5 h-5" />
-            </motion.span>
-          )}
-        </AnimatePresence>
+        <span className="relative w-5 h-5 block">
+          <X
+            className={cn(
+              "w-5 h-5 absolute inset-0 transition-all duration-200",
+              isMobileOpen ? "rotate-0 opacity-100" : "-rotate-90 opacity-0"
+            )}
+          />
+          <Menu
+            className={cn(
+              "w-5 h-5 absolute inset-0 transition-all duration-200",
+              isMobileOpen ? "rotate-90 opacity-0" : "rotate-0 opacity-100"
+            )}
+          />
+        </span>
       </button>
     </header>
 
-    {/* Mobil Menü Overlay */}
-    <AnimatePresence>
-      {isMobileOpen && (
-        <motion.div
-          key="mobile-menu"
-          initial={{ opacity: 0, x: "100%" }}
-          animate={{ opacity: 1, x: 0 }}
-          exit={{ opacity: 0, x: "100%" }}
-          transition={{ type: "spring", stiffness: 260, damping: 30 }}
-          className="fixed inset-0 z-40 flex flex-col bg-[#f4f4f8] dark:bg-[#0a0a0f] backdrop-blur-2xl md:hidden"
-        >
+    {/* Mobil Menü Overlay — sürekli mount, sadece transform ile açılıp kapanır.
+        transform + opacity compositor'da çalışır, layout/paint tetiklemez. */}
+    <div
+      aria-hidden={!isMobileOpen}
+      className={cn(
+        "fixed inset-0 z-40 flex flex-col bg-[#f4f4f8] dark:bg-[#0a0a0f] md:hidden",
+        "transition-transform duration-300 ease-out will-change-transform",
+        isMobileOpen ? "translate-x-0" : "translate-x-full pointer-events-none"
+      )}
+    >
           {/* Üst bar */}
           <div className="flex items-center justify-between px-6 py-5 border-b border-black/10 dark:border-white/10">
             <Link href="/" onClick={() => setIsMobileOpen(false)}>
               <Image
-                src="/logos/Fen%20bilimleri%20logo.png"
+                src="/logos/fen-bilimleri-logo.png"
                 alt="Zekeriyaköy Fen Bilimleri Dershanesi"
                 width={200}
                 height={60}
@@ -275,15 +258,16 @@ export default function Navbar() {
                       <span>{item.name}</span>
                       <ChevronDown className={cn("w-4 h-4 transition-transform duration-300", mobileServicesOpen && "rotate-180")} />
                     </button>
-                    <AnimatePresence>
-                      {mobileServicesOpen && (
-                        <motion.div
-                          initial={{ height: 0, opacity: 0 }}
-                          animate={{ height: "auto", opacity: 1 }}
-                          exit={{ height: 0, opacity: 0 }}
-                          transition={{ duration: 0.22 }}
-                          className="overflow-hidden"
-                        >
+                    {/* grid-rows 0fr→1fr: "auto yüksekliğe" JS'siz geçiş */}
+                    <div
+                      className={cn(
+                        "grid overflow-hidden transition-all duration-200 ease-out",
+                        mobileServicesOpen
+                          ? "grid-rows-[1fr] opacity-100"
+                          : "grid-rows-[0fr] opacity-0"
+                      )}
+                    >
+                      <div className="min-h-0">
                           <div className="flex flex-col gap-1 pl-2 pt-2 pb-2">
                             {services.map((service) => (
                               <Link
@@ -299,9 +283,8 @@ export default function Navbar() {
                               </Link>
                             ))}
                           </div>
-                        </motion.div>
-                      )}
-                    </AnimatePresence>
+                      </div>
+                    </div>
                   </div>
                 )
               }
@@ -329,9 +312,7 @@ export default function Navbar() {
             </div>
             <AnalysisModal />
           </div>
-        </motion.div>
-      )}
-    </AnimatePresence>
+    </div>
     </>
   )
 }

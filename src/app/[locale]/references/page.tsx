@@ -48,7 +48,7 @@ function AchievementCard({ name, achievement, exam }: Student) {
       </div>
       {/* Hover glow behind card */}
       <div
-        className={`absolute inset-0 rounded-2xl -z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-700 blur-2xl ${
+        className={`absolute inset-0 rounded-2xl -z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-700 glow-soft rounded-full ${
           isLGS ? 'bg-blue-400/15' : 'bg-primary/20'
         }`}
       />
@@ -64,7 +64,7 @@ export default async function ReferencesPage() {
       {/* ── Hero Section ──────────────────────────────────────────────────── */}
       <section className="pt-36 pb-20 px-6 text-center relative overflow-hidden">
         <div className="absolute inset-0 pointer-events-none">
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[400px] bg-primary/5 blur-[140px] rounded-full" />
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[400px] bg-primary/5 rounded-full glow-soft" />
         </div>
         <div className="relative max-w-3xl mx-auto space-y-6">
           <p className="text-xs font-bold uppercase tracking-[0.3em] text-primary/70">
