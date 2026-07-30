@@ -1,5 +1,4 @@
 import type { Metadata } from 'next';
-import { ogImages } from '@/config/site';
 import { getTranslations } from 'next-intl/server';
 
 export async function generateMetadata({
@@ -9,7 +8,7 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: 'About' });
-  const origin = 'https://www.bahcelievlersevinc.com';
+  const origin = 'https://www.zekeriyakoyfenbilimleri.com';
   const path = `${origin}/${locale}/about`;
 
   return {
@@ -19,14 +18,14 @@ export async function generateMetadata({
       canonical: path,
       languages: {
         tr: `${origin}/tr/about`,
+        en: `${origin}/en/about`,
       },
     },
     openGraph: {
       title: t('meta_title'),
       description: t('meta_description'),
       url: path,
-      locale: 'tr_TR',
-      images: ogImages,
+      locale: locale === 'en' ? 'en_US' : 'tr_TR',
     },
     twitter: {
       title: t('meta_title'),

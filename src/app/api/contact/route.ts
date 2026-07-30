@@ -1,170 +1,88 @@
 import { NextRequest, NextResponse } from 'next/server';
 import nodemailer from 'nodemailer';
 
-/**
- * İletişim / başvuru formu e-posta ucu.
- *
- * DÜZELTME: alıcı adresi ve marka adı önceden başka bir kuruma
- * (`sirinevlerfinalozelogretim@abdkurumlari.com` / "Şirinevler Final
- * Dershanesi") sabit kodlanmıştı — bu sitedeki tüm form gönderimleri yanlış
- * kutuya gidiyordu. Artık env değişkeniyle yönetiliyor, varsayılan doğru adres.
- */
-
-const BRAND = 'Bahçelievler Sevinç Dershanesi';
-const TO_ADDRESS = process.env.CONTACT_TO ?? 'bahcelievlersevinckurs@gmail.com';
-const FROM_ADDRESS = process.env.CONTACT_FROM ?? process.env.SMTP_USER ?? TO_ADDRESS;
-
-const ACCENT = '#E35205';
-
-/** Kullanıcı girdisi e-posta HTML'ine gömüldüğü için kaçış zorunlu. */
-function esc(value: unknown): string {
-  const s = value === undefined || value === null || value === '' ? '—' : String(value);
-  return s
-    .replace(/&/g, '&amp;')
-    .replace(/</g, '&lt;')
-    .replace(/>/g, '&gt;')
-    .replace(/"/g, '&quot;')
-    .replace(/'/g, '&#39;');
-}
-
-function row(label: string, value: unknown): string {
-  return `<tr>
-    <td style="padding:8px 0;color:#6b7280;width:150px;vertical-align:top;">${esc(label)}</td>
-    <td style="padding:8px 0;color:#111827;">${esc(value)}</td>
-  </tr>`;
-}
-
-function wrap(heading: string, inner: string): string {
-  return `<div style="font-family:Arial,Helvetica,sans-serif;max-width:600px;margin:0 auto;background:#ffffff;color:#111827;padding:32px;border-radius:16px;border:1px solid #e5e7eb;">
-    <h1 style="color:${ACCENT};font-size:22px;margin:0 0 24px;">${esc(heading)}</h1>
-    ${inner}
-    <hr style="border:none;border-top:1px solid #e5e7eb;margin:32px 0 16px;" />
-    <p style="color:#9ca3af;font-size:12px;margin:0;">${esc(BRAND)} — web sitesi form bildirimi</p>
-  </div>`;
-}
-
-function block(title: string, text: unknown): string {
-  return `<h2 style="color:${ACCENT};font-size:15px;margin:24px 0 8px;">${esc(title)}</h2>
-    <p style="background:#fdf3ee;padding:16px;border-radius:8px;color:#111827;border-left:3px solid ${ACCENT};margin:0;white-space:pre-wrap;">${esc(text)}</p>`;
-}
-
-function buildEmail(type: string, data: Record<string, unknown>): { subject: string; html: string } {
-  if (type === 'analysis') {
-    const isExisting = data.path === 'existing';
-    const pathLabel = isExisting ? 'Öğrencim kayıtlı / bilgi almak istiyorum' : 'Yeni kayıt düşünüyorum';
-    const details = isExisting
-      ? row('Web / Referans', data.website) + row('Ad Soyad', data.name) + row('E-posta', data.email) + row('Telefon', data.phone)
-      : row('Sınıf / Seviye', data.sector) +
-        row('Detay', data.projectDetail) +
-        row('İlgi Alanları', Array.isArray(data.services) ? data.services.join(', ') : data.services) +
-        row('Ad Soyad', data.name) +
-        row('E-posta', data.email) +
-        row('Telefon', data.phone);
-
-    return {
-      subject: `🎓 Yeni Ön Görüşme Talebi — ${data.name || 'İsimsiz'}`,
-      html: wrap(
-        '🎓 Yeni Ön Görüşme Talebi',
-        `<p style="color:#6b7280;margin:0 0 16px;"><strong style="color:#111827;">Durum:</strong> ${esc(pathLabel)}</p>
-         <table style="width:100%;border-collapse:collapse;">${details}</table>
-         ${block('Talep / Mesaj', data.request)}`,
-      ),
-    };
-  }
-
-  if (type === 'landing') {
-    return {
-      subject: `📣 Reklam Formu — ${data.studentName || data.name || 'İsimsiz'}`,
-      html: wrap(
-        '📣 Reklam Kampanyası Başvurusu',
-        `<table style="width:100%;border-collapse:collapse;">
-          ${row('Öğrenci', data.studentName)}
-          ${row('Veli', data.parentName)}
-          ${row('Telefon', data.phone)}
-          ${row('E-posta', data.email)}
-          ${row('Gelecek Yıl Sınıfı', data.grade)}
-          ${row('Mevcut Okulu', data.school)}
-          ${row('İlçe', data.district)}
-          ${row('İlgilendiği Program', data.program)}
-        </table>
-        ${data.note ? block('Ek Not', data.note) : ''}`,
-      ),
-    };
-  }
-
-  // Genel iletişim (contact sayfası + LetsWork bölümü)
-  return {
-    subject: `💬 Yeni İletişim Mesajı — ${data.name || 'İsimsiz'}`,
-    html: wrap(
-      '💬 Yeni İletişim Mesajı',
-      `<table style="width:100%;border-collapse:collapse;">
-        ${row('Ad Soyad', data.name)}
-        ${row('E-posta', data.email)}
-        ${row('Telefon', data.phone)}
-        ${data.subject ? row('Konu', data.subject) : ''}
-      </table>
-      ${block('Mesaj', data.message)}`,
-    ),
-  };
-}
+const transporter = nodemailer.createTransport({
+  host: process.env.SMTP_HOST ?? 'smtp.gmail.com',
+  port: Number(process.env.SMTP_PORT ?? 465),
+  secure: true,
+  auth: {
+    user: process.env.SMTP_USER,
+    pass: process.env.SMTP_PASS,
+  },
+});
 
 export async function POST(req: NextRequest) {
-  let body: Record<string, unknown>;
   try {
-    body = await req.json();
-  } catch {
-    return NextResponse.json({ success: false, error: 'Geçersiz istek.' }, { status: 400 });
-  }
+    const body = await req.json();
+    const { type, ...data } = body;
 
-  const { type, ...data } = body as { type?: string } & Record<string, unknown>;
+    let subject = '';
+    let html = '';
 
-  // En azından bir iletişim kanalı zorunlu — boş spam gönderimlerini keser
-  const hasContact = Boolean(data.email || data.phone);
-  if (!data.name && !data.studentName) {
-    return NextResponse.json({ success: false, error: 'İsim zorunlu.' }, { status: 400 });
-  }
-  if (!hasContact) {
-    return NextResponse.json(
-      { success: false, error: 'E-posta veya telefon zorunlu.' },
-      { status: 400 },
-    );
-  }
-
-  if (!process.env.SMTP_USER || !process.env.SMTP_PASS) {
-    console.error('[Contact API] SMTP_USER / SMTP_PASS tanımlı değil.');
-    return NextResponse.json(
-      { success: false, error: 'E-posta servisi yapılandırılmamış.' },
-      { status: 500 },
-    );
-  }
-
-  const { subject, html } = buildEmail(type ?? 'contact', data);
-
-  try {
-    // Transporter istek başına kuruluyor — modül seviyesinde tutulduğunda
-    // serverless örnekleri arasında kopuk bağlantı taşınabiliyor.
-    const transporter = nodemailer.createTransport({
-      host: process.env.SMTP_HOST ?? 'smtp.gmail.com',
-      port: Number(process.env.SMTP_PORT ?? 465),
-      secure: true,
-      auth: {
-        user: process.env.SMTP_USER,
-        pass: process.env.SMTP_PASS,
-      },
-    });
+    if (type === 'analysis') {
+      subject = `🔬 Yeni Analiz Talebi — ${data.path === 'existing' ? 'Markam Var' : 'Marka Kurmak İstiyorum'}`;
+      html = `
+        <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; background: #05010d; color: #f2f2f2; padding: 32px; border-radius: 16px; border: 1px solid #2d1b66;">
+          <h1 style="color: #8b5cf6; font-size: 24px; margin-bottom: 24px;">🔬 Yeni Analiz Talebi</h1>
+          <p style="color: #a3a3a3; margin-bottom: 24px;"><strong style="color: #f2f2f2;">Yol:</strong> ${data.path === 'existing' ? 'Markam Var' : 'Marka Kurmak İstiyorum'}</p>
+          
+          ${data.path === 'existing' ? `
+          <h2 style="color: #8b5cf6; font-size: 16px; margin-top: 24px;">Mevcut Marka Bilgileri</h2>
+          <table style="width: 100%; border-collapse: collapse;">
+            <tr><td style="padding: 8px 0; color: #a3a3a3; width: 140px;">Web Sitesi</td><td style="padding: 8px 0; color: #f2f2f2;">${data.website || '—'}</td></tr>
+            <tr><td style="padding: 8px 0; color: #a3a3a3;">Instagram</td><td style="padding: 8px 0; color: #f2f2f2;">${data.instagram || '—'}</td></tr>
+            <tr><td style="padding: 8px 0; color: #a3a3a3;">LinkedIn</td><td style="padding: 8px 0; color: #f2f2f2;">${data.linkedin || '—'}</td></tr>
+            <tr><td style="padding: 8px 0; color: #a3a3a3;">Ad Soyad</td><td style="padding: 8px 0; color: #f2f2f2;">${data.name || '—'}</td></tr>
+            <tr><td style="padding: 8px 0; color: #a3a3a3;">E-posta</td><td style="padding: 8px 0; color: #f2f2f2;">${data.email || '—'}</td></tr>
+            <tr><td style="padding: 8px 0; color: #a3a3a3;">Telefon</td><td style="padding: 8px 0; color: #f2f2f2;">${data.phone || '—'}</td></tr>
+          </table>
+          ` : `
+          <h2 style="color: #8b5cf6; font-size: 16px; margin-top: 24px;">Yeni Marka Bilgileri</h2>
+          <table style="width: 100%; border-collapse: collapse;">
+            <tr><td style="padding: 8px 0; color: #a3a3a3; width: 140px;">Sektör</td><td style="padding: 8px 0; color: #f2f2f2;">${data.sector || '—'}</td></tr>
+            <tr><td style="padding: 8px 0; color: #a3a3a3;">Proje Detayı</td><td style="padding: 8px 0; color: #f2f2f2;">${data.projectDetail || '—'}</td></tr>
+            <tr><td style="padding: 8px 0; color: #a3a3a3;">İstenen Hizmetler</td><td style="padding: 8px 0; color: #f2f2f2;">${(data.services || []).join(', ') || '—'}</td></tr>
+          </table>
+          `}
+          
+          <h2 style="color: #8b5cf6; font-size: 16px; margin-top: 24px;">Talep / Mesaj</h2>
+          <p style="background: #1e1033; padding: 16px; border-radius: 8px; color: #f2f2f2; border-left: 3px solid #8b5cf6;">${data.request || '—'}</p>
+          
+          <hr style="border: none; border-top: 1px solid #2d1b66; margin: 32px 0;" />
+          <p style="color: #4a4a4a; font-size: 12px;">Zekeriyaköy Fen Bilimleri — Ön Görüşme Sistemi</p>
+        </div>
+      `;
+    } else {
+      // LetsWork / general contact
+      subject = `💼 Yeni İletişim Mesajı — ${data.name || 'İsimsiz'}`;
+      html = `
+        <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; background: #05010d; color: #f2f2f2; padding: 32px; border-radius: 16px; border: 1px solid #2d1b66;">
+          <h1 style="color: #8b5cf6; font-size: 24px; margin-bottom: 24px;">💼 Yeni İletişim Mesajı</h1>
+          <table style="width: 100%; border-collapse: collapse;">
+            <tr><td style="padding: 8px 0; color: #a3a3a3; width: 120px;">Ad Soyad</td><td style="padding: 8px 0; color: #f2f2f2;">${data.name || '—'}</td></tr>
+            <tr><td style="padding: 8px 0; color: #a3a3a3;">E-posta</td><td style="padding: 8px 0; color: #f2f2f2;">${data.email || '—'}</td></tr>
+            <tr><td style="padding: 8px 0; color: #a3a3a3;">Telefon</td><td style="padding: 8px 0; color: #f2f2f2;">${data.phone || '—'}</td></tr>
+          </table>
+          <h2 style="color: #8b5cf6; font-size: 16px; margin-top: 24px;">Mesaj</h2>
+          <p style="background: #1e1033; padding: 16px; border-radius: 8px; color: #f2f2f2; border-left: 3px solid #8b5cf6;">${data.message || '—'}</p>
+          <hr style="border: none; border-top: 1px solid #2d1b66; margin: 32px 0;" />
+          <p style="color: #4a4a4a; font-size: 12px;">Zekeriyaköy Fen Bilimleri — İletişim Sistemi</p>
+        </div>
+      `;
+    }
 
     await transporter.sendMail({
-      from: `"${BRAND}" <${FROM_ADDRESS}>`,
-      to: TO_ADDRESS,
-      replyTo: typeof data.email === 'string' && data.email ? data.email : undefined,
+      from: '"Zekeriyaköy Fen Bilimleri" <zekeriyakoyfenbilimleri@gmail.com>',
+      to: 'zekeriyakoyfenbilimleri@gmail.com',
       subject,
       html,
     });
 
+    console.log('[Contact API] Email sent:', subject, data);
+
     return NextResponse.json({ success: true });
   } catch (err) {
-    // Form içeriğini loglamıyoruz (kişisel veri).
-    console.error('[Contact API] Gönderim hatası:', err instanceof Error ? err.message : err);
-    return NextResponse.json({ success: false, error: 'Gönderilemedi.' }, { status: 500 });
+    console.error('[Contact API] Error:', err);
+    return NextResponse.json({ success: false, error: String(err) }, { status: 500 });
   }
 }

@@ -1,19 +1,15 @@
-import React from 'react';
-import { Link } from '@/navigation';
-import { cn } from '@/lib/utils';
-import { BookOpen, GraduationCap, Trophy, Users } from 'lucide-react';
+'use client';
 
-/**
- * Program etiketleri — server component.
- *
- * Önceden framer-motion spring + hover'da `filter: blur(4px)` vardı; blur
- * filtresi her hover'da tüm katmanı yeniden boyatıyordu. Artık saf CSS
- * transform/opacity. `useRouter().push` yerine gerçek <Link> kullanılıyor
- * (prefetch çalışır, sağ tık → yeni sekme çalışır, JS gerekmez).
- */
-interface Badge {
-  slug: string;
-  href: string;
+import React, { useState } from 'react';
+import { motion } from 'framer-motion';
+import { useRouter } from '@/navigation';
+import { cn } from '@/lib/utils';
+import { 
+  BookOpen, GraduationCap, Trophy, FileText, Users, Star, BookMarked, BarChart2 
+} from 'lucide-react';
+
+interface BadgeProps {
+  id: string;
   label: string;
   icon: React.ReactNode;
   rotation: number;
@@ -23,72 +19,160 @@ interface Badge {
   zIndex?: number;
 }
 
-const badges: Badge[] = [
-  { slug: '9-sinif',   href: '/services/9-sinif',   label: '9. Sınıf',        icon: <BookOpen className="w-4 h-4" />,      rotation: -12, x: -280, y: -80,  color: 'from-[#E35205] to-[#A03500]' },
-  { slug: '10-sinif',  href: '/services/10-sinif',  label: '10. Sınıf',       icon: <BookOpen className="w-4 h-4" />,      rotation: 8,   x: -120, y: -140, color: 'from-[#2E3192] to-[#242672]' },
-  { slug: '11-sinif',  href: '/services/11-sinif',  label: '11. Sınıf',       icon: <GraduationCap className="w-4 h-4" />, rotation: -5,  x: 150,  y: -120, color: 'from-[#E35205] to-[#2E3192]' },
-  { slug: '12-sinif',  href: '/services/12-sinif',  label: '12. Sınıf & YKS', icon: <Trophy className="w-4 h-4" />,        rotation: 10,  x: 260,  y: -30,  color: 'from-zinc-800 to-zinc-900' },
-  { slug: 'mezun',     href: '/services/mezun',     label: 'Mezun',           icon: <GraduationCap className="w-4 h-4" />, rotation: 6,   x: -220, y: 60,   color: 'from-[#2E3192] to-[#E35205]' },
-  { slug: 'ozel-ders', href: '/services/ozel-ders', label: 'Özel Ders',       icon: <Users className="w-4 h-4" />,         rotation: -8,  x: 180,  y: 90,   color: 'from-[#E35205] to-[#A03500]' },
-  { slug: 'rehberlik', href: '/rehberlik',          label: 'Rehberlik',       icon: <Users className="w-4 h-4" />,         rotation: 0,   x: -40,  y: -20,  color: 'from-[#2E3192] to-[#242672]', zIndex: 50 },
+const badges: BadgeProps[] = [
+  { 
+    id: '7-sinif', 
+    label: '7. Sınıf', 
+    icon: <BookOpen className="w-4 h-4" />,
+    rotation: -12,
+    x: -280,
+    y: -80,
+    color: "from-[#ec2027] to-[#c9191e]"
+  },
+  { 
+    id: '8-sinif', 
+    label: '8. Sınıf & LGS', 
+    icon: <GraduationCap className="w-4 h-4" />,
+    rotation: 8,
+    x: -120,
+    y: -140,
+    color: "from-[#12648f] to-[#0e4e6f]"
+  },
+  { 
+    id: '10-sinif', 
+    label: '10. Sınıf', 
+    icon: <BookMarked className="w-4 h-4" />,
+    rotation: -5,
+    x: 150,
+    y: -120,
+    color: "from-[#ec2027] to-[#12648f]"
+  },
+  { 
+    id: '11-sinif', 
+    label: '11. Sınıf', 
+    icon: <FileText className="w-4 h-4" />,
+    rotation: 10,
+    x: 260,
+    y: -30,
+    color: "from-zinc-800 to-zinc-900"
+  },
+  { 
+    id: '12-sinif', 
+    label: '12. Sınıf & YKS', 
+    icon: <Trophy className="w-4 h-4" />,
+    rotation: 6,
+    x: -220,
+    y: 60,
+    color: "from-[#12648f] to-[#ec2027]"
+  },
+  { 
+    id: 'mezun', 
+    label: 'Mezun & YKS', 
+    icon: <GraduationCap className="w-4 h-4" />,
+    rotation: -3,
+    x: 0,
+    y: 110,
+    color: "from-zinc-700 to-zinc-900"
+  },
+  { 
+    id: 'deneme-kulubu', 
+    label: 'Deneme Kulübü', 
+    icon: <BarChart2 className="w-4 h-4" />,
+    rotation: -8,
+    x: 180,
+    y: 90,
+    color: "from-[#ec2027] to-[#c9191e]"
+  },
+  { 
+    id: 'rehberlik', 
+    label: 'Rehberlik', 
+    icon: <Users className="w-4 h-4" />,
+    rotation: 0,
+    x: -40,
+    y: -20,
+    zIndex: 50,
+    color: "from-[#12648f] to-[#0e4e6f]"
+  }
 ];
 
-const badgeBase =
-  'bg-gradient-to-br font-bold text-white border border-white/10 inline-flex items-center rounded-2xl';
-
 export default function MarketingBadges() {
+  const router = useRouter();
+  const [hoveredId, setHoveredId] = useState<string | null>(null);
+
+  const handleClick = (id: string) => {
+    if (id === 'rehberlik') {
+      router.push('/rehberlik' as any);
+    } else {
+      router.push(`/services/${id}`);
+    }
+  };
+
   return (
     <>
-      {/* MOBİL: taşmayan flex grid */}
+      {/* ── MOBİL: overflow olmayan flex grid ── */}
       <div className="md:hidden w-full px-4 py-8">
         <div className="flex flex-wrap gap-3 justify-center">
-          {badges.map((badge) => (
-            <Link
-              key={badge.slug}
-              href={badge.href}
+          {badges.map((badge, index) => (
+            <motion.button
+              key={badge.id}
+              onClick={() => handleClick(badge.id)}
+              initial={{ opacity: 0, scale: 0.8 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ type: "spring", stiffness: 120, damping: 14, delay: index * 0.05 }}
+              whileTap={{ scale: 0.95 }}
               className={cn(
-                badgeBase,
-                'gap-2 px-5 py-3 shadow-lg text-sm active:scale-95 transition-transform',
-                badge.color,
+                "flex items-center gap-2 px-5 py-3 rounded-2xl border border-white/10 shadow-lg backdrop-blur-md cursor-pointer",
+                "bg-gradient-to-br font-bold text-white text-sm",
+                badge.color
               )}
             >
               <span className="text-white/70">{badge.icon}</span>
               <span className="tracking-tight text-white/90 whitespace-nowrap">{badge.label}</span>
-            </Link>
+            </motion.button>
           ))}
         </div>
       </div>
 
-      {/* MASAÜSTÜ: dağınık yüzen yerleşim.
-          Konum/rotasyon dış sarmalayıcıda, hover ölçeği içte — böylece inline
-          transform ile hover:scale birbirini ezmiyor. */}
-      <div className="hidden md:flex relative h-[500px] w-full items-center justify-center">
-        {badges.map((badge) => (
-          <div
-            key={badge.slug}
-            className="absolute"
-            style={{
-              transform: `translate(${badge.x}px, ${badge.y}px) rotate(${badge.rotation}deg)`,
-              zIndex: badge.zIndex ?? 10,
-            }}
-          >
-            <Link
-              href={badge.href}
+      {/* ── DESKTOP: yüzen scattered layout ── */}
+      <div className="hidden md:flex relative h-[500px] w-full items-center justify-center overflow-visible">
+        {/* Background Ambience */}
+        <div className="absolute inset-0 bg-primary/5 blur-[120px] rounded-full pointer-events-none" />
+
+        {badges.map((badge, index) => {
+          const isHovered = hoveredId === badge.id;
+          const isOtherHovered = hoveredId !== null && hoveredId !== badge.id;
+
+          return (
+            <motion.button
+              key={badge.id}
+              onClick={() => handleClick(badge.id)}
+              onMouseEnter={() => setHoveredId(badge.id)}
+              onMouseLeave={() => setHoveredId(null)}
+              initial={{ opacity: 0, scale: 0.5, x: 0, y: 0, rotate: 0 }}
+              whileInView={{ opacity: 1, scale: 1, x: badge.x, y: badge.y, rotate: badge.rotation }}
+              viewport={{ once: true }}
+              transition={{ type: "spring", stiffness: 100, damping: 15, delay: index * 0.05 }}
+              animate={{
+                scale: isHovered ? 1.2 : isOtherHovered ? 0.8 : 1,
+                opacity: isHovered ? 1 : isOtherHovered ? 0.2 : 1,
+                rotate: isHovered ? 0 : badge.rotation,
+                filter: isOtherHovered ? "blur(4px)" : "blur(0px)",
+                zIndex: isHovered ? 999 : (badge.zIndex || 10)
+              }}
+              whileTap={{ scale: 0.95 }}
               className={cn(
-                badgeBase,
-                'group gap-3 px-8 py-4 shadow-2xl transition-transform duration-300 hover:scale-110',
-                badge.color,
+                "absolute flex items-center gap-3 px-8 py-4 rounded-2xl border border-white/10 shadow-2xl backdrop-blur-md transition-all duration-500 group cursor-pointer",
+                "bg-gradient-to-br font-bold text-white",
+                badge.color
               )}
             >
-              <span className="text-white/60 group-hover:text-white transition-colors">
-                {badge.icon}
-              </span>
-              <span className="text-base tracking-tight text-white/90 whitespace-nowrap">
-                {badge.label}
-              </span>
-            </Link>
-          </div>
-        ))}
+              <div className="absolute inset-0 rounded-2xl bg-white/5 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none" />
+              <span className="text-white/60 group-hover:text-white transition-colors">{badge.icon}</span>
+              <span className="text-base tracking-tight text-white/90 group-hover:text-white whitespace-nowrap">{badge.label}</span>
+            </motion.button>
+          );
+        })}
       </div>
     </>
   );

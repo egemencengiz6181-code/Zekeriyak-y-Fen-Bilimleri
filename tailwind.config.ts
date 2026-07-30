@@ -1,10 +1,10 @@
 import type { Config } from "tailwindcss";
 
 const config: Config = {
-  // `src/pages` bu projede yok — tarama yolundan çıkarıldı.
   content: [
-    "./src/components/**/*.{ts,tsx}",
-    "./src/app/**/*.{ts,tsx}",
+    "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
+    "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
+    "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   darkMode: 'class',
   theme: {
@@ -12,21 +12,24 @@ const config: Config = {
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
-        muted: "var(--muted)",
         primary: {
-          DEFAULT: "#E35205",
-          light: "#FF9E7F",
-          dark: "#A03500",
+          DEFAULT: "#ec2027",
+          light: "#f04e53",
+          dark: "#b01a1e",
         },
         secondary: {
-          DEFAULT: "#A03500",
-          light: "#E35205",
-          dark: "#7A2800",
+          DEFAULT: "#12648f",
+          light: "#1a7dae",
+          dark: "#0e4f72",
         },
         accent: {
-          DEFAULT: "#E35205",
-          muted: "#1a0e08",
+          DEFAULT: "#12648f",
+          muted: "#0e1e2e",
         },
+      },
+      backgroundImage: {
+        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
+        'hero-gradient': 'linear-gradient(to bottom right, #05010d, #0e1e2e)',
       },
     },
   },

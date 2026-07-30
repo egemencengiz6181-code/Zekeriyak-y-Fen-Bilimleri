@@ -1,21 +1,16 @@
 import type { Metadata } from 'next';
-import { ogImages } from '@/config/site';
 import { getTranslations } from 'next-intl/server';
 
 // Valid service slugs that match messages keys
 const validSlugs = [
-  '6-sinif',
   '7-sinif',
   '8-sinif',
-  '9-sinif',
   '10-sinif',
   '11-sinif',
   '12-sinif',
   'mezun',
-  '8-sinif-vip',
-  '12-sinif-vip',
+  'acik-lise',
   'deneme-kulubu',
-  'ozel-ders',
 ] as const;
 
 type ServiceSlug = (typeof validSlugs)[number];
@@ -30,7 +25,7 @@ export async function generateMetadata({
   params: Promise<{ locale: string; slug: string }>;
 }): Promise<Metadata> {
   const { locale, slug } = await params;
-  const origin = 'https://www.bahcelievlersevinc.com';
+  const origin = 'https://www.zekeriyakoyfenbilimleri.com';
   const path = `${origin}/${locale}/services/${slug}`;
 
   if (!isValidSlug(slug)) {
@@ -51,14 +46,14 @@ export async function generateMetadata({
       canonical: path,
       languages: {
         tr: `${origin}/tr/services/${slug}`,
+        en: `${origin}/en/services/${slug}`,
       },
     },
     openGraph: {
       title,
       description,
       url: path,
-      locale: 'tr_TR',
-      images: ogImages,
+      locale: locale === 'en' ? 'en_US' : 'tr_TR',
     },
     twitter: {
       title,

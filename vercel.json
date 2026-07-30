@@ -5,36 +5,5 @@
     "src/app/api/**/*.ts": {
       "maxDuration": 30
     }
-  },
-  "rewrites": [
-    { "source": "/wp-admin/:path*", "destination": "/api/__blocked" },
-    { "source": "/wp-login/:path*", "destination": "/api/__blocked" },
-    { "source": "/wp-includes/:path*", "destination": "/api/__blocked" },
-    { "source": "/wp-content/:path*", "destination": "/api/__blocked" },
-    { "source": "/xmlrpc.php", "destination": "/api/__blocked" },
-    { "source": "/.env", "destination": "/api/__blocked" },
-    { "source": "/.git/:path*", "destination": "/api/__blocked" },
-    { "source": "/phpmyadmin/:path*", "destination": "/api/__blocked" },
-    { "source": "/cgi-bin/:path*", "destination": "/api/__blocked" },
-    { "source": "/vendor/:path*", "destination": "/api/__blocked" },
-    { "source": "/telescope/:path*", "destination": "/api/__blocked" },
-    { "source": "/actuator/:path*", "destination": "/api/__blocked" },
-    { "source": "/solr/:path*", "destination": "/api/__blocked" },
-    { "source": "/_ignition/:path*", "destination": "/api/__blocked" }
-  ],
-  "headers": [
-    {
-      "source": "/(.*)",
-      "headers": [
-        { "key": "X-Robots-Tag", "value": "noindex, nofollow" }
-      ],
-      "has": [
-        {
-          "type": "header",
-          "key": "user-agent",
-          "value": ".*(sqlmap|nikto|zgrab|gobuster|dirbuster|wpscan|masscan|nmap|acunetix|openvas|semrush|ahrefsbot|mj12bot|dotbot|blexbot|petalbot|bytespider).*"
-        }
-      ]
-    }
-  ]
+  }
 }

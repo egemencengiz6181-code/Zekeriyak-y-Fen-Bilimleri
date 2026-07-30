@@ -1,19 +1,25 @@
 import type { MetadataRoute } from 'next';
-import { locales } from '@/config/locales';
-import { serviceSlugs } from '@/config/services';
+import { works } from '@/config/works';
 
-const origin = 'https://www.bahcelievlersevinc.com';
+const origin = 'https://www.zekeriyakoyfenbilimleri.com';
+const locales = ['tr'] as const;
 
-// NOT: /form reklam landing page'i bilinçli olarak sitemap'te yok — layout'unda
-// robots: { index: false } tanımlı.
-const staticPaths = ['', '/about', '/services', '/rehberlik', '/references', '/contact'] as const;
+const serviceSlugs = [
+  '7-sinif',
+  '8-sinif',
+  '10-sinif',
+  '11-sinif',
+  '12-sinif',
+  'mezun',
+  'acik-lise',
+  'deneme-kulubu',
+] as const;
 
-export default function sitemap(): MetadataRoute.Sitemap {
+export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const now = new Date();
 
-  const alternates = (path: string) => ({
-    languages: Object.fromEntries(locales.map((l) => [l, `${origin}/${l}${path}`])),
-  });
+  // ── Static routes ────────────────────────────────────────────────────────────
+  const staticPaths = ['', '/about', '/services', '/rehberlik', '/references', '/contact'];
 
   const staticEntries: MetadataRoute.Sitemap = staticPaths.flatMap((path) =>
     locales.map((locale) => ({
@@ -21,19 +27,43 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: now,
       changeFrequency: path === '' ? ('daily' as const) : ('weekly' as const),
       priority: path === '' ? 1.0 : 0.8,
-      alternates: alternates(path),
-    })),
+      alternates: {
+        languages: Object.fromEntries(
+          locales.map((l) => [l, `${origin}/${l}${path}`])
+        ),
+      },
+    }))
   );
 
+  // ── Services detail routes ───────────────────────────────────────────────────
   const serviceEntries: MetadataRoute.Sitemap = serviceSlugs.flatMap((slug) =>
     locales.map((locale) => ({
       url: `${origin}/${locale}/services/${slug}`,
       lastModified: now,
       changeFrequency: 'monthly' as const,
       priority: 0.7,
-      alternates: alternates(`/services/${slug}`),
-    })),
+      alternates: {
+        languages: Object.fromEntries(
+          locales.map((l) => [l, `${origin}/${l}/services/${slug}`])
+        ),
+      },
+    }))
   );
 
-  return [...staticEntries, ...serviceEntries];
+  // ── Works (case study) routes ────────────────────────────────────────────────
+  const worksEntries: MetadataRoute.Sitemap = works.flatMap(({ slug }) =>
+    locales.map((locale) => ({
+      url: `${origin}/${locale}/works/${slug}`,
+      lastModified: now,
+      changeFrequency: 'monthly' as const,
+      priority: 0.7,
+      alternates: {
+        languages: Object.fromEntries(
+          locales.map((l) => [l, `${origin}/${l}/works/${slug}`])
+        ),
+      },
+    }))
+  );
+
+  return [...staticEntries, ...serviceEntries, ...worksEntries];
 }

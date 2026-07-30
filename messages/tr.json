@@ -1,23 +1,31 @@
 {
   "Index": {
-    "title": "Bahçelievler Sevinç Dershanesi | Bahçelievler İstanbul",
-    "description": "Bahçelievler Sevinç Dershanesi — Bahçelievler'de ortaokul, lise ve YKS hazırlık ders programları."
+    "title": "Zekeriyaköy Fen Bilimleri | Sarıyer İstanbul",
+    "description": "Zekeriyaköy Nazmi Arıkan Fen Bilimleri Dershanesi — Sarıyer'de 7. sınıftan mezuna, LGS'den YKS'ye kapsamlı ders programları."
+  },
+  "Hero": {
+    "eyebrow": "Zekeriyaköy · Sarıyer / İstanbul",
+    "title": "Başarıya Giden Yol",
+    "subtitle": "LGS ve YKS'de hedeflediğin okula ulaşmak için doğru adres.",
+    "headline": "Hedefine Giden Yolu Birlikte Çiziyoruz",
+    "slogan": "Deneyimli öğretmenler, bireysel takip ve kanıtlanmış ders programlarıyla yanındayız.",
+    "cta": "Programları Keşfet"
   },
   "HeroMain": {
     "title_prefix": "Başarıya",
     "title_highlight": "giden yol",
     "title_suffix": "buradan geçer.",
-    "subtitle": "Hedef okuluna ulaşmak için doğru adres. Deneyimli öğretmenler, kişisel takip ve kanıtlanmış ders programlarıyla yanındayız.",
+    "subtitle": "LGS ve YKS'de hedef okuluna ulaşmak için doğru adres. Deneyimli öğretmenler, kişisel takip ve kanıtlanmış ders programlarıyla yanındayız.",
     "cta": "Kayıt ve Bilgi Al"
   },
   "Services": {
-    "meta_title": "Programlarımız | Bahçelievler Sevinç Dershanesi",
-    "meta_description": "Ortaokul, lise ve YKS öğrencilerine yönelik kapsamlı ve kişiselleştirilmiş ders programları.",
+    "meta_title": "Programlarımız | Zekeriyaköy Fen Bilimleri",
+    "meta_description": "7. sınıftan mezuna, LGS'den YKS'ye kapsamlı ve kişiselleştirilmiş ders programları.",
     "title": "Programlarımız",
     "subtitle": "Her öğrencinin hedefine özel, uzmanlıkla hazırlanmış ders programları.",
     "cta": "Bilgi Al",
     "back": "Tüm Programlar",
-    "discovery_title": "Neden Bahçelievler Sevinç Dershanesi?",
+    "discovery_title": "Neden Zekeriyaköy Fen Bilimleri?",
     "strategy_section": "Program Detayı",
     "tech_section": "Yayın & Süre",
     "scope": "Kapsam",
@@ -25,323 +33,215 @@
     "sections": {
       "ortaokul": "Ortaokul Programı",
       "lise": "Lise Programı",
-      "destek": "Destek & Analiz",
-      "vip": "VIP Programlar"
+      "destek": "Destek & Analiz"
     },
     "items": {
-      "6-sinif": {
-        "title": "6. Sınıf",
-        "description": "Haftada 12 saat ders, İngilizce dahil, yılda 6 deneme, rehberlik ve psikolog desteği.",
-        "hero_quote": "Sağlam bir temel, parlak bir gelecek inşa eder.",
-        "intro": "6. sınıf programımız, öğrencilerin temel derslerinde güçlü altyapı oluşturmasını ve süreçe erken adapte olmasını hedefler.",
-        "body": "Haftada 12 saat ders verilmektedir. İngilizce dersleri de program kapsamında öğrencilere verilmektedir. Yılda 6 deneme yapılmaktadır. Cumartesi 4 saat, pazar 4 saat ders, salı 4 saat etüt uygulanmaktadır. Cuma günleri 15:45 - 18:10 soru çözüm saati bulunmaktadır. Öğrenciler ile kurum iç kurum dışı etkinlikler yapılmaktadır (okul gezileri, futbol maçları, sinema, bilgi yarışması, kahvaltılar). Deneme sonrası rehberlik birimi tarafından sıfır hata kitapçığı çıkarılarak sınav analizi yapılır. Her öğrenci ile düzenli olarak psikolog eşliğinde seanslar yapılmaktadır. 2 haftada bir sınıf danışman öğretmenleri veliler ile düzenli telefon görüşmesi yapmaktadır. 2 haftada bir gruplar halinde psikodrama terapisi yapılmaktadır. 36 haftalık eğitim sistemimizde 432 saat eğitim verilmektedir. Öğrencilere gruplar halinde randevulu eğitim programı (REP) kapsamında dersler verilmektedir. Yılda 2 kez tüm veliler kuruma davet edilerek veli toplantısı yapılır. Yıl içerisinde veli birebir görüşmelere davet edilerek görüşme sağlanır. Psikolog eşliğinde 15 gün arayla danışman hocaları ile birlikte öğrenci analizleri yapılıyor. Dönem içinde psikolog eşliğinde seminerler yapılmaktadır. Öğrencilere haftalık soru takip çizelgeleri verilerek düzenli olarak kontrol edilip kişiye özel hazırlanmış dosyalara eklenmektedir. Yıl boyunca 80 saat soru çözüm saatları yapılacaktır. Okula destek için her yazılı döneminde öğrencilere yazılı çalışması yapılmaktadır.",
-        "strategy_title": "Program İçeriği",
-        "phase1_title": "Temel Dersler",
-        "phase1_text": "Matematik, Fen, Türkçe, Sosyal Bilgiler ve İngilizce konularının derinlemesine işlenmesi.",
-        "phase2_title": "Test & Değerlendirme",
-        "phase2_text": "Yılda 6 deneme sınavı. Sıfır hata kitapçığı ile sınav analizi.",
-        "phase3_title": "Kişisel Takip & Rehberlik",
-        "phase3_text": "Psikolog eşliğinde seanslar, psikodrama terapisi, danışman hoca takibi ve veli görüşmeleri.",
-        "result_title": "Kazanımlar",
-        "result_text": "Güçlü temel bilgi, sınav alışkanlığı ve bireysel gelişim takibi.",
-        "tech_title": "Haftalık 12 ders saati · 36 Hafta · 432 Saat",
-        "tech_intro": "Cumartesi 4 saat, Pazar 4 saat ders, Salı 4 saat etüt. Cuma soru çözüm saati.",
-        "tech_tools": "Konu anlatımı · Test çözümü · Etüt · Rehberlik · Psikolog desteği · İngilizce",
-        "features": [
-          "Haftada 12 saat ders",
-          "İngilizce eğitimi dahil",
-          "Yılda 6 deneme",
-          "Psikolog eşliğinde seanslar",
-          "Psikodrama terapisi",
-          "REP kapsamında dersler",
-          "80 saat soru çözüm"
-        ],
-        "meta_title": "6. Sınıf Programı | Bahçelievler Sevinç Dershanesi",
-        "meta_description": "6. sınıf öğrencileri için haftalık 12 ders saati, 36 hafta 432 saat eğitim, psikolog ve rehberlik destekli program."
-      },
       "7-sinif": {
         "title": "7. Sınıf",
-        "description": "Haftada 12 saat ders, İngilizce dahil, yılda 8 deneme + deneme kulübü, rehberlik ve psikolog desteği.",
-        "hero_quote": "Pekişen her bilgi, başarıya bir adım daha yaklaştırır.",
-        "intro": "7. sınıf programımız, öğrencilerin ortaokul müfredatını derinlemesine kavramasını ve 8. sınıfa hazırlıklı geçmesini sağlar.",
-        "body": "Haftada 12 saat ders verilmektedir. İngilizce dersleri de program kapsamında öğrencilere verilmektedir. Yılda 8 deneme + deneme kulübüne kayıt olan öğrencilere deneme sınavları yapılmaktadır. Cumartesi 4 saat, pazar 4 saat ders, haftaiçi bir gün 4 saat etüt uygulanmaktadır. Öğrenciler ile kurum iç kurum dışı etkinlikler yapılmaktadır (okul gezileri, futbol maçları, sinema, bilgi yarışması, kahvaltılar). Deneme sonrası rehberlik birimi tarafından sıfır hata kitapçığı çıkarılarak sınav analizi yapılır. Her öğrenci ile düzenli olarak psikolog eşliğinde seanslar yapılmaktadır. 2 haftada bir sınıf danışman öğretmenleri veliler ile düzenli telefon görüşmesi yapmaktadır. Öğrencilere haftalık soru takip çizelgeleri verilerek düzenli olarak kontrol edilip kişiye özel hazırlanmış dosyalara eklenmektedir. 8. sınıfa kayıt yaptıran öğrencilerimiz ile 2. dönem LGS hazırlık dersleri yapılmaktadır. 2 haftada bir gruplar halinde psikodrama terapisi yapılmaktadır. Psikolog eşliğinde 15 gün arayla danışman hocaları ile birlikte öğrenci analizleri yapılıyor. 36 haftalık eğitim sistemimizde 432 saat eğitim verilmektedir. Yılda 2 kez tüm veliler kuruma davet edilerek veli toplantısı yapılır. Yıl içerisinde veli birebir görüşmelere davet edilerek görüşme sağlanır. Okula destek için her yazılı döneminde öğrencilere yazılı çalışması yapılmaktadır. Yıl boyunca 240 saat soru çözüm saatları yapılacaktır (Cuma, C.tesi, Pazar 16:00-18:00). Öğrencilere gruplar halinde randevulu eğitim programı (REP) kapsamında dersler verilecektir. Dönem içinde psikolog eşliğinde seminerler yapılmaktadır.",
+        "description": "Ortaokul temellerini güçlendirerek 8. sınıfa hazırlık. Haftalık 12 ders saati, ÖZDEBİR yayınları.",
+        "hero_quote": "Sağlam bir temel, parlak bir gelecek inşa eder.",
+        "intro": "7. sınıf programımız, öğrencilerin Matematik, Fen, Türkçe ve Sosyal derslerinde sağlam altyapı oluşturmasını hedefler. ÖZDEBİR yayınları ile desteklenen haftalık 12 ders saatlik program, mevcut dönemi ve kritik 8. sınıf sürecini birlikte karşılar.",
+        "body": "Düzenli konu testleri ve veli bilgilendirme raporları ile her öğrencinin gelişimi bireysel olarak takip edilir.",
         "strategy_title": "Program İçeriği",
         "phase1_title": "Temel Dersler",
-        "phase1_text": "Matematik, Fen, Türkçe, Sosyal Bilgiler ve İngilizce konularının derinlemesine işlenmesi.",
+        "phase1_text": "Matematik, Fen, Türkçe ve Sosyal Bilgiler konularının derinlemesine işlenmesi.",
         "phase2_title": "Test & Değerlendirme",
-        "phase2_text": "Yılda 8 deneme sınavı + deneme kulübü denemeleri. Sıfır hata kitapçığı ile analiz.",
-        "phase3_title": "Kişisel Takip & Rehberlik",
-        "phase3_text": "Psikolog eşliğinde seanslar, psikodrama terapisi, danışman hoca takibi ve veli görüşmeleri.",
+        "phase2_text": "Düzenli konu testleri ve değerlendirme sınavları. Veli bilgilendirme raporları.",
+        "phase3_title": "Kişisel Takip",
+        "phase3_text": "Her öğrencinin gelişim sürecini bireysel olarak izleyen danışman öğretmen desteği.",
         "result_title": "Kazanımlar",
         "result_text": "Güçlü temel bilgi, sınav alışkanlığı ve 8. sınıf programına sorunsuz geçiş.",
-        "tech_title": "Haftalık 12 ders saati · 36 Hafta · 432 Saat",
-        "tech_intro": "Cumartesi 4 saat, Pazar 4 saat ders, haftaiçi 1 gün 4 saat etüt. 240 saat soru çözüm.",
-        "tech_tools": "Konu anlatımı · Test çözümü · Etüt · Rehberlik · Psikolog desteği · İngilizce",
+        "tech_title": "ÖZDEBİR Yayınları · 12 ders saati/hafta",
+        "tech_intro": "Bu programda ÖZDEBİR yayınlarını kullanıyoruz. Haftalık ders saati: 12.",
+        "tech_tools": "Konu anlatımı · Test çözümü · Ödev takibi · Veli görüşmeleri",
         "features": [
-          "Haftada 12 saat ders",
-          "İngilizce eğitimi dahil",
-          "Yılda 8 deneme + deneme kulübü",
-          "Psikolog eşliğinde seanslar",
-          "Psikodrama terapisi",
-          "REP kapsamında dersler",
-          "240 saat soru çözüm"
+          "Konu anlatımı",
+          "Test çözümü",
+          "Ödev takibi",
+          "Veli görüşmeleri"
         ],
-        "meta_title": "7. Sınıf Programı | Bahçelievler Sevinç Dershanesi",
-        "meta_description": "7. sınıf öğrencileri için haftalık 12 ders saati, yılda 8 deneme, psikolog ve rehberlik destekli program."
+        "meta_title": "7. Sınıf Programı | Zekeriyaköy Fen Bilimleri",
+        "meta_description": "7. sınıf öğrencileri için haftalık 12 ders saati, ÖZDEBİR yayınları destekli kapsamlı program."
       },
       "8-sinif": {
-        "title": "8. Sınıf",
-        "description": "Haftada 12 saat ders, yılda 30 deneme + deneme kulübü, rehberlik ve psikolog desteği.",
-        "hero_quote": "Doğru strateji ve yoğun çalışmayla hedef okul kapıda.",
-        "intro": "8. sınıf programımız, LGS'ye odaklanan kapsamlı bir hazırlık sürecidir. Öğrencileri sınav formatına alıştırır ve bireysel gelişimini yakından takip eder.",
-        "body": "Haftada 12 saat ders verilmektedir. Yılda 30 deneme + deneme kulübüne kayıt olan öğrencilere deneme sınavları yapılmaktadır. Cumartesi 4 saat, pazar 4 saat ders, haftaiçi bir gün 4 saat etüt uygulanmaktadır. Öğrenciler ile kurum iç kurum dışı etkinlikler yapılmaktadır (okul gezileri, futbol maçları, sinema, bilgi yarışması, kahvaltılar). Öğrencilere haftalık soru takip çizelgeleri verilerek düzenli olarak kontrol edilip kişiye özel hazırlanmış dosyalara eklenmektedir. Deneme sonrası rehberlik birimi tarafından sıfır hata kitapçığı çıkarılarak sınav analizi yapılır. Yılda 2 kez tüm veliler kuruma davet edilerek veli toplantısı yapılır. Yıl içerisinde veli birebir görüşmelere davet edilerek görüşme sağlanır. Her öğrenci ile düzenli olarak psikolog eşliğinde seanslar yapılmaktadır. 2 haftada bir sınıf danışman öğretmenleri veliler ile düzenli telefon görüşmesi yapmaktadır. 2 haftada bir gruplar halinde psikodrama terapisi yapılmaktadır. 40 haftalık eğitim sistemimizde 480 saat eğitim verilmektedir. Psikolog eşliğinde 15 gün arayla danışman hocaları ile birlikte öğrenci analizleri yapılıyor. Dönem içinde psikolog eşliğinde seminerler yapılmaktadır. Okula destek için her yazılı döneminde öğrencilere yazılı çalışması yapılmaktadır. Öğrencilere gruplar halinde randevulu eğitim programı (REP) kapsamında dersler verilmektedir. Her Çarşamba veya Perşembe günü Soru Çözüm Günü düzenlenmektedir. Yıl boyunca 240 saat soru çözüm saatları yapılacaktır (haftaiçi Cuma, C.tesi, Pazar 15:45-18:10).",
+        "title": "8. Sınıf & LGS",
+        "description": "LGS'ye yönelik yoğun hazırlık. Haftalık 14 ders saati, Apotemi yayınları ile hedef okula.",
+        "hero_quote": "LGS'de doğru strateji ve yoğun çalışmayla hedef okul kapıda.",
+        "intro": "8. sınıf programımız, LGS'ye odaklanan kapsamlı bir hazırlık sürecidir. Apotemi yayınlarıyla desteklenen haftalık 14 ders saatlik program, öğrencileri LGS formatına alıştırır ve net artışını maksimize eder.",
+        "body": "Haftalık LGS formatında deneme sınavları ve detaylı performans analizi ile sürekli gelişim sağlanır.",
         "strategy_title": "LGS Hazırlık Stratejisi",
-        "phase1_title": "Konu Pekiştirme & Deneme",
-        "phase1_text": "Tüm LGS konularının sistematik tekrarı ve yılda 30 deneme sınavı ile eksik noktaların giderilmesi.",
-        "phase2_title": "Sınav Analizi & Takip",
-        "phase2_text": "Sıfır hata kitapçığı ile deneme analizi. Bireysel soru takip çizelgeleri ve dosyalama.",
-        "phase3_title": "Rehberlik & Süreç Yönetimi",
-        "phase3_text": "Psikolog eşliğinde seanslar, psikodrama terapisi, danışman takibi ve veli görüşmeleri.",
+        "phase1_title": "Konu Pekiştirme",
+        "phase1_text": "Tüm LGS konularının sistematik tekrarı ve eksik noktaların giderilmesi.",
+        "phase2_title": "Deneme Analizi",
+        "phase2_text": "Haftalık LGS formatında deneme sınavları ve detaylı performans analizi.",
+        "phase3_title": "Süreç Yönetimi",
+        "phase3_text": "Sınav motivasyonu, zaman yönetimi ve sınav kaygısıyla başa çıkma teknikleri.",
         "result_title": "Hedef",
-        "result_text": "LGS'de yüksek net ile hedef liseye yerleşme.",
-        "tech_title": "Haftalık 12 ders saati · 40 Hafta · 480 Saat",
-        "tech_intro": "Cumartesi 4 saat, Pazar 4 saat ders, haftaiçi 1 gün 4 saat etüt. 240 saat soru çözüm.",
-        "tech_tools": "Konu anlatımı · Yılda 30 deneme · Sıfır hata kitapçığı · Psikolog desteği",
+        "result_text": "LGS'de yüksek net ile fen lisesi, Anadolu lisesi veya hedef okula yerleşme.",
+        "tech_title": "Apotemi Yayınları · 14 ders saati/hafta",
+        "tech_intro": "Bu programda Apotemi yayınlarını kullanıyoruz. Haftalık ders saati: 14.",
+        "tech_tools": "LGS konu tekrarı · Haftalık deneme · Net analizi · Psikolojik destek",
         "features": [
-          "Haftada 12 saat ders",
-          "Yılda 30 deneme + deneme kulübü",
-          "Soru Çözüm Günü (Çarşamba/Perşembe)",
-          "Psikolog eşliğinde seanslar",
-          "Psikodrama terapisi",
-          "REP kapsamında dersler",
-          "240 saat soru çözüm"
+          "LGS konu tekrarı",
+          "Haftalık deneme",
+          "Net analizi",
+          "Psikolojik destek"
         ],
-        "meta_title": "8. Sınıf Programı | Bahçelievler Sevinç Dershanesi",
-        "meta_description": "8. sınıf öğrencileri için haftalık 12 ders saati, yılda 30 deneme, psikolog ve rehberlik destekli LGS hazırlık programı."
-      },
-      "9-sinif": {
-        "title": "9. Sınıf",
-        "description": "Haftada 12 saat ders, yılda 8 deneme, rehberlik ve psikolog desteği.",
-        "hero_quote": "Lise hayatına güçlü bir başlangıç, YKS'ye sağlam bir temel.",
-        "intro": "9. sınıf programımız, lise müfredatına uyum sağlamayı ve YKS sürecine erken hazırlık yapılmasını hedefler.",
-        "body": "Haftada 12 saat ders verilmektedir. Yılda 8 deneme yapılmaktadır. Cumartesi 5 saat, pazar 5 saat ders, haftaiçi bir gün 2 saat etüt uygulanmaktadır. Öğrenciler ile kurum iç kurum dışı etkinlikler yapılmaktadır (futbol, sinema, bilgi yarışması, yemek). Öğrencilere gruplar halinde randevulu eğitim programı (REP) kapsamında dersler verilmektedir. Deneme sonrası rehberlik birimi tarafından sıfır hata kitapçığı çıkarılarak sınav analizi yapılır. Her öğrenci ile düzenli olarak psikolog eşliğinde seanslar yapılmaktadır. Yılda 2 kez tüm veliler kuruma davet edilerek veli toplantısı yapılır. Yıl içerisinde veli birebir görüşmelere davet edilerek görüşme sağlanır. 2 haftada bir sınıf danışman öğretmenleri veliler ile düzenli telefon görüşmesi yapmaktadır. Öğrencilere haftalık soru takip çizelgeleri verilerek düzenli olarak kontrol edilip kişiye özel hazırlanmış dosyalara eklenmektedir. 2 haftada bir gruplar halinde psikodrama terapisi yapılmaktadır. Psikolog eşliğinde 15 gün arayla danışman hocaları ile birlikte öğrenci analizleri yapılıyor. 36 haftalık eğitim sistemimizde 432 saat eğitim verilmektedir. Okula destek için her yazılı döneminde öğrencilere yazılı çalışması yapılmaktadır. Yıl boyunca 240 saat soru çözüm saatları yapılacaktır (haftaiçi Salı, Çarşamba, Perşembe 15:00-17:00).",
-        "strategy_title": "Program İçeriği",
-        "phase1_title": "Temel Dersler",
-        "phase1_text": "Lise müfredatı kapsamında tüm derslerin derinlemesine işlenmesi.",
-        "phase2_title": "Test & Değerlendirme",
-        "phase2_text": "Yılda 8 deneme sınavı. Sıfır hata kitapçığı ile sınav analizi.",
-        "phase3_title": "Kişisel Takip & Rehberlik",
-        "phase3_text": "Psikolog eşliğinde seanslar, psikodrama terapisi, danışman hoca takibi ve veli görüşmeleri.",
-        "result_title": "Kazanımlar",
-        "result_text": "Lise müfredatına güçlü adaptasyon ve YKS sürecine erken hazırlık.",
-        "tech_title": "Haftalık 12 ders saati · 36 Hafta · 432 Saat",
-        "tech_intro": "Cumartesi 5 saat, Pazar 5 saat ders, haftaiçi 1 gün 2 saat etüt. 240 saat soru çözüm.",
-        "tech_tools": "Konu anlatımı · Test çözümü · Etüt · Rehberlik · Psikolog desteği",
-        "features": [
-          "Haftada 12 saat ders",
-          "Yılda 8 deneme",
-          "Psikolog eşliğinde seanslar",
-          "Psikodrama terapisi",
-          "REP kapsamında dersler",
-          "240 saat soru çözüm"
-        ],
-        "meta_title": "9. Sınıf Programı | Bahçelievler Sevinç Dershanesi",
-        "meta_description": "9. sınıf öğrencileri için haftalık 12 ders saati, yılda 8 deneme, psikolog ve rehberlik destekli program."
+        "meta_title": "8. Sınıf & LGS Hazırlık | Zekeriyaköy Fen Bilimleri",
+        "meta_description": "LGS'ye yönelik haftalık 14 ders saati, Apotemi destekli yoğun hazırlık programı."
       },
       "10-sinif": {
         "title": "10. Sınıf",
-        "description": "Haftada 12 saat ders, yılda 8 deneme, rehberlik ve psikolog desteği.",
-        "hero_quote": "Her adım YKS'ye bir adım daha yaklaştırır.",
-        "intro": "10. sınıf programımız, lise müfredatını pekiştirmeyi ve YKS'ye sağlam altyapı oluşturmayı hedefler.",
-        "body": "Haftada 12 saat ders verilmektedir. Yılda 8 deneme yapılmaktadır. Cumartesi 5 saat, pazar 5 saat ders, haftaiçi bir gün 2 saat etüt uygulanmaktadır. Öğrenciler ile kurum iç kurum dışı etkinlikler yapılmaktadır (futbol, sinema, bilgi yarışması, yemek). Deneme sonrası rehberlik birimi tarafından sıfır hata kitapçığı çıkarılarak sınav analizi yapılır. Yılda 2 kez tüm veliler kuruma davet edilerek veli toplantısı yapılır. Yıl içerisinde veli birebir görüşmelere davet edilerek görüşme sağlanır. Her öğrenci ile düzenli olarak psikolog eşliğinde seanslar yapılmaktadır. 2 haftada bir sınıf danışman öğretmenleri veliler ile düzenli telefon görüşmesi yapmaktadır. 2 haftada bir gruplar halinde psikodrama terapisi yapılmaktadır. 36 haftalık eğitim sistemimizde 432 saat eğitim verilmektedir. Öğrencilere haftalık soru takip çizelgeleri verilerek düzenli olarak kontrol edilip kişiye özel hazırlanmış dosyalara eklenmektedir. Psikolog eşliğinde 15 gün arayla danışman hocaları ile birlikte öğrenci analizleri yapılıyor. Okula destek için her yazılı döneminde öğrencilere yazılı çalışması yapılmaktadır. Yıl boyunca 240 saat soru çözüm saatları yapılacaktır (haftaiçi Salı, Çarşamba, Perşembe 15:00-17:00). Öğrencilere gruplar halinde randevulu eğitim programı (REP) kapsamında dersler verilmektedir.",
+        "description": "Lise temellerini pekiştirmek için stratejik program. Haftalık 10 ders saati, 3D Yayınları.",
+        "hero_quote": "10. sınıf, YKS yolculuğunun gerçek başlangıcıdır.",
+        "intro": "10. sınıf programımız, alan derslerinde güçlü temel oluşturmayı ve 11. sınıfa hazırlıklı geçmeyi sağlar. TYT temel becerileri geliştirilir.",
+        "body": "Alan seçimi, meslek planlaması ve YKS hedef belirleme konusunda uzman rehberlik eşliğinde ilerlenir.",
         "strategy_title": "Program İçeriği",
-        "phase1_title": "Temel Dersler",
-        "phase1_text": "Lise müfredatı kapsamında tüm derslerin derinlemesine işlenmesi.",
-        "phase2_title": "Test & Değerlendirme",
-        "phase2_text": "Yılda 8 deneme sınavı. Sıfır hata kitapçığı ile sınav analizi.",
-        "phase3_title": "Kişisel Takip & Rehberlik",
-        "phase3_text": "Psikolog eşliğinde seanslar, psikodrama terapisi, danışman hoca takibi ve veli görüşmeleri.",
+        "phase1_title": "Alan Dersleri",
+        "phase1_text": "Sayısal, sözel veya eşit ağırlık alanına göre özelleştirilmiş ders programı.",
+        "phase2_title": "TYT Temeli",
+        "phase2_text": "Türkçe, Matematik, Fen ve Sosyal alanlarında TYT temel becerileri kazandırma.",
+        "phase3_title": "Kariyer Rehberliği",
+        "phase3_text": "Alan seçimi, meslek planlaması ve YKS hedef belirleme konusunda uzman rehberlik.",
         "result_title": "Kazanımlar",
-        "result_text": "Güçlü müfredat bilgisi ve YKS'ye sağlam altyapı.",
-        "tech_title": "Haftalık 12 ders saati · 36 Hafta · 432 Saat",
-        "tech_intro": "Cumartesi 5 saat, Pazar 5 saat ders, haftaiçi 1 gün 2 saat etüt. 240 saat soru çözüm.",
-        "tech_tools": "Konu anlatımı · Test çözümü · Etüt · Rehberlik · Psikolog desteği",
+        "result_text": "Güçlü lise temeli, net alan kararı ve 11. sınıf programına hazır başlangıç.",
+        "tech_title": "3D Yayınları · 10 ders saati/hafta",
+        "tech_intro": "Bu programda 3D yayınlarını kullanıyoruz. Haftalık ders saati: 10.",
+        "tech_tools": "Alan dersleri · TYT temeli · Kariyer rehberliği · Değerlendirme",
         "features": [
-          "Haftada 12 saat ders",
-          "Yılda 8 deneme",
-          "Psikolog eşliğinde seanslar",
-          "Psikodrama terapisi",
-          "REP kapsamında dersler",
-          "240 saat soru çözüm"
+          "Alan dersleri",
+          "TYT temeli",
+          "Kariyer rehberliği",
+          "Değerlendirme"
         ],
-        "meta_title": "10. Sınıf Programı | Bahçelievler Sevinç Dershanesi",
-        "meta_description": "10. sınıf öğrencileri için haftalık 12 ders saati, yılda 8 deneme, psikolog ve rehberlik destekli program."
+        "meta_title": "10. Sınıf Programı | Zekeriyaköy Fen Bilimleri",
+        "meta_description": "10. sınıf öğrencileri için haftalık 10 ders saati stratejik hazırlık programı."
       },
       "11-sinif": {
         "title": "11. Sınıf",
-        "description": "Haftada 14 saat ders, yılda 15 TYT-AYT denemesi + deneme kulübü, rehberlik ve psikolog desteği.",
-        "hero_quote": "YKS maratonunda en önemli dönem başlıyor.",
-        "intro": "11. sınıf programımız, TYT ve AYT'ye yönelik yoğun hazırlık sürecini başlatır.",
-        "body": "Haftada 14 saat ders verilmektedir. Yılda 8 TYT, 7 AYT toplam 15 deneme + deneme kulübü denemeleri yapılmaktadır. Cumartesi 6 saat, pazar 6 saat ders, haftaiçi 2 gün 2 saat ders uygulanmaktadır. Yılda 2 kez tüm veliler kuruma davet edilerek veli toplantısı yapılır. Yıl içerisinde veli birebir görüşmelere davet edilerek görüşme sağlanır. Öğrenciler ile kurum iç kurum dışı etkinlikler yapılmaktadır (üniversite gezileri, futbol, sinema, bilgi yarışması, yemek). Deneme sonrası rehberlik birimi tarafından sıfır hata kitapçığı çıkarılarak sınav analizi yapılır. Her öğrenci ile düzenli olarak psikolog eşliğinde seanslar yapılmaktadır. 2 haftada bir sınıf danışman öğretmenleri veliler ile düzenli telefon görüşmesi yapmaktadır. 2 haftada bir gruplar halinde psikodrama terapisi yapılmaktadır. 36 haftalık eğitim sistemimizde 504 saat eğitim verilmektedir. Okula destek için her yazılı döneminde öğrencilere yazılı çalışması yapılmaktadır. Öğrencilere haftalık soru takip çizelgeleri verilerek düzenli olarak kontrol edilip kişiye özel hazırlanmış dosyalara eklenmektedir. Psikolog eşliğinde 15 gün arayla danışman hocaları ile birlikte öğrenci analizleri yapılıyor. Yıl boyunca 240 saat soru çözüm saatları yapılacaktır (haftaiçi Salı, Çarşamba, Perşembe 15:00-17:00). Öğrencilere gruplar halinde randevulu eğitim programı (REP) kapsamında dersler verilmektedir.",
-        "strategy_title": "YKS Hazırlık Stratejisi",
-        "phase1_title": "TYT & AYT Dersleri",
-        "phase1_text": "Haftada 14 saat ders ile TYT ve AYT müfredatının sistematik işlenmesi.",
-        "phase2_title": "Deneme Sınavları & Analiz",
-        "phase2_text": "Yılda 15 TYT-AYT denemesi + deneme kulübü. Sıfır hata kitapçığı ile analiz.",
-        "phase3_title": "Rehberlik & Süreç Yönetimi",
-        "phase3_text": "Psikolog eşliğinde seanslar, psikodrama terapisi, danışman takibi ve veli görüşmeleri.",
+        "description": "YKS hazırlığının kritik dönemi. Haftalık 14 ders saati, Mozaik yayınları.",
+        "hero_quote": "11. sınıf, YKS başarısının şekillendiği yıldır.",
+        "intro": "11. sınıf programımız, YKS'ye yönelik hazırlığın yoğunlaştığı kritik süreçtir. Mozaik yayınları destekli haftalık 14 ders saatiyle hem TYT hem AYT konuları işlenir.",
+        "body": "Aylık deneme sınavları ve gelişim grafikleri ile sürekli performans izlenir.",
+        "strategy_title": "YKS Hazırlık Planı",
+        "phase1_title": "TYT & AYT Konuları",
+        "phase1_text": "Tüm TYT ve ilgili AYT konularının sırası ile işlenmesi ve konu bazlı test uygulamaları.",
+        "phase2_title": "Performans Takibi",
+        "phase2_text": "Aylık YKS deneme sınavları ve gelişim grafikleri. Zayıf konulara yönelik ek çalışma planları.",
+        "phase3_title": "Motivasyon & Planlama",
+        "phase3_text": "Uzun soluklu hazırlık sürecinde motivasyonu yüksek tutma ve etkili çalışma programı oluşturma.",
         "result_title": "Hedef",
-        "result_text": "YKS'ye güçlü bir altyapı ile hazırlık ve hedef puana yaklaşma.",
-        "tech_title": "Haftalık 14 ders saati · 36 Hafta · 504 Saat",
-        "tech_intro": "Cumartesi 6 saat, Pazar 6 saat ders, haftaiçi 2 gün 2 saat ders. 240 saat soru çözüm.",
-        "tech_tools": "TYT-AYT dersleri · 15 deneme · Sıfır hata kitapçığı · Psikolog desteği",
+        "result_text": "12. sınıfa güçlü YKS temeli ile geçiş ve hedef puan türünde üstün performans.",
+        "tech_title": "Mozaik Yayınları · 14 ders saati/hafta",
+        "tech_intro": "Bu programda Mozaik yayınlarını kullanıyoruz. Haftalık ders saati: 14.",
+        "tech_tools": "TYT & AYT konuları · Aylık deneme · Performans raporu · Motivasyon",
         "features": [
-          "Haftada 14 saat ders",
-          "Yılda 15 TYT-AYT denemesi",
-          "Psikolog eşliğinde seanslar",
-          "Psikodrama terapisi",
-          "REP kapsamında dersler",
-          "240 saat soru çözüm"
+          "TYT & AYT konuları",
+          "Aylık deneme",
+          "Performans raporu",
+          "Motivasyon desteği"
         ],
-        "meta_title": "11. Sınıf Programı | Bahçelievler Sevinç Dershanesi",
-        "meta_description": "11. sınıf öğrencileri için haftalık 14 ders saati, yılda 15 TYT-AYT denemesi, psikolog ve rehberlik destekli program."
+        "meta_title": "11. Sınıf Programı | Zekeriyaköy Fen Bilimleri",
+        "meta_description": "11. sınıf YKS hazırlık programı. Haftalık 14 ders saati, Mozaik yayınları."
       },
       "12-sinif": {
-        "title": "12. Sınıf",
-        "description": "Haftada 16 saat ders, 26 TYT + 14 AYT toplam 40 Deneme Sınavı + Deneme Kulübü, rehberlik ve psikolog desteği.",
-        "hero_quote": "YKS'ye giden son virajda her an değerli.",
-        "intro": "12. sınıf programımız, YKS'ye odaklanan yoğun ve kapsamlı bir hazırlık sürecidir.",
-        "body": "Haftada 16 saat ders verilmektedir. 26 TYT + 14 AYT olmak üzere toplam 40 Deneme Sınavı + Deneme Kulübü denemeleri yapılmaktadır. Cumartesi 6 saat, pazar 6 saat ders, haftaiçi 2 gün 2 saat ders uygulanmaktadır. Öğrenciler ile kurum iç kurum dışı etkinlikler yapılmaktadır (üniversite gezileri, futbol, sinema, bilgi yarışması, yemek). Yılda 2 kez tüm veliler kuruma davet edilerek veli toplantısı yapılır. Yıl içerisinde veli birebir görüşmelere davet edilerek görüşme sağlanır. Deneme sonrası rehberlik birimi tarafından sıfır hata kitapçığı çıkarılarak sınav analizi yapılır. Her öğrenci ile düzenli olarak psikolog eşliğinde seanslar yapılmaktadır. 2 haftada bir sınıf danışman öğretmenleri veliler ile düzenli telefon görüşmesi yapmaktadır. Psikolog eşliğinde 15 gün arayla danışman hocaları ile birlikte öğrenci analizleri yapılıyor. 2 haftada bir gruplar halinde psikodrama terapisi yapılmaktadır. 40 haftalık eğitim sistemimizde 640 saat eğitim verilmektedir. Öğrencilere haftalık soru takip çizelgeleri verilerek düzenli olarak kontrol edilip kişiye özel hazırlanmış dosyalara eklenmektedir. Yıl boyunca 240 saat soru çözüm saatları yapılacaktır (haftaiçi Salı, Çarşamba, Perşembe 15:00-17:00). Öğrencilere gruplar halinde randevulu eğitim programı (REP) kapsamında dersler verilmektedir.",
-        "strategy_title": "YKS Hazırlık Stratejisi",
-        "phase1_title": "TYT & AYT Yoğun Ders",
-        "phase1_text": "Haftada 16 saat ders ile TYT ve AYT müfredatının kapsamlı tekrarı.",
-        "phase2_title": "40 Deneme & Analiz",
-        "phase2_text": "26 TYT + 14 AYT olmak üzere toplam 40 Deneme Sınavı + Deneme Kulübü. Sıfır hata kitapçığı ile sınav analizi.",
-        "phase3_title": "Rehberlik & Süreç Yönetimi",
-        "phase3_text": "Psikolog eşliğinde seanslar, psikodrama terapisi, danışman takibi ve veli görüşmeleri.",
+        "title": "12. Sınıf & YKS",
+        "description": "YKS'ye yoğun hazırlık. Haftalık 18 ders saati, tam kapsam ve deneme analizi.",
+        "hero_quote": "Bu yıl tüm hayallerini gerçeğe dönüştürme yılı.",
+        "intro": "12. sınıf programımız, YKS'ye giden son ve en kritik süreçtir. Haftalık 18 ders saatiyle konu tekrarı, deneme analizi ve psikolojik destek birlikte yürütülür.",
+        "body": "Haftada 2 tam YKS denemesi, detaylı net analizi ve tercih rehberliği ile en verimli hazırlık süreci.",
+        "strategy_title": "Son Sprint Programı",
+        "phase1_title": "Konu Tekrarı",
+        "phase1_text": "TYT ve AYT tüm konularının hızlandırılmış tekrarı. Eksik noktalara odaklı bireysel planlar.",
+        "phase2_title": "Yoğun Deneme",
+        "phase2_text": "Haftada 2 tam YKS denemesi, detaylı net analizi ve soru bazlı değerlendirme görüşmeleri.",
+        "phase3_title": "Tercih Rehberliği",
+        "phase3_text": "YKS sonrası üniversite ve bölüm seçimi için kapsamlı rehberlik ve tercih listesi oluşturma.",
         "result_title": "Hedef",
-        "result_text": "YKS'de hedef puana ulaşmak ve tercih edilen üniversitede okuma hakkı kazanmak.",
-        "tech_title": "Haftalık 16 ders saati · 40 Hafta · 640 Saat",
-        "tech_intro": "Cumartesi 6 saat, Pazar 6 saat ders, haftaiçi 2 gün 2 saat ders. 240 saat soru çözüm.",
-        "tech_tools": "TYT-AYT dersleri · 40 deneme · Sıfır hata kitapçığı · Psikolog desteği",
+        "result_text": "YKS'de istenen puana ulaşma ve hedef üniversite/bölüme yerleşme.",
+        "tech_title": "Tüm YKS Yayınları · 18 ders saati/hafta",
+        "tech_intro": "Bu programda tüm YKS yayınlarını kullanıyoruz. Haftalık ders saati: 18.",
+        "tech_tools": "Hızlandırılmış tekrar · Haftada 2 deneme · Net analizi · Tercih rehberliği",
         "features": [
-          "Haftada 16 saat ders",
-          "26 TYT + 14 AYT = 40 Deneme Sınavı",
-          "Deneme Kulübü dahil",
-          "Psikolog eşliğinde seanslar",
-          "Psikodrama terapisi",
-          "REP kapsamında dersler",
-          "240 saat soru çözüm"
+          "Hızlandırılmış tekrar",
+          "Haftada 2 deneme",
+          "Net analizi",
+          "Tercih rehberliği"
         ],
-        "meta_title": "12. Sınıf Programı | Bahçelievler Sevinç Dershanesi",
-        "meta_description": "12. sınıf öğrencileri için haftalık 16 ders saati, 26 TYT + 14 AYT toplam 40 deneme sınavı, psikolog ve rehberlik destekli program."
+        "meta_title": "12. Sınıf & YKS Hazırlık | Zekeriyaköy Fen Bilimleri",
+        "meta_description": "12. sınıf YKS programı. Haftalık 18 ders saati, haftada 2 deneme ve tercih rehberliği."
       },
       "mezun": {
-        "title": "Mezun",
-        "description": "Haftada 18 saat ders, 26 TYT + 14 AYT toplam 40 Deneme Sınavı + Deneme Kulübü, rehberlik ve psikolog desteği.",
-        "hero_quote": "YKS'ye bir yıl daha hazırlanmak, daha güçlü devam etmektir.",
-        "intro": "Mezun programımız, YKS'ye tam odaklı yoğun bir hazırlık sürecidir.",
-        "body": "Haftada 18 saat ders verilmektedir. 26 TYT + 14 AYT olmak üzere toplam 40 Deneme Sınavı + Deneme Kulübü denemeleri yapılmaktadır. Salı, Çarşamba, Perşembe günleri günde 6 saat ders yapılacaktır (ders sonrasında öğretmen gözetiminde 15:00-17:00 arasında etüt). Öğrenciler ile kurum iç kurum dışı etkinlikler yapılmaktadır (üniversite gezileri, futbol, sinema, bilgi yarışması, yemek). Deneme sonrası rehberlik birimi tarafından sıfır hata kitapçığı çıkarılarak sınav analizi yapılır. Her öğrenci ile düzenli olarak psikolog eşliğinde seanslar yapılmaktadır. 2 haftada bir sınıf danışman öğretmenleri veliler ile düzenli telefon görüşmesi yapmaktadır. Yılda 2 kez tüm veliler kuruma davet edilerek veli toplantısı yapılır. Yıl içerisinde veli birebir görüşmelere davet edilerek görüşme sağlanır. Psikolog eşliğinde 15 gün arayla danışman hocaları ile birlikte öğrenci analizleri yapmaktadır. 2 haftada bir gruplar halinde psikodrama terapisi yapılmaktadır. 36 haftalık eğitim sistemimizde 648 saat eğitim verilmektedir. Öğrencilere haftalık soru takip çizelgeleri verilerek düzenli olarak kontrol edilip kişiye özel hazırlanmış dosyalara eklenmektedir. Yıl boyunca 240 saat soru çözüm saatları yapılacaktır (haftaiçi Salı, Çarşamba, Perşembe 15:00-17:00). Öğrencilere gruplar halinde randevulu eğitim programı (REP) kapsamında dersler verilmektedir.",
-        "strategy_title": "Mezun Eğitim Modeli",
-        "phase1_title": "Yoğun TYT & AYT Dersleri",
-        "phase1_text": "Haftada 18 saat ders ile TYT ve AYT müfredatının kapsamlı tekrarı. Ders sonrası etüt.",
-        "phase2_title": "40 Deneme & Analiz",
-        "phase2_text": "26 TYT + 14 AYT olmak üzere toplam 40 Deneme Sınavı + Deneme Kulübü. Sıfır hata kitapçığı ile analiz.",
-        "phase3_title": "Rehberlik & Süreç Yönetimi",
-        "phase3_text": "Psikolog eşliğinde seanslar, psikodrama terapisi, danışman takibi ve veli görüşmeleri.",
+        "title": "Mezun & YKS",
+        "description": "Mezun öğrencilere özel esnek YKS hazırlık programı. Birebir ders imkânı.",
+        "hero_quote": "Geçen yıldan ders çıkar, bu yıl farkını göster.",
+        "intro": "Mezun programımız, YKS'de tekrar şans arayan öğrencilere yönelik özel tasarlanmıştır. Birebir öğretmen desteği ve esnek ders saatleriyle hedefe odaklanılır.",
+        "body": "Önceki YKS sonuçları analiz edilerek kişiye özel çalışma planı oluşturulur.",
+        "strategy_title": "Mezun Programı İçeriği",
+        "phase1_title": "Bireysel Analiz",
+        "phase1_text": "Önceki YKS sonuçları ve zayıf konuların tespiti. Kişiye özel çalışma programı.",
+        "phase2_title": "Yoğun Tekrar",
+        "phase2_text": "Öncelikli konularda yoğunlaştırılmış çalışma. Birebir ders ile anlık geri bildirim.",
+        "phase3_title": "Deneme & Analiz",
+        "phase3_text": "Düzenli tam YKS denemeleri ve detaylı analiz görüşmeleri ile gelişim takibi.",
         "result_title": "Hedef",
-        "result_text": "YKS'de hedeflenen puana ulaşmak ve tercih edilen üniversitede eğitim hakkı kazanmak.",
-        "tech_title": "Haftalık 18 ders saati · 36 Hafta · 648 Saat",
-        "tech_intro": "Salı-Çarşamba-Perşembe günde 6 saat ders + etüt. 240 saat soru çözüm.",
-        "tech_tools": "TYT-AYT dersleri · 40 deneme · Sıfır hata kitapçığı · Psikolog desteği",
+        "result_text": "YKS'de puan artışı ve hedef üniversiteye yerleşme.",
+        "tech_title": "Tüm YKS Yayınları · Esnek program",
+        "tech_intro": "Bu programda tüm YKS yayınlarını kullanıyoruz. Esnek ders saati.",
+        "tech_tools": "Bireysel analiz · Birebir ders · Esnek program · Tercih desteği",
         "features": [
-          "Haftada 18 saat ders",
-          "26 TYT + 14 AYT = 40 Deneme Sınavı",
-          "Deneme Kulübü dahil",
-          "Psikolog eşliğinde seanslar",
-          "Psikodrama terapisi",
-          "REP kapsamında dersler",
-          "240 saat soru çözüm"
+          "Bireysel analiz",
+          "Birebir ders",
+          "Esnek program",
+          "Tercih desteği"
         ],
-        "meta_title": "Mezun Programı | Bahçelievler Sevinç Dershanesi",
-        "meta_description": "Mezun öğrenciler için haftalık 18 ders saati, 26 TYT + 14 AYT toplam 40 deneme sınavı, psikolog ve rehberlik destekli program."
+        "meta_title": "Mezun & YKS Programı | Zekeriyaköy Fen Bilimleri",
+        "meta_description": "Mezun öğrencilere birebir ders ve esnek YKS hazırlık programı."
       },
-      "8-sinif-vip": {
-        "title": "8. Sınıf VIP",
-        "description": "Haftada 14 saat ders, yılda 27 deneme + deneme kulübü, 40 saat özel ders, koç desteği.",
-        "hero_quote": "VIP programımızla her öğrencimiz ayrı ayrı değerlidir.",
-        "intro": "8. Sınıf VIP programımızda öğrencilere haftada 14 saat ders verilmektedir. Her VIP öğrencisi yılda 40 saat özel ders almaktadır.",
-        "body": "8. sınıflar için haftada 14 saat ders yapılmaktadır. VIP sınıfına kayıt yaptıran öğrenci için 1 yılda 40 saat özel ders yapılmaktadır. Her VIP öğrencisi için ders eksiklik durumuna göre haftada 1 ders saati özel ders verilmektedir. 8. sınıf VIP için yılda 27 deneme + deneme kulübü denemeleri yapılmaktadır. Cumartesi 6 saat, pazar 6 saat ders, haftaiçi 2 gün 2 saat ders toplamda 16 saat ders yapılmaktadır. Yılda 2 kez tüm veliler kuruma davet edilerek veli toplantısı yapılır. Yıl içerisinde veli birebir görüşmelere davet edilerek görüşme sağlanır. Öğrencilere haftalık soru takip çizelgeleri verilerek düzenli olarak kontrol edilip kişiye özel hazırlanmış dosyalara eklenmektedir. Öğrenciler ile kurum iç kurum dışı etkinlikler yapılmaktadır (üniversite ve okul gezileri, futbol, sinema, bilgi yarışması, yemek). Deneme sonrası rehberlik birimi tarafından sıfır hata kitapçığı çıkarılarak sınav analizi yapılır. Her öğrenci ile düzenli olarak psikolog eşliğinde seanslar yapılmaktadır. 2 haftada bir sınıf danışman öğretmenleri veliler ile düzenli telefon görüşmesi yapmaktadır. 2 haftada bir gruplar halinde psikodrama terapisi yapılmaktadır. Psikolog eşliğinde 15 gün arayla danışman hocaları ile birlikte öğrenci analizleri yapılıyor. 40 haftalık eğitim sistemimizde 8. sınıf VIP öğrencileri için 560 saat eğitim verilmektedir. Okula destek için her yazılı döneminde öğrencilere yazılı çalışması yapılmaktadır. Yıl boyunca 240 saat soru çözüm saatları yapılacaktır (haftaiçi Salı, Çarşamba, Perşembe 15:00-17:00). Öğrencilere gruplar halinde randevulu eğitim programı (REP) kapsamında dersler verilmektedir. 8. sınıf VIP öğrencileri ile sınıf danışman hocası haftada 2 gün zoom üzerinden toplantı yapmaktadır. VIP öğrencilerimiz haftada 1 gün koçu ile çalışmalar yapmaktadır.",
-        "strategy_title": "VIP 8. Sınıf Eğitim Modeli",
-        "phase1_title": "Yoğun Ders & Özel Ders",
-        "phase1_text": "Haftada 14 saat ders. Yılda 40 saat bireysel özel ders. Haftalık koç çalışması.",
-        "phase2_title": "27 Deneme & Analiz",
-        "phase2_text": "Yılda 27 deneme + deneme kulübü. Sıfır hata kitapçığı ile sınav analizi.",
-        "phase3_title": "Rehberlik & VIP Takip",
-        "phase3_text": "Haftada 2 gün Zoom toplantısı, koç desteği, psikolog seansları ve psikodrama terapisi.",
+      "acik-lise": {
+        "title": "Açık Lise",
+        "description": "Açık öğretim lise öğrencilerine sınav hazırlık desteği ve YKS programı.",
+        "hero_quote": "Açık lise, engel değil fırsat. Doğru destekle hedefe ulaşırsın.",
+        "intro": "Açık Lise programımız, öğrencilerin hem Açık Lise sınavlarına hem de YKS'ye hazırlanmasını destekler. Esnek program yapısı kendi hızında ilerlemeye imkân tanır.",
+        "body": "Açık Lise dönem sınavları ve YKS hazırlığı paralel yürütülür.",
+        "strategy_title": "Açık Lise Programı",
+        "phase1_title": "Sınav Desteği",
+        "phase1_text": "Açık Lise dönem sınavlarına yönelik konu özeti ve test çalışmaları.",
+        "phase2_title": "YKS Entegrasyonu",
+        "phase2_text": "YKS hazırlığı ile Açık Lise sürecini birlikte götürme. TYT ve AYT paralel yürütülür.",
+        "phase3_title": "Kişisel Planlama",
+        "phase3_text": "Bireysel duruma göre hazırlanan esnek çalışma takvimi ve danışman desteği.",
         "result_title": "Hedef",
-        "result_text": "LGS'de yüksek net ile hedef liseye yerleşme.",
-        "tech_title": "VIP Program · 14 ders saati/hafta · 40 Saat Özel Ders",
-        "tech_intro": "Haftada 14 saat ders, 40 saat özel ders, koç desteği ve 40 hafta 560 saat eğitim.",
-        "tech_tools": "VIP ders · 27 deneme · 40 saat özel ders · Koç desteği · Psikolog",
+        "result_text": "Açık Lise diploması ve YKS'de başarılı sonuç.",
+        "tech_title": "MEB & YKS Kaynakları · Esnek program",
+        "tech_intro": "MEB ve YKS kaynaklarını kullanıyoruz. Esnek ders saati.",
+        "tech_tools": "Açık lise desteği · YKS hazırlığı · Esnek program · Danışmanlık",
         "features": [
-          "Haftada 14 saat ders",
-          "Yılda 27 deneme + deneme kulübü",
-          "40 saat bireysel özel ders",
-          "Haftalık koç çalışması",
-          "Zoom toplantıları",
-          "560 saat eğitim (40 hafta)"
+          "Açık lise desteği",
+          "YKS hazırlığı",
+          "Esnek program",
+          "Danışmanlık"
         ],
-        "meta_title": "8. Sınıf VIP | Bahçelievler Sevinç Dershanesi",
-        "meta_description": "8. Sınıf VIP programı. Haftada 14 saat ders, yılda 27 deneme, 40 saat özel ders ve koç desteği."
-      },
-      "12-sinif-vip": {
-        "title": "12. Sınıf VIP",
-        "description": "Haftada 16 saat ders, 26 TYT + 14 AYT toplam 40 Deneme Sınavı + Deneme Kulübü, 40 saat özel ders, koç desteği.",
-        "hero_quote": "YKS'ye giden bu son dönemde her öğrencimiz ayrı ayrı değerlidir; VIP programımızla farkı hissettiriyoruz.",
-        "intro": "12. Sınıf VIP programımızda öğrencilere haftada 16 saat ders verilmektedir. Her VIP öğrencisi yılda 40 saat özel ders almaktadır.",
-        "body": "12. sınıflar için haftada 16 saat ders yapılmaktadır. VIP sınıfına kayıt yaptıran öğrenci için 1 yılda 40 saat özel ders yapılmaktadır. Her VIP öğrencisi için ders eksiklik durumuna göre haftada 1 ders saati özel ders verilmektedir. 12. sınıf VIP için yılda 27 deneme + deneme kulübü denemeleri yapılmaktadır. 12. Sınıf VIP için 26 TYT + 14 AYT olmak üzere toplam 40 Deneme Sınavı + Deneme Kulübü denemeleri yapılmaktadır. Cumartesi 6 saat, pazar 6 saat ders, haftaiçi 2 gün 2 saat ders toplamda 16 saat ders yapılmaktadır. Yılda 2 kez tüm veliler kuruma davet edilerek veli toplantısı yapılır. Yıl içerisinde veli birebir görüşmelere davet edilerek görüşme sağlanır. Öğrencilere haftalık soru takip çizelgeleri verilerek düzenli olarak kontrol edilip kişiye özel hazırlanmış dosyalara eklenmektedir. Öğrenciler ile kurum iç kurum dışı etkinlikler yapılmaktadır (üniversite ve okul gezileri, futbol, sinema, bilgi yarışması, yemek). Deneme sonrası rehberlik birimi tarafından sıfır hata kitapçığı çıkarılarak sınav analizi yapılır. Her öğrenci ile düzenli olarak psikolog eşliğinde seanslar yapılmaktadır. 2 haftada bir sınıf danışman öğretmenleri veliler ile düzenli telefon görüşmesi yapmaktadır. 2 haftada bir gruplar halinde psikodrama terapisi yapılmaktadır. Psikolog eşliğinde 15 gün arayla danışman hocaları ile birlikte öğrenci analizleri yapılıyor. 40 haftalık eğitim sistemimizde 12. sınıf VIP öğrencileri için 640 saat eğitim verilmektedir. Okula destek için her yazılı döneminde öğrencilere yazılı çalışması yapılmaktadır. Yıl boyunca 240 saat soru çözüm saatları yapılacaktır (haftaiçi Salı, Çarşamba, Perşembe 15:00-17:00). Öğrencilere gruplar halinde randevulu eğitim programı (REP) kapsamında dersler verilmektedir. 12. sınıf VIP öğrencileri ile sınıf danışman hocası haftada 2 gün zoom üzerinden toplantı yapmaktadır. VIP öğrencilerimiz haftada 1 gün koçu ile çalışmalar yapmaktadır.",
-        "strategy_title": "VIP 12. Sınıf Eğitim Modeli",
-        "phase1_title": "Yoğun Ders & Özel Ders",
-        "phase1_text": "Haftada 16 saat ders. Yılda 40 saat bireysel özel ders. Haftalık koç çalışması.",
-        "phase2_title": "26 Deneme & Analiz",
-        "phase2_text": "26 TYT + 14 AYT olmak üzere toplam 40 Deneme Sınavı + Deneme Kulübü. Sıfır hata kitapçığı ile sınav analizi.",
-        "phase3_title": "Rehberlik & VIP Takip",
-        "phase3_text": "Haftada 2 gün Zoom toplantısı, koç desteği, psikolog seansları ve psikodrama terapisi.",
-        "result_title": "Hedef",
-        "result_text": "YKS'de hedef puana ulaşmak ve tercih edilen üniversitede okuma hakkı kazanmak.",
-        "tech_title": "VIP Program · 16 ders saati/hafta · 40 Saat Özel Ders",
-        "tech_intro": "Haftada 16 saat ders, 40 saat özel ders, koç desteği ve 40 hafta 640 saat eğitim.",
-        "tech_tools": "VIP ders · 26 deneme · 40 saat özel ders · Koç desteği · Psikolog",
-        "features": [
-          "Haftada 16 saat ders",
-          "26 TYT + 14 AYT = 40 Deneme Sınavı",
-          "Deneme Kulübü dahil",
-          "40 saat bireysel özel ders",
-          "Haftalık koç çalışması",
-          "Zoom toplantıları",
-          "640 saat eğitim (40 hafta)"
-        ],
-        "meta_title": "12. Sınıf VIP | Bahçelievler Sevinç Dershanesi",
-        "meta_description": "12. Sınıf VIP programı. Haftada 16 saat ders, 26 TYT + 14 AYT toplam 40 deneme sınavı, 40 saat özel ders ve koç desteği."
+        "meta_title": "Açık Lise Programı | Zekeriyaköy Fen Bilimleri",
+        "meta_description": "Açık öğretim lise öğrencileri için sınav hazırlık ve YKS programı."
       },
       "deneme-kulubu": {
         "title": "Deneme Kulübü",
         "description": "Düzenli deneme sınavları, net analizi ve akran öğrenmesi. Tüm sınıflara açık.",
         "hero_quote": "Her deneme seni bir adım öne taşır.",
-        "intro": "Deneme Kulübü, tüm sınıflardaki öğrencilere düzenli sınav deneyimi kazandırmayı hedefler. Haftalık formatında denemeler ve detaylı net analizi.",
+        "intro": "Deneme Kulübü, tüm sınıf düzeylerindeki öğrencilere düzenli sınav deneyimi kazandırmayı hedefler. Haftalık LGS ve YKS formatında denemeler ve detaylı net analizi.",
         "body": "Grup değerlendirme görüşmeleri ve akran öğrenmesi ile öğrenciler sürekli gelişir.",
         "strategy_title": "Deneme Kulübü Programı",
-        "phase1_title": "Haftalık Deneme Sınavı",
-        "phase1_text": "Haftalık tam denemeler. Gerçek sınav koşullarında uygulama.",
+        "phase1_title": "Haftalık Deneme",
+        "phase1_text": "LGS ve YKS formatında haftalık tam denemeler. Gerçek sınav koşullarında uygulama.",
         "phase2_title": "Net Analizi",
         "phase2_text": "Deneme sonrası konu bazlı net analizi, yanlış yapılan soruların bireysel incelenmesi.",
         "phase3_title": "Grup Değerlendirme",
         "phase3_text": "Öğrencilerin bir arada değerlendirme yaptığı grup görüşmeleri ve akran öğrenmesi.",
         "result_title": "Kazanım",
         "result_text": "Sürekli artan net sayısı, sınav alışkanlığı ve güçlenen özgüven.",
-        "tech_title": "Haftalık deneme + analiz",
-        "tech_intro": "Haftalık deneme sınavları. Analiz görüşmeleri dahil.",
+        "tech_title": "Tüm Format · Haftalık deneme + analiz",
+        "tech_intro": "LGS ve YKS formatında haftalık deneme sınavları. Analiz görüşmeleri dahil.",
         "tech_tools": "Haftalık deneme · Net analizi · Grup değerlendirme · Gelişim takibi",
         "features": [
           "Haftalık deneme",
@@ -349,59 +249,58 @@
           "Grup değerlendirme",
           "Gelişim takibi"
         ],
-        "meta_title": "Deneme Kulübü | Bahçelievler Sevinç Dershanesi",
-        "meta_description": "Haftalık denemeler, net analizi ve grup değerlendirme."
+        "meta_title": "Deneme Kulübü | Zekeriyaköy Fen Bilimleri",
+        "meta_description": "Haftalık LGS ve YKS formatında denemeler, net analizi ve grup değerlendirme."
       },
-      "ozel-ders": {
-        "title": "Özel Ders",
-        "description": "Alanında uzman eğitmenlerle tamamen kişiye özel, birebir ders programı.",
-        "hero_quote": "Her öğrenci farklıdır; en büyük gelişim, sana özel hazırlanan programda gizlidir.",
-        "intro": "Öğrencilerimizin ihtiyaçlarına göre birebir rehberlik sağladığımız Özel Ders programımız, akademik başarıyı maksimum düzeye taşımak amacıyla hazırlanmıştır.",
-        "body": "Alanında uzman eğitmenlerimiz, öğrencilerin güçlü ve gelişime açık yönlerini analiz ederek tamamen kişiye özel bir eğitim programı oluşturur. Bu sayede öğrenciler, zorluk yaşadıkları konuları daha iyi kavrama fırsatı bulur ve sınavlarda daha yüksek performans gösterirler.",
-        "strategy_title": "Özel Ders Süreci",
-        "phase1_title": "Seviye & Eksik Analizi",
-        "phase1_text": "Öğrencinin mevcut seviyesi ve eksik konuları belirlenerek kişiye özel bir yol haritası oluşturulur.",
-        "phase2_title": "Kişiye Özel Program",
-        "phase2_text": "Uzman eğitmen, belirlenen eksikliklere yönelik birebir ders planı hazırlar ve öğrenciyle birlikte uygular.",
-        "phase3_title": "Sürekli Takip & Güncelleme",
-        "phase3_text": "Her dersin ardından ilerleme değerlendirilir; program öğrencinin gelişimine göre güncellenerek sürdürülür.",
+      "rehberlik": {
+        "title": "Rehberlik",
+        "description": "Kariyer planlaması, motivasyon ve sınav kaygısı için birebir psikolojik ve akademik rehberlik.",
+        "hero_quote": "Başarı doğru yönde çalışmakla gelir. Rehberlik programımız seninle yönü belirler.",
+        "intro": "Rehberlik programımız, akademik ve kişisel gelişimi destekleyen kapsamlı danışmanlık hizmetidir. Sınav kaygısı, kariyer planlaması ve veli iletişimi bir arada yürütülür.",
+        "body": "Birebir görüşmeler ve düzenli veli raporları ile süreç şeffaf takip edilir.",
+        "strategy_title": "Rehberlik Hizmetleri",
+        "phase1_title": "Akademik Rehberlik",
+        "phase1_text": "Hedef belirleme, alan seçimi ve çalışma planı oluşturma konularında birebir danışmanlık.",
+        "phase2_title": "Psikolojik Destek",
+        "phase2_text": "Sınav kaygısı, motivasyon düşüklüğü ve stres yönetimi için uzman desteği.",
+        "phase3_title": "Veli İletişimi",
+        "phase3_text": "Düzenli veli görüşmeleri ve öğrenci gelişim raporları.",
         "result_title": "Hedef",
-        "result_text": "Zayıf konuların giderilmesi, sınav performansının artırılması ve hedef puanlara ulaşılması.",
-        "tech_title": "Birebir Özel Ders",
-        "tech_intro": "Tamamen öğrencinin ihtiyaçlarına göre şekillenen, uzman eğitmen eşliğinde kişisel öğrenme deneyimi.",
-        "tech_tools": "Birebir eğitim · Kişiye özel plan · Uzman eğitmen · Sürekli takip",
+        "result_text": "Özgüveni yüksek, hedef odaklı ve motivasyonu güçlü öğrenciler.",
+        "tech_title": "Uzman Kadro · Gereksinim bazlı",
+        "tech_intro": "Uzman öğretmen ve rehber kadrosu ile birebir görüşme imkânı.",
+        "tech_tools": "Birebir görüşme · Kariyer planı · Veli raporu · Motivasyon desteği",
         "features": [
-          "Birebir eğitim",
-          "Kişiye özel program",
-          "Uzman eğitmenler",
-          "Eksik konu analizi",
-          "Sürekli takip"
+          "Birebir görüşme",
+          "Kariyer planı",
+          "Veli raporu",
+          "Motivasyon desteği"
         ],
-        "meta_title": "Özel Ders | Bahçelievler Sevinç Dershanesi",
-        "meta_description": "Birebir özel ders programı. Uzman eğitmenlerle kişiye özel hazırlanmış ders planı."
+        "meta_title": "Rehberlik Programı | Zekeriyaköy Fen Bilimleri",
+        "meta_description": "Kariyer planlaması, sınav kaygısı yönetimi ve motivasyon için birebir rehberlik."
       }
     }
   },
   "References": {
-    "meta_title": "Başarılarımız | Bahçelievler Sevinç Dershanesi",
-    "meta_description": "YKS'de hedef üniversitelerine ulaşan öğrencilerimizin başarı hikayeleri.",
+    "meta_title": "Başarılarımız | Zekeriyaköy Fen Bilimleri",
+    "meta_description": "LGS ve YKS'de hedef okullarına ulaşan öğrencilerimizin başarı hikayeleri.",
     "title": "Başarı Hikayeleri",
     "subtitle": "Öğrencilerimizin gerçek başarıları ilham veriyor."
   },
   "About": {
-    "meta_title": "Hakkımızda | Bahçelievler Sevinç Dershanesi",
-    "meta_description": "Köklü eğitim kurumu. Deneyimli öğretmenler, bireysel takip ve kanıtlanmış başarı.",
+    "meta_title": "Hakkımızda | Zekeriyaköy Nazmi Arıkan Fen Bilimleri",
+    "meta_description": "1995'ten bu yana Sarıyer'in köklü eğitim kurumu. Deneyimli öğretmenler, bireysel takip ve kanıtlanmış başarı.",
     "title": "Hakkımızda",
-    "hero_slogan": "Bahçelievler'in köklü eğitim yuvası.",
-    "subtitle": "Bahçelievler'de Eğitim",
-    "content": "Bahçelievler Sevinç Dershanesi, bölgedeki öğrencilere kaliteli LGS ve YKS hazırlık eğitimi sağlamak amacıyla kurulmuştur. Yıllar içinde binlerce öğrencimizi hedef okullarına ulaştırdık.",
+    "hero_slogan": "Zekeriyaköy'ün köklü eğitim yuvası.",
+    "subtitle": "1995'ten Bu Yana Sarıyer'de Eğitim",
+    "content": "Zekeriyaköy Nazmi Arıkan Fen Bilimleri Dershanesi, 1995 yılında Sarıyer'in eğitime katkı sağlamak amacıyla kurulmuştur. Yıllar içinde binlerce öğrencimizi hedef okullarına ulaştırdık.",
     "vision": {
       "title": "Vizyon",
-      "text": "Bahçelievler ve çevresindeki her öğrencinin, nitelikli ve bireyselleştirilmiş eğitime kolayca erişebildiği; akademik başarıyı, sınav disiplinini ve öz güveni bir arada büyüttüğü güvenilir bir kurs merkezi olmak. Sistematik sınav programlarımız, uzman öğretmen kadromuz ve kişiye özel takip anlayışımızla Bahçelievler'in en güçlü eğitim yuvasını inşa etmeye devam ediyoruz."
+      "text": "Zekeriyaköy ve çevresindeki öğrencilerin eğitime en kolay ve kaliteli biçimde erişebildiği güvenilir bir eğitim yuvası olmak."
     },
     "mission": {
       "title": "Misyon",
-      "text": "Her öğrencinin potansiyelini keşfetmesine, akademik hedeflerine ulaşmasına ve hayatın her alanında başarılı olmasına destek olmak. LGS ve YKS odaklı kanıtlanmış programlarımız, bireysel takip sistemi ve psikolog desteğiyle her öğrenciye özel bir öğrenme deneyimi sunuyoruz. Bahçelievler'in köklü kurs merkezi olarak; kaliteli eğitim, güçlü motivasyon ve ilham veren başarı hikayeleriyle fark yaratmaya devam ediyoruz. Kurum olarak hedefimiz, öğrencilerimizi yalnızca sınav başarısına değil; disiplinli, özgüvenli ve hedef odaklı bireyler olarak geleceğe hazırlamaktır."
+      "text": "Her öğrencinin potansiyelini keşfetmesine ve akademik hedeflerine ulaşmasına destek olmak. Kaliteli eğitim, bireysel takip ve güçlü motivasyonla fark yaratmak."
     },
     "founder": {
       "role": "Kurucu",
@@ -409,8 +308,8 @@
     }
   },
   "Contact": {
-    "meta_title": "İletişim | Bahçelievler Sevinç Dershanesi",
-    "meta_description": "Ücretsiz ön görüşme için bize ulaşın. 0(212) 505 40 01 — bahcelievlersevinckurs@gmail.com",
+    "meta_title": "İletişim | Zekeriyaköy Fen Bilimleri",
+    "meta_description": "Ücretsiz ön görüşme için bize ulaşın. 0212 201 58 48 — zekeriyakoyfenbilimleri@gmail.com",
     "title": "İletişim",
     "subtitle": "Sormak istedikleriniz için bize ulaşın. Hemen dönüş yapalım.",
     "form": {
@@ -435,8 +334,8 @@
     }
   },
   "WhyUs": {
-    "title": "Neden Bahçelievler Sevinç Dershanesi?",
-    "description": "Deneyimli öğretmen kadrosu, bireysel öğrenci takibi, psikolog desteği ve kanıtlanmış başarıyla fark yaratıyoruz.",
+    "title": "Neden Zekeriyaköy Fen Bilimleri?",
+    "description": "Deneyimli öğretmen kadrosu, bireysel öğrenci takibi, Baykuş Kütüphanesi ve 15 yılı aşkın kanıtlanmış başarıyla fark yaratıyoruz.",
     "cta": "Ücretsiz Ön Görüşme Al"
   },
   "LetsWork": {
@@ -456,23 +355,67 @@
     "analysis": "Ücretsiz Ön Görüşme",
     "blog": "Blog",
     "services_items": {
-      "6-sinif": "6. Sınıf",
       "7-sinif": "7. Sınıf",
-      "8-sinif": "8. Sınıf",
+      "8-sinif": "8. Sınıf & LGS",
+      "10-sinif": "10. Sınıf",
+      "11-sinif": "11. Sınıf",
+      "12-sinif": "12. Sınıf & YKS",
+      "mezun": "Mezun & YKS",
+      "acik-lise": "Açık Lise",
       "deneme-kulubu": "Deneme Kulübü"
     }
   },
   "Footer": {
-    "address": "Haznedar, Bahçelievler Mahallesi, Bağcılar Caddesi No:11, Bahçelievler/İstanbul",
-    "rights": "© 2026 Bahçelievler Sevinç Dershanesi",
+    "address": "Uskumruköy, Zekeriyaköy Mah., Kilyos Cad. No: 238/2, Sarıyer / İstanbul",
+    "rights": "© 2026 Zekeriyaköy Fen Bilimleri",
     "quick_links": "Hızlı Bağlantılar",
     "social": "Sosyal Medya",
     "contact": "İletişim",
     "pages": "Sayfalar",
-    "brand_tagline": "Bahçelievler'den Türkiye'nin en iyi üniversitelerine.",
+    "brand_tagline": "Zekeriyaköy'den Türkiye'nin en iyi okullarına.",
     "rights_suffix": "Tüm hakları saklıdır.",
-    "tagline": "Bahçelievler, İstanbul · Sevinç Dershanesi",
+    "tagline": "Sarıyer, İstanbul · Fen Bilimleri Dershanesi",
     "contact_info": "İletişim Bilgileri"
+  },
+  "Works": {
+    "section_label": "Başarı Hikayeleri",
+    "section_title": "Hedeflerine Ulaştırdık",
+    "section_title_1": "Hedeflerine",
+    "section_title_2": "Ulaştırdık",
+    "view_all": "Tümünü Gör",
+    "next_project": "Sonraki Vaka",
+    "services_label": "Program",
+    "back_home": "Ana Sayfa",
+    "challenge": "Hedef",
+    "approach": "Yaklaşım",
+    "result": "Sonuç",
+    "drag_hint": "Sürükle veya üzerine gel →",
+    "brands": {
+      "arni": {
+        "title": "ARNİ",
+        "description": "Sıfırdan eksiksiz kurumsal kimlik: logo, renk paleti, kartvizit, bina cephesi ve marka kitabı."
+      },
+      "deru": {
+        "title": "DERU",
+        "description": "Cesur tipografi ve özgün logo sistemiyle sektörde fark yaratan bir kurumsal kimlik tasarlandı."
+      },
+      "erts": {
+        "title": "ERTS",
+        "description": "Mimarlık sektöründe güvenilir ve prestijli bir kurumsal imaj inşa edildi."
+      },
+      "every": {
+        "title": "EVERY",
+        "description": "Esnek ve ölçeklenebilir marka sistemiyle tüm temas noktalarında tutarlı bir kimlik oluşturuldu."
+      },
+      "peralta": {
+        "title": "PERALTA",
+        "description": "Premium konumlama için minimal ama güçlü bir kurumsal kimlik ve sunum sistemi tasarlandı."
+      },
+      "tepsta": {
+        "title": "TEPSTA",
+        "description": "Dinamik ve genç kitleye hitap eden enerjik bir marka kimliği ve sosyal medya şablon sistemi."
+      }
+    }
   },
   "Testimonials": {
     "title": "Öğrenci & Veli Görüşleri",
@@ -480,43 +423,43 @@
     "items": [
       {
         "name": "Ayşe K.",
-        "role": "YKS — İstanbul Tıp Fakültesi",
-        "text": "12. sınıfta aldığım destekle YKS'de hedef puana ulaştım. Öğretmenlerimiz gerçekten çok ilgilendi."
+        "role": "LGS 500 Net — Fen Lisesi",
+        "text": "8. sınıf boyunca aldığım destekle LGS'de 500 net yaptım. Öğretmenlerimiz gerçekten çok ilgilendi."
       },
       {
-        "name": "Mehmet T. (Veli)",
-        "role": "Oğlu YKS ile Tıp Fakültesi kazandı",
-        "text": "Oğlum 11. ve 12. sınıfta burada okudu ve İstanbul Tıp Fakültesi'ni kazandı. Bireysel ilgiye çok şaşırdık."
+        "name": "Murat T. (Veli)",
+        "role": "Çocuğu YKS ile tıp okuyor",
+        "text": "Oğlum 11. ve 12. sınıfta burada okudu ve tıp fakültesini kazandı. Bireysel ilgiye çok şaşırdık."
       },
       {
         "name": "Selin A.",
-        "role": "YKS — İTÜ Bilgisayar Mühendisliği",
-        "text": "Deneme Kulübü sayesinde sınav kaygım geçti ve YKS'ye güvenle girdim. Rehberlik hizmeti çok değerliydi."
+        "role": "YKS — İstanbul Üniversitesi",
+        "text": "Mezun programıyla ikinci yılımda hedef bölümümü kazandım. Rehberlik hizmeti çok değerliydi."
       },
       {
         "name": "Kerem B.",
-        "role": "YKS — Boğaziçi Üniversitesi",
-        "text": "11. sınıftan itibaren buradayım. Haftalık denemeler ve bireysel analiz sayesinde YKS'ye hazır hissettim."
+        "role": "LGS — Sarıyer Anadolu Lisesi",
+        "text": "7. sınıftan beri buradayım. Deneme Kulübü sayesinde sınav kaygım geçti ve LGS'ye güvenle girdim."
       },
       {
         "name": "Zeynep Ö. (Veli)",
-        "role": "Kızı YKS ile hedef üniversiteye girdi",
-        "text": "Kızım 10. sınıftan itibaren burada. Hem akademik hem de psikolojik destek mükemmeldi."
+        "role": "Kızı LGS'de Kadıköy Anadolu Lisesi'ne girdi",
+        "text": "Kızım 7. sınıftan itibaren burada. Hem akademik hem de psikolojik destek mükemmeldi."
       },
       {
         "name": "Emre D.",
-        "role": "YKS — Hacettepe Tıp Fakültesi",
-        "text": "Mezun yılında programa dahil oldum. Yoğun tempo ve bireysel program sayesinde hedef üniversiteme girdim."
+        "role": "YKS — İTÜ Bilgisayar Mühendisliği",
+        "text": "12. sınıfta programa dahil oldum. Yoğun tempo ve bireysel ders programı sayesinde İTÜ'ye girdim."
       },
       {
         "name": "Neslihan A. (Veli)",
-        "role": "Oğlu YKS ile Mühendislik kazandı",
+        "role": "Oğlu YKS ile diş hekimliği okuyor",
         "text": "Öğretmenlerin her öğrenciye özel ilgisi bizi şaşırttı. Oğlum çok kısa sürede özgüven kazandı."
       },
       {
         "name": "Can T.",
-        "role": "YKS — Ankara Hukuk Fakültesi",
-        "text": "Deneme sınavlarındaki detaylı analizler sayesinde hangi konularda eksiğim olduğunu gördüm ve kapattım. YKS'de çok iyi sonuç aldım."
+        "role": "LGS — Kabataş Erkek Lisesi",
+        "text": "Deneme sınavlarındaki detaylı analizler sayesinde hangi konularda eksiğim olduğunu gördüm ve kapattım."
       }
     ]
   },
@@ -554,23 +497,37 @@
     "btn_sending": "Gönderiliyor...",
     "btn_submit": "Görüşme Talep Et",
     "placeholder_website": "Hangi okulda okuyorsunuz?",
+    "placeholder_instagram": "Instagram kullanıcı adı",
+    "placeholder_linkedin": "LinkedIn profil linki",
     "placeholder_name": "Adınız Soyadınız",
     "placeholder_email": "ornek@email.com",
     "placeholder_phone": "05XX XXX XX XX",
     "services": [
-      "6. Sınıf",
       "7. Sınıf",
-      "8. Sınıf",
-      "9. Sınıf",
+      "8. Sınıf & LGS",
       "10. Sınıf",
       "11. Sınıf",
-      "12. Sınıf",
-      "Mezun",
-      "8. Sınıf VIP",
-      "12. Sınıf VIP",
+      "12. Sınıf & YKS",
+      "Mezun & YKS",
+      "Açık Lise",
       "Deneme Kulübü",
-      "Özel Ders",
       "Rehberlik"
     ]
+  },
+  "Blog": {
+    "meta_title": "Eğitim Blogu | Zekeriyaköy Fen Bilimleri",
+    "meta_description": "LGS, YKS ve eğitim hayatı hakkında faydalı yazılar.",
+    "title_prefix": "Eğitim",
+    "title_highlight": "Blogu",
+    "subtitle": "LGS, YKS ve eğitim hayatı hakkında faydalı yazılar.",
+    "empty_title": "Henüz yazı yok",
+    "empty_subtitle": "Yakında içerikler eklenecek.",
+    "recent": "Son Yazılar",
+    "categories": {
+      "lgs": "LGS",
+      "yks": "YKS",
+      "tips": "Çalışma Tüyoları",
+      "motivation": "Motivasyon"
+    }
   }
 }

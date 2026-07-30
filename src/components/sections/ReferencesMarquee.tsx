@@ -1,47 +1,55 @@
-// Server component — marquee tamamen CSS keyframe'i, client JS gerekmiyor.
+"use client"
+
+import { motion } from "framer-motion"
 
 const row1 = [
-  "Galatasaray Lisesi",
-  "İstanbul Erkek Lisesi",
-  "Kabataş Erkek Lisesi",
-  "Cağaloğlu Anadolu Lisesi",
-  "Ankara Fen Lisesi",
-  "Vefa Lisesi",
   "İstanbul Fen Lisesi",
+  "Galatasaray Lisesi",
+  "Kabataş Erkek Lisesi",
   "Atatürk Fen Lisesi",
   "Darüşşafaka Lisesi",
+  "Boğaziçi Üniversitesi",
+  "İTÜ İstanbul",
+  "ODTÜ Ankara",
   "Beşiktaş Anadolu Lisesi",
-  "Kadıköy Anadolu Lisesi",
-  "Sultanahmet Anadolu Lisesi",
+  "Vefa Lisesi",
+  "Nişantaşı Fen Lisesi",
+  "Arnavutköy Anadolu Lisesi",
 ]
 
 const row2 = [
-  "YKS Türkiye Derecesi",
+  "LGS'de 500 Tam Puan",
+  "YKS'de İlk 100",
+  "30 Yıllık Tecrübe",
   "Bireysel Öğrenci Takibi",
   "Küçük Grup Dersleri",
   "Deneyimli Öğretmenler",
-  "%95 Üniversite Yerleşme",
-  "Haftalık YKS Denemesi",
-  "Yapay Zeka Destekli Analiz",
-  "Rehberlik & Koçluk",
+  "%95 Hedef Okul Başarısı",
+  "1995'ten Beri Sarıyer'de",
+  "Sınırsız Tekrar İmkânı",
 ]
 
 function MarqueeRow({
   items,
   direction,
-  duration,
+  duration = 40,
 }: {
   items: string[]
   direction: "left" | "right"
-  duration: number
+  duration?: number
 }) {
   const doubled = [...items, ...items]
 
   return (
     <div className="flex overflow-hidden py-3">
-      <div
-        className="flex shrink-0 w-max"
-        style={{ animation: `marquee-${direction} ${duration}s linear infinite` }}
+      <motion.div
+        animate={
+          direction === "left"
+            ? { x: ["0%", "-50%"] }
+            : { x: ["-50%", "0%"] }
+        }
+        transition={{ duration, repeat: Infinity, ease: "linear" }}
+        className="flex shrink-0"
       >
         {doubled.map((item, idx) => (
           <span
@@ -52,7 +60,7 @@ function MarqueeRow({
             {item}
           </span>
         ))}
-      </div>
+      </motion.div>
     </div>
   )
 }
@@ -60,7 +68,7 @@ function MarqueeRow({
 export default function ReferencesMarquee() {
   return (
     <section className="py-16 border-t border-black/5 dark:border-white/5 relative overflow-hidden">
-      {/* Kenar geçişleri */}
+      {/* Edge fades */}
       <div className="absolute top-0 left-0 w-40 h-full bg-gradient-to-r from-background to-transparent z-10 pointer-events-none" />
       <div className="absolute top-0 right-0 w-40 h-full bg-gradient-to-l from-background to-transparent z-10 pointer-events-none" />
 

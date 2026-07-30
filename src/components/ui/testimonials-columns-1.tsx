@@ -1,0 +1,50 @@
+"use client";
+import React from "react";
+import { motion } from "framer-motion";
+
+export const TestimonialsColumn = (props: {
+  className?: string;
+  testimonials: { text: string; image: string; name: string; role: string }[];
+  duration?: number;
+}) => {
+  return (
+    <div className={props.className}>
+      <motion.div
+        animate={{ translateY: "-50%" }}
+        transition={{
+          duration: props.duration || 10,
+          repeat: Infinity,
+          ease: "linear",
+          repeatType: "loop",
+        }}
+        className="flex flex-col gap-6 pb-6 bg-transparent"
+      >
+        {[...new Array(2)].map((_, index) => (
+          <React.Fragment key={index}>
+            {props.testimonials.map(({ text, image, name, role }, i) => (
+              <div 
+                className="p-8 rounded-3xl border border-white/10 bg-white/5 backdrop-blur-md shadow-2xl max-w-xs w-full hover:border-purple-500/40 transition-all duration-300 group" 
+                key={i}
+              >
+                <div className="text-white/70 leading-relaxed italic group-hover:text-white transition-colors">
+                  "{text}"
+                </div>
+                <div className="flex items-center gap-3 mt-6">
+                  <img
+                    src={image}
+                    alt={name}
+                    className="h-11 w-11 rounded-full object-cover border-2 border-purple-500/20"
+                  />
+                  <div className="flex flex-col">
+                    <div className="font-semibold text-white text-sm">{name}</div>
+                    <div className="text-[10px] text-purple-400 uppercase tracking-widest font-bold">{role}</div>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </React.Fragment>
+        ))}
+      </motion.div>
+    </div>
+  );
+};
