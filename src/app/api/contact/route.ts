@@ -1,15 +1,51 @@
 import { NextRequest, NextResponse } from 'next/server';
 import nodemailer from 'nodemailer';
 
+// nodemailer Node API'lerine ihtiyaç duyar — Edge runtime'da çalışmaz.
+export const runtime = 'nodejs';
+export const dynamic = 'force-dynamic';
+
+// ── SMTP yapılandırması (Microsoft 365) ──────────────────────────────────────
+// Değerler ortam değişkeninden okunur; varsayılanlar Office 365 içindir.
+const SMTP_HOST = process.env.SMTP_HOST ?? 'smtp.office365.com';
+const SMTP_PORT = Number(process.env.SMTP_PORT ?? 587);
+const SMTP_USER = process.env.SMTP_USER ?? 'alim.demirli@abdkurumlari.com';
+const SMTP_PASS = process.env.SMTP_PASS;
+
+/** Formların düşeceği kutu. */
+const MAIL_TO = process.env.MAIL_TO ?? 'alim.demirli@abdkurumlari.com';
+
+/**
+ * Gönderen adresi kimlik doğrulaması yapılan kutuyla AYNI olmak zorunda.
+ * Microsoft 365, From başlığı oturum açan kullanıcıdan farklıysa
+ * "5.7.60 SMTP; Client does not have permissions to send as this sender"
+ * hatasıyla reddeder. Bu yüzden From her zaman SMTP_USER.
+ */
+const MAIL_FROM = `"Zekeriyaköy Fen Bilimleri" <${SMTP_USER}>`;
+
+/**
+ * 587 STARTTLS demektir: bağlantı düz başlar, sonra TLS'e yükseltilir —
+ * yani `secure: false` + `requireTLS: true`. `secure: true` yalnızca
+ * 465 (implicit TLS) içindir; 587'de kullanılırsa el sıkışma takılır.
+ */
 const transporter = nodemailer.createTransport({
-  host: process.env.SMTP_HOST ?? 'smtp.gmail.com',
-  port: Number(process.env.SMTP_PORT ?? 465),
-  secure: true,
-  auth: {
-    user: process.env.SMTP_USER,
-    pass: process.env.SMTP_PASS,
-  },
+  host: SMTP_HOST,
+  port: SMTP_PORT,
+  secure: SMTP_PORT === 465,
+  requireTLS: SMTP_PORT !== 465,
+  auth: { user: SMTP_USER, pass: SMTP_PASS },
+  tls: { minVersion: 'TLSv1.2' },
+  connectionTimeout: 10_000,
+  greetingTimeout: 10_000,
+  socketTimeout: 20_000,
 });
+
+/** Formu dolduranın adresi geçerliyse yanıt oraya gitsin. */
+function replyToFor(email: unknown): string | undefined {
+  const v = typeof email === 'string' ? email.trim() : '';
+  if (!v || v === 'form@landing.com') return undefined;
+  return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v) ? v : undefined;
+}
 
 /** Kullanıcı girdisi e-posta HTML'ine gömülüyor; kaçışsız bırakmak
  *  gelen kutusunda HTML/markup enjeksiyonuna izin verirdi. */
@@ -29,6 +65,18 @@ function escapeMultiline(value: unknown): string {
 }
 
 export async function POST(req: NextRequest) {
+  // Şifre yoksa sessizce 500'e düşmek yerine nedenini açıkça logla.
+  if (!SMTP_PASS) {
+    console.error(
+      '[Contact API] SMTP_PASS tanımlı değil — e-posta gönderilemez. ' +
+        'Vercel → Project Settings → Environment Variables altına ekleyin.'
+    );
+    return NextResponse.json(
+      { success: false, error: 'E-posta servisi yapılandırılmamış.' },
+      { status: 500 }
+    );
+  }
+
   try {
     const body = await req.json();
     const { type, ...data } = body;
@@ -93,8 +141,9 @@ export async function POST(req: NextRequest) {
     }
 
     await transporter.sendMail({
-      from: '"Zekeriyaköy Fen Bilimleri" <zekeriyakoyfenbilimleri@gmail.com>',
-      to: 'zekeriyakoyfenbilimleri@gmail.com',
+      from: MAIL_FROM,
+      to: MAIL_TO,
+      replyTo: replyToFor(data.email),
       // Satır sonları başlık enjeksiyonuna yol açabilir — tek satıra indir.
       subject: subject.replace(/[\r\n]+/g, ' ').slice(0, 200),
       html,
@@ -102,7 +151,16 @@ export async function POST(req: NextRequest) {
 
     return NextResponse.json({ success: true });
   } catch (err) {
-    console.error('[Contact API] Error:', err);
+    // Sunucu loglarında teşhis için yeterli bilgi bırak (şifre HARİÇ).
+    const e = err as { code?: string; responseCode?: number; message?: string };
+    console.error('[Contact API] Gönderim hatası:', {
+      code: e?.code,
+      responseCode: e?.responseCode,
+      message: e?.message,
+      host: SMTP_HOST,
+      port: SMTP_PORT,
+      user: SMTP_USER,
+    });
     // Hata detayı istemciye sızdırılmaz (SMTP host/kimlik bilgisi içerebilir).
     return NextResponse.json(
       { success: false, error: 'E-posta gönderilemedi.' },

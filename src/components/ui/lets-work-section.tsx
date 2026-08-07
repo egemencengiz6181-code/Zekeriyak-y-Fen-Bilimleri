@@ -12,6 +12,7 @@ export default function LetsWorkSection() {
   const [showForm, setShowForm] = useState(false);
   const [loading, setLoading] = useState(false);
   const [sent, setSent] = useState(false);
+  const [error, setError] = useState<string | null>(null);
   const [form, setForm] = useState({ name: '', email: '', phone: '', message: '' });
 
   const set = (k: keyof typeof form, v: string) => setForm(p => ({ ...p, [k]: v }));
@@ -20,15 +21,19 @@ export default function LetsWorkSection() {
     e.preventDefault();
     if (!form.name || !form.email) return;
     setLoading(true);
+    setError(null);
     try {
-      await fetch('/api/contact', {
+      const res = await fetch('/api/contact', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ type: 'contact', ...form }),
       });
+      // res.ok kontrol edilmezse sunucu 500 dönse bile "gönderildi" gösterilir
+      // ve e-posta hatası sessizce kaybolur.
+      if (!res.ok) throw new Error(String(res.status));
       setSent(true);
-    } catch (err) {
-      console.error(err);
+    } catch {
+      setError('Mesaj gönderilemedi. Lütfen tekrar deneyin veya 0212 201 58 48 numaralı telefondan bize ulaşın.');
     } finally {
       setLoading(false);
     }
@@ -114,6 +119,11 @@ export default function LetsWorkSection() {
                       </div>
                       <input type="tel" className={inputCls} placeholder={ct('form.phone_placeholder')} value={form.phone} onChange={e => set('phone', e.target.value)} />
                       <textarea rows={4} className={`${inputCls} resize-none`} placeholder={ct('form.message_placeholder')} value={form.message} onChange={e => set('message', e.target.value)} />
+                      {error && (
+                        <p className="text-sm text-[#ec2027] bg-[#ec2027]/10 border border-[#ec2027]/25 rounded-xl px-4 py-3">
+                          {error}
+                        </p>
+                      )}
                       <button
                         type="submit"
                         disabled={loading}

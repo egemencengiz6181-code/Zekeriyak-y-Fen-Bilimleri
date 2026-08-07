@@ -1,12 +1,46 @@
 'use client';
 
+import { useState } from 'react';
 import { useTranslations } from 'next-intl';
-import { MapPin, Phone, Mail, Send } from 'lucide-react';
+import { MapPin, Phone, Mail, Send, CheckCircle2, Loader2 } from 'lucide-react';
 import LocationMap from '@/components/shared/LocationMap';
 import LetsWorkSection from '@/components/ui/lets-work-section';
 
 export default function ContactPage() {
   const t = useTranslations('Contact');
+  const [loading, setLoading] = useState(false);
+  const [sent, setSent] = useState(false);
+  const [error, setError] = useState<string | null>(null);
+
+  async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+    e.preventDefault();
+    setLoading(true);
+    setError(null);
+
+    const fd = new FormData(e.currentTarget);
+    const get = (k: string) => String(fd.get(k) ?? '').trim();
+
+    try {
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          name: get('name'),
+          email: get('email'),
+          subject: `İletişim Formu — ${get('subject') || 'Konu belirtilmedi'}`,
+          message: get('message'),
+        }),
+      });
+      if (!res.ok) throw new Error(String(res.status));
+      setSent(true);
+    } catch {
+      setError(
+        'Mesaj gönderilemedi. Lütfen tekrar deneyin veya 0212 201 58 48 numaralı telefondan bize ulaşın.'
+      );
+    } finally {
+      setLoading(false);
+    }
+  }
 
   return (
     <div className="min-h-screen pt-40 pb-24 relative overflow-hidden bg-transparent z-10">
@@ -76,30 +110,49 @@ export default function ContactPage() {
           <div
             className="enter-up p-10 rounded-[40px] bg-slate-100 dark:bg-accent-muted border border-black/10 dark:border-white/10 relative"
           >
-            <form className="space-y-6">
+            {sent ? (
+              <div className="enter-fade text-center py-10 space-y-4">
+                <div className="w-16 h-16 rounded-full bg-green-500/15 border border-green-500/30 flex items-center justify-center mx-auto">
+                  <CheckCircle2 className="w-8 h-8 text-green-500" />
+                </div>
+                <h3 className="text-xl font-bold">{t('form.success_title')}</h3>
+                <p className="text-sm text-foreground/50">{t('form.success_text')}</p>
+              </div>
+            ) : (
+            <form onSubmit={handleSubmit} className="space-y-6">
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                 <div className="space-y-2">
-                  <label className="text-sm font-medium text-foreground/40 ml-1">{t('form.name')}</label>
-                  <input type="text" className="w-full px-6 py-4 rounded-2xl bg-background/50 border border-black/10 dark:border-white/10 focus:border-primary-light outline-none transition-colors font-light text-sm" />
+                  <label htmlFor="c-name" className="text-sm font-medium text-foreground/40 ml-1">{t('form.name')}</label>
+                  <input id="c-name" name="name" type="text" required autoComplete="name" placeholder={t('form.name_placeholder')} className="w-full px-6 py-4 rounded-2xl bg-background/50 border border-black/10 dark:border-white/10 focus:border-primary-light outline-none transition-colors font-light text-sm" />
                 </div>
                 <div className="space-y-2">
-                  <label className="text-sm font-medium text-foreground/40 ml-1">{t('form.email')}</label>
-                  <input type="email" className="w-full px-6 py-4 rounded-2xl bg-background/50 border border-black/10 dark:border-white/10 focus:border-primary-light outline-none transition-colors font-light text-sm" />
+                  <label htmlFor="c-email" className="text-sm font-medium text-foreground/40 ml-1">{t('form.email')}</label>
+                  <input id="c-email" name="email" type="email" required autoComplete="email" placeholder={t('form.email_placeholder')} className="w-full px-6 py-4 rounded-2xl bg-background/50 border border-black/10 dark:border-white/10 focus:border-primary-light outline-none transition-colors font-light text-sm" />
                 </div>
               </div>
               <div className="space-y-2">
-                <label className="text-sm font-medium text-foreground/40 ml-1">{t('form.subject')}</label>
-                <input type="text" className="w-full px-6 py-4 rounded-2xl bg-background/50 border border-black/10 dark:border-white/10 focus:border-primary-light outline-none transition-colors font-light text-sm" />
+                <label htmlFor="c-subject" className="text-sm font-medium text-foreground/40 ml-1">{t('form.subject')}</label>
+                <input id="c-subject" name="subject" type="text" required className="w-full px-6 py-4 rounded-2xl bg-background/50 border border-black/10 dark:border-white/10 focus:border-primary-light outline-none transition-colors font-light text-sm" />
               </div>
               <div className="space-y-2">
-                <label className="text-sm font-medium text-foreground/40 ml-1">{t('form.message')}</label>
-                <textarea rows={4} className="w-full px-6 py-4 rounded-2xl bg-background/50 border border-black/10 dark:border-white/10 focus:border-primary-light outline-none transition-colors font-light text-sm resize-none"></textarea>
+                <label htmlFor="c-message" className="text-sm font-medium text-foreground/40 ml-1">{t('form.message')}</label>
+                <textarea id="c-message" name="message" rows={4} required placeholder={t('form.message_placeholder')} className="w-full px-6 py-4 rounded-2xl bg-background/50 border border-black/10 dark:border-white/10 focus:border-primary-light outline-none transition-colors font-light text-sm resize-none"></textarea>
               </div>
-              <button className="w-full py-5 bg-[#ec2027] hover:bg-[#c8191f] text-white font-medium rounded-2xl transition-all shadow-[0_0_20px_rgba(236,32,39,0.3)] hover:shadow-[0_0_30px_rgba(236,32,39,0.5)] flex items-center justify-center gap-2 group">
-                {t('form.send')}
-                <Send className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+
+              {error && (
+                <p className="text-sm text-primary bg-primary/10 border border-primary/25 rounded-2xl px-5 py-4">
+                  {error}
+                </p>
+              )}
+
+              <button type="submit" disabled={loading} className="w-full py-5 bg-[#ec2027] hover:bg-[#c8191f] disabled:opacity-50 disabled:cursor-not-allowed text-white font-medium rounded-2xl transition-all shadow-[0_0_20px_rgba(236,32,39,0.3)] hover:shadow-[0_0_30px_rgba(236,32,39,0.5)] flex items-center justify-center gap-2 group">
+                {loading ? t('form.sending') : t('form.send')}
+                {loading
+                  ? <Loader2 className="w-4 h-4 animate-spin" />
+                  : <Send className="w-4 h-4 transition-transform group-hover:translate-x-1" />}
               </button>
             </form>
+            )}
           </div>
         </div>
       </div>

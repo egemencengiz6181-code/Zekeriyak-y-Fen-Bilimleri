@@ -109,6 +109,7 @@ export default function AnalysisModal() {
   const [form, setForm] = useState<FormData>(INITIAL);
   const [loading, setLoading] = useState(false);
   const [success, setSuccess] = useState(false);
+  const [error, setError] = useState<string | null>(null);
 
   // Mobil sticky butonun tetikleyebilmesi için custom event dinle
   useEffect(() => {
@@ -168,23 +169,25 @@ export default function AnalysisModal() {
 
   const handleClose = () => {
     setOpen(false);
-    setTimeout(() => { setStep(0); setForm(INITIAL); setSuccess(false); }, 400);
+    setTimeout(() => { setStep(0); setForm(INITIAL); setSuccess(false); setError(null); }, 400);
   };
 
   const handleSubmit = async () => {
     setLoading(true);
+    setError(null);
     try {
       const res = await fetch("/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ type: "analysis", ...form }),
       });
-      const data = await res.json();
-      console.log("[AnalysisModal] Response:", data);
+      // res.ok kontrol edilmezse sunucu 500 dönse bile başarı ekranı açılır
+      // ve e-posta gönderilemediği hiç fark edilmez.
+      if (!res.ok) throw new Error(String(res.status));
       setSuccess(true);
       setStep(totalSteps);
-    } catch (e) {
-      console.error(e);
+    } catch {
+      setError("Talebiniz gönderilemedi. Lütfen tekrar deneyin veya 0212 201 58 48 numaralı telefondan bize ulaşın.");
     } finally {
       setLoading(false);
     }
@@ -361,6 +364,12 @@ export default function AnalysisModal() {
                         </button>
                       </div>
                     )}
+
+                  {error && (
+                    <p className="mt-6 text-sm text-[#ec2027] bg-[#ec2027]/10 border border-[#ec2027]/25 rounded-2xl px-4 py-3">
+                      {error}
+                    </p>
+                  )}
 
                   {/* ── Navigation ───────────────────────────────────────── */}
                   {step < totalSteps && (
