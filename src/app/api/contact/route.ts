@@ -77,9 +77,13 @@ export async function POST(req: NextRequest) {
     );
   }
 
+  // Gönderim başarısız olursa loglayabilmek için catch'ten de erişilebilir olmalı.
+  let payloadForRecovery: unknown = null;
+
   try {
     const body = await req.json();
     const { type, ...data } = body;
+    payloadForRecovery = data;
 
     let subject = '';
     let html = '';
@@ -161,6 +165,14 @@ export async function POST(req: NextRequest) {
       port: SMTP_PORT,
       user: SMTP_USER,
     });
+
+    // GÜVENLİK AĞI: e-posta gidemediyse başvuru tamamen kaybolmasın.
+    // Vercel → Deployments → Functions loglarından kurtarılabilir.
+    // `removeConsole` prod'da console.error'ı korur, bu satır canlıda da çalışır.
+    console.error(
+      '[Contact API] GÖNDERİLEMEYEN BAŞVURU (log üzerinden kurtarın):',
+      JSON.stringify(payloadForRecovery)
+    );
     // Hata detayı istemciye sızdırılmaz (SMTP host/kimlik bilgisi içerebilir).
     return NextResponse.json(
       { success: false, error: 'E-posta gönderilemedi.' },
