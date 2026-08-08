@@ -22,13 +22,14 @@ export default function MobileStickyButton() {
       className="md:hidden fixed bottom-0 left-0 right-0 z-40 px-4 pt-6 bg-gradient-to-t from-background via-background/90 to-transparent pointer-events-none"
       style={{ paddingBottom: "max(1.25rem, env(safe-area-inset-bottom))" }}
     >
+      {/* Buton OPAK: `bg-black/10` iken sayfa içeriği butonun içinden
+          görünüyordu (eskiden backdrop-blur maskeliyordu, Safari için
+          kaldırıldı). Marka rengiyle dolu — aynı zamanda daha iyi bir CTA. */}
       <button
         onClick={handleClick}
-        className="pointer-events-auto w-full flex items-center justify-center gap-3 py-3.5 rounded-2xl bg-black/10 dark:bg-white/10 border border-black/20 dark:border-white/20 text-black dark:text-white font-semibold text-base tracking-wide shadow-[0_8px_32px_rgba(0,0,0,0.15)] dark:shadow-[0_8px_32px_rgba(0,0,0,0.35)] active:scale-95 transition-transform touch-manipulation"
+        className="pointer-events-auto w-full flex items-center justify-center gap-3 py-3.5 rounded-2xl bg-primary hover:bg-primary-dark text-white font-semibold text-base tracking-wide shadow-[0_8px_32px_rgba(236,32,39,0.35)] active:scale-95 transition-transform touch-manipulation"
       >
-        <span className="relative flex h-2.5 w-2.5">
-          <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-[#ec2027]" />
-        </span>
+        <span className="inline-flex rounded-full h-2 w-2 bg-white/90" />
         {at("button")}
       </button>
     </div>

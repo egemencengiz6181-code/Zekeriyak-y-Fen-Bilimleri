@@ -1,7 +1,6 @@
 'use client';
 
 import { useState } from 'react';
-import Image from 'next/image';
 import { CheckCircle2, Loader2, Send } from 'lucide-react';
 
 /* ── Seçenekler — sitenin kendi programlarından türetildi ──────────────────
@@ -99,16 +98,9 @@ export default function FormPage() {
       />
 
       <div className="max-w-2xl mx-auto">
-        {/* ── Logo + başlık ── */}
+        {/* Sayfa içi logo kaldırıldı — navbar zaten logoyu gösteriyor, iki
+            özdeş logo üst üste geliyordu. */}
         <div className="text-center mb-12">
-          <Image
-            src="/logos/fen-bilimleri-logo.png"
-            alt="Zekeriyaköy Nazmi Arıkan Fen Bilimleri"
-            width={220}
-            height={74}
-            className="h-16 w-auto object-contain mx-auto mb-8"
-            priority
-          />
           <h1 className="enter-up text-3xl md:text-5xl font-bold tracking-tighter mb-4 leading-tight">
             Kayıt ve Bilgi Formu
           </h1>

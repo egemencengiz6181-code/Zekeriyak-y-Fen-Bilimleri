@@ -210,7 +210,9 @@ export default function ServicePage({
       <section className="max-w-5xl mx-auto px-6 pb-32">
         <div className="grid grid-cols-1 lg:grid-cols-[280px_1fr] gap-16 items-start">
           {/* Sticky sidebar — features + CTA */}
-          <Reveal as="aside" className="lg:sticky lg:top-32 p-8 rounded-3xl border border-black/5 dark:border-white/5 bg-black/[0.03] dark:bg-white/[0.03] ">
+          {/* Yapışkan kenar çubuğu: %3 opaklıkta olduğu için sayfa kayarken
+              arkasındaki metin içinden geçiyordu. Opak yüzeye alındı. */}
+          <Reveal as="aside" className="lg:sticky lg:top-32 p-8 rounded-3xl border border-black/10 dark:border-white/10 bg-surface dark:bg-[#12121c] shadow-[0_8px_24px_-12px_rgba(0,0,0,0.2)]">
             <h3 className="text-xs font-bold uppercase tracking-[0.25em] text-[#ec2027] mb-6">{t('scope')}</h3>
             <ul className="space-y-3">
               {features?.map((f: string) => (

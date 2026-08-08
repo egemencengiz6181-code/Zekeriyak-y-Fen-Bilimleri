@@ -99,7 +99,18 @@ export default function Navbar() {
 
   return (
     <>
-    <header className="fixed top-0 left-0 right-0 z-50 w-full px-6 md:px-12 py-5 flex items-center justify-between pointer-events-none">
+    {/* Sayfa aşağı kaydırılınca header'a dolu bir zemin gelir; aksi halde
+        içerik logonun ve nav hapının arkasından geçip yazılar üst üste
+        biniyordu. En üstteyken zemin yok — hero'nun üzerinde yüzen tasarım
+        korunuyor. (`isScrolled` daha önce hesaplanıp hiç kullanılmıyordu.) */}
+    <header
+      className={cn(
+        "fixed top-0 left-0 right-0 z-50 w-full px-6 md:px-12 py-5 flex items-center justify-between pointer-events-none",
+        "transition-colors duration-300",
+        isScrolled &&
+          "bg-background border-b border-black/10 dark:border-white/10 shadow-[0_4px_20px_-8px_rgba(0,0,0,0.25)]"
+      )}
+    >
       {/* Logo - Sol Taraf */}
       <div className="pointer-events-auto w-[200px] md:w-[260px] flex items-center">
         <Link href="/" className="flex items-center">
@@ -116,7 +127,10 @@ export default function Navbar() {
 
       {/* Nav Linkleri - Orta Kısım (sadece desktop) */}
       <div className="pointer-events-auto hidden md:flex flex-col items-center">
-        <div className="flex items-center gap-1 bg-black/5 dark:bg-white/5 border border-black/10 dark:border-white/10 py-1 px-1 rounded-full shadow-lg relative max-w-fit">
+        {/* Nav hapı OPAK olmalı: `bg-black/5` ile arkadaki başlık metni
+            haptan geçip menü yazılarıyla üst üste biniyordu. Eskiden
+            backdrop-blur bunu maskeliyordu, o da Safari için kaldırıldı. */}
+        <div className="flex items-center gap-1 bg-surface dark:bg-[#12121c] border border-black/10 dark:border-white/10 py-1 px-1 rounded-full shadow-[0_8px_24px_-8px_rgba(0,0,0,0.25)] dark:shadow-[0_8px_24px_-8px_rgba(0,0,0,0.7)] relative max-w-fit">
           {navItems.map((item) => {
             const isActive = activeTab === item.name
 
@@ -140,10 +154,12 @@ export default function Navbar() {
                     {item.hasMegaMenu && <ChevronDown className={cn("w-3 h-3 transition-transform duration-300", isHovered === item.name && "rotate-180")} />}
                   </span>
                   
+                  {/* Aktif sekme göstergesi. Eskiden hapın ÜSTÜNE taşan bir
+                      "lamba" çubuğu vardı; parlamasını sağlayan blur Safari
+                      için kaldırılınca geriye hapın dışında duran kırmızı bir
+                      çizgi kaldı. Gösterge artık hapın içinde. */}
                   {isActive && (
-                    <div className="absolute inset-0 bg-primary/10 rounded-full -z-10">
-                      <div className="absolute -top-2 left-1/2 -translate-x-1/2 w-8 h-1 bg-primary-light rounded-t-full shadow-[0_-4px_8px_0_rgba(236,32,39,0.8)]" />
-                    </div>
+                    <div className="absolute inset-0 bg-primary/10 rounded-full -z-10" />
                   )}
                 </Link>
               </div>
