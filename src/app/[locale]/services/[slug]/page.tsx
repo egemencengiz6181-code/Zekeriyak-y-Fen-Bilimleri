@@ -4,7 +4,7 @@ import { use } from 'react';
 import { useTranslations } from 'next-intl';
 import Image from 'next/image';
 import { Link } from '@/navigation';
-import { ArrowLeft, ArrowRight, CheckCircle2, Cpu, MessageCircle } from 'lucide-react';
+import { ArrowLeft, ArrowRight, CheckCircle2, Cpu, MessageCircle, Phone } from 'lucide-react';
 import { HeroHighlight } from '@/components/ui/hero-highlight';
 import MarketingBadges from '@/components/ui/marketing-badges';
 import LetsWorkSection from '@/components/ui/lets-work-section';
@@ -221,16 +221,27 @@ export default function ServicePage({
               ))}
             </ul>
             <div className="mt-8 pt-8 border-t border-black/5 dark:border-white/5">
-              <a
-                href="tel:02122015848"
-                target="_blank"
-                rel="noopener noreferrer"
+              {/* Kayıt/bilgi popup formunu açar. Eskiden `tel:` linkiydi —
+                  masaüstünde çoğu tarayıcıda hiçbir şey yapmıyordu. */}
+              <button
+                type="button"
+                onClick={() =>
+                  window.dispatchEvent(new CustomEvent('open-analysis-modal'))
+                }
                 className="group flex items-center justify-center gap-2 w-full px-6 py-4 rounded-2xl bg-[#ec2027] hover:bg-[#c9191e] text-white font-semibold text-sm transition-all hover:scale-[1.02] active:scale-[0.98] shadow-[0_0_24px_rgba(236,32,39,0.35)]"
               >
                 <MessageCircle className="w-4 h-4" />
                 {t('cta')}
                 <ArrowRight className="w-4 h-4 -translate-x-1 group-hover:translate-x-0 transition-transform" />
-              </a>
+              </button>
+
+              <Link
+                href="/contact"
+                className="mt-3 flex items-center justify-center gap-2 w-full px-6 py-3.5 rounded-2xl border border-black/10 dark:border-white/10 text-slate-600 dark:text-white/60 hover:text-slate-900 dark:hover:text-white hover:border-black/25 dark:hover:border-white/25 font-semibold text-sm transition-colors"
+              >
+                <Phone className="w-4 h-4" />
+                İletişim Bilgileri
+              </Link>
             </div>
           </Reveal>
 

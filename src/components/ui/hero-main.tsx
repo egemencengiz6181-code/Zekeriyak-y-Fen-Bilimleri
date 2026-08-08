@@ -1,8 +1,9 @@
 "use client";
 
-import { ArrowRight, MessageCircle } from "lucide-react";
+import { ArrowRight, MessageCircle, Phone } from "lucide-react";
 import { useTranslations } from "next-intl";
 import Image from "next/image";
+import { Link } from "@/navigation";
 
 export default function HeroMain() {
   const t = useTranslations("HeroMain");
@@ -78,16 +79,28 @@ export default function HeroMain() {
           className="enter-up flex flex-col sm:flex-row items-center justify-center gap-4"
           style={{ animationDelay: "0.3s" }}
         >
-          <a
-            href="https://wa.me/902122015848"
-            target="_blank"
-            rel="noopener noreferrer"
+          {/* Kayıt/bilgi popup formunu açar (AnalysisModal global event dinler).
+              Eskiden wa.me/902122015848'e gidiyordu — bu bir sabit hat numarası,
+              WhatsApp sabit hatlarda çalışmadığı için buton boşa gidiyordu. */}
+          <button
+            type="button"
+            onClick={() =>
+              window.dispatchEvent(new CustomEvent("open-analysis-modal"))
+            }
             className="group inline-flex items-center gap-3 px-8 py-4 rounded-full bg-primary hover:bg-primary-dark text-white font-semibold text-sm tracking-wide transition-colors duration-200 shadow-[0_0_32px_rgba(236,32,39,0.35)]"
           >
             <MessageCircle className="w-4 h-4" />
             {t("cta")}
             <ArrowRight className="w-4 h-4 -translate-x-1 group-hover:translate-x-0 transition-transform" />
-          </a>
+          </button>
+
+          <Link
+            href="/contact"
+            className="inline-flex items-center gap-2 px-8 py-4 rounded-full border border-black/15 dark:border-white/15 text-slate-700 dark:text-white/70 hover:text-slate-900 dark:hover:text-white hover:border-black/30 dark:hover:border-white/30 font-semibold text-sm tracking-wide transition-colors duration-200"
+          >
+            <Phone className="w-4 h-4" />
+            {t("cta_secondary")}
+          </Link>
         </div>
       </div>
 

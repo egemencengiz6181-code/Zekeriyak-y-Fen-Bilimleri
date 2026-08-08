@@ -211,11 +211,15 @@ export default function Navbar() {
     </header>
 
     {/* Mobil Menü Overlay — sürekli mount, sadece transform ile açılıp kapanır.
-        transform + opacity compositor'da çalışır, layout/paint tetiklemez. */}
+        transform + opacity compositor'da çalışır, layout/paint tetiklemez.
+
+        z-[60]: header z-50'de ve `fixed` olduğu için menü z-40 iken header'ın
+        logosu menünün ÜSTÜNDE kalıyor, menünün kendi logosuyla çakışıyordu.
+        Menü artık header'ı tamamen örtüyor; kapatma butonu menünün içinde. */}
     <div
       aria-hidden={!isMobileOpen}
       className={cn(
-        "fixed inset-0 z-40 flex flex-col bg-[#f4f4f8] dark:bg-[#0a0a0f] md:hidden",
+        "fixed inset-0 z-[60] flex flex-col bg-[#f4f4f8] dark:bg-[#0a0a0f] md:hidden",
         "transition-transform duration-300 ease-out will-change-transform",
         isMobileOpen ? "translate-x-0" : "translate-x-full pointer-events-none"
       )}

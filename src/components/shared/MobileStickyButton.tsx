@@ -17,7 +17,9 @@ export default function MobileStickyButton() {
 
   return (
     <div
-      className="md:hidden fixed bottom-0 left-0 right-0 z-[100] px-4 pt-6 bg-gradient-to-t from-background via-background/90 to-transparent pointer-events-none"
+      // z-40: sayfa içeriğinin (z-10) üstünde ama mobil menünün (z-60)
+      // altında kalmalı — yoksa menü açıkken menünün üzerine biniyor.
+      className="md:hidden fixed bottom-0 left-0 right-0 z-40 px-4 pt-6 bg-gradient-to-t from-background via-background/90 to-transparent pointer-events-none"
       style={{ paddingBottom: "max(1.25rem, env(safe-area-inset-bottom))" }}
     >
       <button
