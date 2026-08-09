@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "test:smtp": "node --env-file=.env.local scripts/test-smtp.mjs"
+    "test:mail": "node --env-file=.env.local scripts/test-mail.mjs"
   },
   "dependencies": {
     "@radix-ui/react-slot": "^1.2.4",

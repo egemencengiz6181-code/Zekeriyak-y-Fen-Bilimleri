@@ -5,23 +5,32 @@ import nodemailer from 'nodemailer';
 export const runtime = 'nodejs';
 export const dynamic = 'force-dynamic';
 
-// ── SMTP yapılandırması (Microsoft 365) ──────────────────────────────────────
-// Değerler ortam değişkeninden okunur; varsayılanlar Office 365 içindir.
+/** Formların düşeceği kutu. */
+const MAIL_TO = process.env.MAIL_TO ?? 'alim.demirli@abdkurumlari.com';
+
+// ── Sağlayıcı 1: Resend (tercih edilen) ──────────────────────────────────────
+// RESEND_API_KEY tanımlıysa e-posta Resend üzerinden gider. Microsoft 365'ten
+// tamamen bağımsızdır; kiracıda SMTP AUTH kapalı olsa da çalışır.
+const RESEND_API_KEY = process.env.RESEND_API_KEY;
+const RESEND_API_URL = process.env.RESEND_API_URL ?? 'https://api.resend.com/emails';
+/** Resend'de DOĞRULANMIŞ alan adına ait bir adres olmak zorunda. */
+const RESEND_FROM =
+  process.env.MAIL_FROM ?? 'Zekeriyaköy Fen Bilimleri <bilgi@zekeriyakoyfenbilimleri.com>';
+
+// ── Sağlayıcı 2: SMTP (yedek) ────────────────────────────────────────────────
 const SMTP_HOST = process.env.SMTP_HOST ?? 'smtp.office365.com';
 const SMTP_PORT = Number(process.env.SMTP_PORT ?? 587);
 const SMTP_USER = process.env.SMTP_USER ?? 'alim.demirli@abdkurumlari.com';
 const SMTP_PASS = process.env.SMTP_PASS;
 
-/** Formların düşeceği kutu. */
-const MAIL_TO = process.env.MAIL_TO ?? 'alim.demirli@abdkurumlari.com';
-
 /**
- * Gönderen adresi kimlik doğrulaması yapılan kutuyla AYNI olmak zorunda.
+ * SMTP'de gönderen, kimlik doğrulaması yapılan kutuyla AYNI olmak zorunda.
  * Microsoft 365, From başlığı oturum açan kullanıcıdan farklıysa
- * "5.7.60 SMTP; Client does not have permissions to send as this sender"
- * hatasıyla reddeder. Bu yüzden From her zaman SMTP_USER.
+ * "5.7.60 Client does not have permissions to send as this sender" der.
  */
-const MAIL_FROM = `"Zekeriyaköy Fen Bilimleri" <${SMTP_USER}>`;
+const SMTP_FROM = `"Zekeriyaköy Fen Bilimleri" <${SMTP_USER}>`;
+
+const useResend = Boolean(RESEND_API_KEY);
 
 /**
  * 587 STARTTLS demektir: bağlantı düz başlar, sonra TLS'e yükseltilir —
@@ -39,6 +48,44 @@ const transporter = nodemailer.createTransport({
   greetingTimeout: 10_000,
   socketTimeout: 20_000,
 });
+
+/**
+ * Yapılandırılmış sağlayıcıyla e-posta gönderir.
+ * Resend REST API'si tek bir POST olduğu için SDK bağımlılığı eklenmedi.
+ */
+async function deliver(opts: { subject: string; html: string; replyTo?: string }) {
+  if (useResend) {
+    const res = await fetch(RESEND_API_URL, {
+      method: 'POST',
+      headers: {
+        Authorization: `Bearer ${RESEND_API_KEY}`,
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        from: RESEND_FROM,
+        to: [MAIL_TO],
+        subject: opts.subject,
+        html: opts.html,
+        ...(opts.replyTo ? { reply_to: opts.replyTo } : {}),
+      }),
+      signal: AbortSignal.timeout(15_000),
+    });
+
+    if (!res.ok) {
+      const detail = await res.text().catch(() => '');
+      throw new Error(`Resend ${res.status}: ${detail.slice(0, 300)}`);
+    }
+    return;
+  }
+
+  await transporter.sendMail({
+    from: SMTP_FROM,
+    to: MAIL_TO,
+    replyTo: opts.replyTo,
+    subject: opts.subject,
+    html: opts.html,
+  });
+}
 
 /** Formu dolduranın adresi geçerliyse yanıt oraya gitsin. */
 function replyToFor(email: unknown): string | undefined {
@@ -65,11 +112,12 @@ function escapeMultiline(value: unknown): string {
 }
 
 export async function POST(req: NextRequest) {
-  // Şifre yoksa sessizce 500'e düşmek yerine nedenini açıkça logla.
-  if (!SMTP_PASS) {
+  // Hiçbir sağlayıcı yapılandırılmamışsa nedenini açıkça logla.
+  if (!useResend && !SMTP_PASS) {
     console.error(
-      '[Contact API] SMTP_PASS tanımlı değil — e-posta gönderilemez. ' +
-        'Vercel → Project Settings → Environment Variables altına ekleyin.'
+      '[Contact API] E-posta sağlayıcısı yapılandırılmamış. Vercel → Project ' +
+        'Settings → Environment Variables altına RESEND_API_KEY (önerilen) ' +
+        'veya SMTP_PASS ekleyin.'
     );
     return NextResponse.json(
       { success: false, error: 'E-posta servisi yapılandırılmamış.' },
@@ -144,26 +192,24 @@ export async function POST(req: NextRequest) {
       `;
     }
 
-    await transporter.sendMail({
-      from: MAIL_FROM,
-      to: MAIL_TO,
-      replyTo: replyToFor(data.email),
+    await deliver({
       // Satır sonları başlık enjeksiyonuna yol açabilir — tek satıra indir.
       subject: subject.replace(/[\r\n]+/g, ' ').slice(0, 200),
       html,
+      replyTo: replyToFor(data.email),
     });
 
     return NextResponse.json({ success: true });
   } catch (err) {
-    // Sunucu loglarında teşhis için yeterli bilgi bırak (şifre HARİÇ).
+    // Sunucu loglarında teşhis için yeterli bilgi bırak (anahtar/şifre HARİÇ).
     const e = err as { code?: string; responseCode?: number; message?: string };
     console.error('[Contact API] Gönderim hatası:', {
+      provider: useResend ? 'resend' : 'smtp',
       code: e?.code,
       responseCode: e?.responseCode,
       message: e?.message,
-      host: SMTP_HOST,
-      port: SMTP_PORT,
-      user: SMTP_USER,
+      ...(useResend ? { from: RESEND_FROM } : { host: SMTP_HOST, port: SMTP_PORT, user: SMTP_USER }),
+      to: MAIL_TO,
     });
 
     // GÜVENLİK AĞI: e-posta gidemediyse başvuru tamamen kaybolmasın.
